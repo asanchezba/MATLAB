@@ -5,7 +5,7 @@ The mostly used categories of data types of variables:
 - Character and string: character, string and cell array
 - Date and time
 
-```
+```matlab
 % Variable definition
 
 % Numeric data types
