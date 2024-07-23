@@ -110,3 +110,5 @@ fprintf('text%f', var)
 fprintf('\n')
 ```
 _'text'_ can be any string or character, and _var_ indicates the value of a variable that is required to be printed. Finally, _'\n'_ is used to shift to the next line.  
+
+_fprintf()_ can be used to print both text and numbers in the command window. The input provided within the bracket will be printed in the command window as a string, or characters. If the defined value of any variable is required to be printed with text, the _fprintf(text%d,var)_ command can be utilized where _%d_ will be replaced by the value of the defined variable _var_. However, it is only true if the variable is an integer type. For printing the values of float type variables, _%f_ is used in place of _%d_. 
