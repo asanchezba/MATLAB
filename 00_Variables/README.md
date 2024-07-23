@@ -33,6 +33,8 @@ whos
 The _whos_ command prints the details of all the defined variables stored in the workspace. It provides the name, size, bytes
 class, and attributes. 
 
+After defining a variable, the assigned data can be reused at any time throughout the program, unless the variable is reassigned with new data, or cleared. 
+- To erase all the variables type _clear_ or _clear all_
 
 
 
