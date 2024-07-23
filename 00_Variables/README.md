@@ -44,6 +44,13 @@ After defining a variable, the assigned data can be reused at any time throughou
 ### Data type conversion
 
 
+| Number to text   | Description                               |
+| ---------------- | ----------------------------------------- |
+| int2ster(number) | Convert any integer number to a character |
+| num2str(number)  | Convert any number to a character         |
+| char(number)     | Convert any number to a character         |
+| string(number)   | Convert any number to a string            |
+
 
 
 
