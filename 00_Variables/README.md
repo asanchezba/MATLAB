@@ -35,6 +35,13 @@ class, and attributes.
 
 After defining a variable, the assigned data can be reused at any time throughout the program, unless the variable is reassigned with new data, or cleared. 
 - To erase all the variables type _clear_ or _clear all_
+- To erase a specific variable type _clear x_
+- To clear two specific variables type _clear x y_
+- To clear only the command window type _clc_
+
+### Data type conversion
+
+
 
 
 
