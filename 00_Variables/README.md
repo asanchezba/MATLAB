@@ -86,7 +86,7 @@ var6_conv = str2num(var6); % Conversion into double
 
 ### Recording a MATLAB session
 
-The ***diary('Name')*** function records a MATLAB session and creates a file containing the keyboard inputs and the outputs. * *'Name'* * indicates the name of the file in which the session will be recorded.
+The ***diary('Name')*** function records a MATLAB session and creates a file containing the keyboard inputs and the outputs. * *Name* * indicates the name of the file in which the session will be recorded.
 
 ```matlab
 % Diary function
