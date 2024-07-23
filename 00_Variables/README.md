@@ -29,3 +29,10 @@ fprintf('var6 = ');   disp(var6)
 fprintf('var7 = ');   disp(var7)
 whos
 ```
+
+The _whos_ command prints the details of all the defined variables stored in the workspace. It provides the name, size, bytes
+class, and attributes. 
+
+
+
+
