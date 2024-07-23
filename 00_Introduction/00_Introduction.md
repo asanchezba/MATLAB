@@ -99,4 +99,14 @@ fprintf('Sumation: %d\n', sum);
 diary('diaryFile.txt');
 ```
 
+### Printing Output
 
+Built-in functions ***fprintf()*** and ***disp()*** are used to print the output of a program. 
+
+```matlab
+fprintf('text')
+fprintf('text%d', var)
+fprintf('text%f', var)
+fprintf('\n')
+```
+_'text'_ can be any string or character, and _var_ indicates the value of a variable that is required to be printed. Finally, _'\n'_ is used to shift to the next line.  
