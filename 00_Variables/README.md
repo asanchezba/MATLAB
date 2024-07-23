@@ -1,4 +1,6 @@
-# Variables in MATLAB 
+# Introduction
+
+### Variables in MATLAB
 
 The mostly used categories of data types of variables: 
 - Numeric data type: integer, float (single and double), and logical
@@ -30,16 +32,18 @@ fprintf('var7 = ');   disp(var7)
 whos
 ```
 
-The _whos_ command prints the details of all the defined variables stored in the workspace. It provides the name, size, bytes
+The ***whos*** command prints the details of all the defined variables stored in the workspace. It provides the name, size, bytes
 class, and attributes. 
 
 After defining a variable, the assigned data can be reused at any time throughout the program, unless the variable is reassigned with new data, or cleared. 
-- To erase all the variables type _clear_ or _clear all_
-- To erase a specific variable type _clear x_
-- To clear two specific variables type _clear x y_
-- To clear only the command window type _clc_
+- To erase all the variables type ***clear*** or ***clear all***
+- To erase a specific variable type ***clear x***
+- To clear two specific variables type ***clear x y***
+- To clear only the command window type ***clc***
 
 ### Data type conversion
+
+
 
 
 
