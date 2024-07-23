@@ -46,11 +46,15 @@ After defining a variable, the assigned data can be reused at any time throughou
 
 | Number to text   | Description                               |
 | ---------------- | ----------------------------------------- |
-| int2ster(number) | Convert any integer number to a character |
+| int2str(number)  | Convert any integer number to a character |
 | num2str(number)  | Convert any number to a character         |
 | char(number)     | Convert any number to a character         |
 | string(number)   | Convert any number to a string            |
 
+| Text to number   | Description                                          |
+| ---------------- | ---------------------------------------------------- |
+| str2num(text)    | Convert any character or string into a double number |                
+| str2double(text) | Convert any character or string into a double number |
 
 
 
