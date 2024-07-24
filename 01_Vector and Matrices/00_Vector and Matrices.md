@@ -13,3 +13,16 @@ A = [1 5 7 9]
 % Column vector
 B = [1; 5; 7; 9]
 ```
+A vector having values of equal increment or decrement can be defined in an easier way for avoiding enlisting a large number of values manually.
+
+The vector C has three entities—the first one is the starting value and the last one is the ending value of the vector. The values are equally spaced and have a +2 increment. The increment value represents the middle entity of the C vector. In case, the increment is +1, the middle entity can be skipped as MATLAB considers +1 as the default increment. For decrement or negative increment, the middle entity will become a negative value.
+
+```matlab
+% Row vector with increments
+C = 1:2:12
+
+% Row vector with decrements
+D = 12:-2:1
+```
+
+
