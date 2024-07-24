@@ -12,3 +12,6 @@ C = 1:2:12
 
 % Row vector with decrements
 D = 12:-2:1
+
+% Matrice
+E = [1 3 5;2 4 3;2 8 4;1 6 9]
