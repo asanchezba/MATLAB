@@ -33,3 +33,44 @@ A matrix can be defined in the same way as a vector and can have multiple rows a
 % Matrix
 A = [1 3 5;2 4 3;2 8 4;1 6 9]
 ```
+
+### Manipulation of vectors and matrices
+
+A matrix can be formed by combining multiple vectors of the same size. After defining a vector or matrix, it is essential to access each value. V1, V2, and V3 represent the values of the first, second, and third rows of M, respectively. A colon (:) is used while accessing multiple values.
+
+```matlab
+% Definition of vector 1
+V1 = [1 2 5]
+
+% Definition of vector 2
+V2 = [4 6 8]
+
+% Definition of vector 3
+V3 = [5 7 9]
+
+% Formation of a matrix
+M = [V1;V2;V3]
+
+% Accessing a value from the matrix
+M(2,3)
+
+% Accessing the values in the first row of every column of matrix M
+V1 = M(1, :)
+
+% Accessing the values in the first column of every row of matrix M
+V2 = M(:, 1)
+```
+
+### Dimensions of matrices
+
+The dimension of a matrix can be determined by _size()_ and is represented by row x column, where row indicates the total number of rows and column refers to the number of columns of that matrix.
+
+```matlab
+% Dimension of a matrix
+clc; clear;
+
+A = [2, 1; 4, 3; 2, 1]
+dim = size(A);
+fprintf('Dimension of matrix A:\n');
+disp(dim)
+```
