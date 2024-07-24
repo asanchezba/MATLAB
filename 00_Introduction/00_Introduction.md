@@ -146,15 +146,15 @@ disp(['The value of the variable is: ', num2str(var)]);
 ### Exercice 1
 
 Perform the following operations and save the results in a variable. Demonstrate the variables using “whos” command:
--(a) 2*4^2
--(b) (2*4)^2
--(c) 503+224604 
--(d) (10^3)/(9*2) 
--(e) 6.25*0.42^3.56
--(f) Save “MATLAB is fun!” in a variable
+-2*4^2
+-(2*4)^2
+-503+224-604 
+-(10^3)/(9*2) 
+-6.25*0.42^3.56
+-Save “MATLAB is fun!” in a variable
 
 ### Exercice 2
 
 Take two numerical inputs from the user and save them in variables num1 and num2. Perform the following operations and record the session using the _diary_ function:
-(i) num1/num2 
-(ii) num1\num2
+-num1/num2 
+-num1\num2
