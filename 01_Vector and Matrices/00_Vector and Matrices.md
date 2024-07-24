@@ -25,4 +25,11 @@ C = 1:2:12
 D = 12:-2:1
 ```
 
+### Creating Matrices
 
+A matrix can be defined in the same way as a vector and can have multiple rows and columns, based on which its size is determined. The size can be controlled by using space and semicolons. Space indicates a shift from one column to another within a single row, whereas a semicolon represents the end of one row or the start of a new row. The size of any vector is defined by row x column.
+
+```matlab
+% Matrice
+A = [1 3 5;2 4 3;2 8 4;1 6 9]
+```
