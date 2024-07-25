@@ -169,7 +169,33 @@ disp(B);
 ```
 Random number generation can be very effective for verifying any particular program with random input values. Based on the types of random numbers that are required to be generated, command may vary.
 
-Command for arrays of random numbers uniformly distributed: _rand(row,col)_
-Command for arrays of random numbers normally distributed: _randn(row,col)_
-Command for arrays of random pseudo-integer numbers uniformly distributed: _randi([num<sub>min</sub>,num<sub>max</sub>], [row,col])_
+- **Command for arrays of random numbers uniformly distributed:** _rand(row,col)_
+- **Command for arrays of random numbers normally distributed:** _randn(row,col)_
+- **Command for arrays of random pseudo-integer numbers uniformly distributed:** _randi([num<sub>min</sub>,num<sub>max</sub>], [row,col])_
+  _row_ and _col_ indicate the array size; num<sub>min</sub> and num<sub>max</sub> are the minimum and maximum range of the generated random numbers
+
+```matlab
+% Arrays of random numbers
+
+clc;clear;
+
+row = 3;
+col = 2;
+num_min = 2;
+num_max = 8;
+
+% uniformly distributed random numbers
+A = rand(row,col);
+% normally distributed random numbers
+B = randn(row,col);
+% uniformly distributed random pseudo-integer
+C = randi([num_min,num_max],[row,col]);
+
+fprintf('Array of uniformly distributed random numbers:\n');
+disp(A);
+fprintf('Array of normally distributed random numbers:\n');
+disp(B);
+fprintf('Array of uniformly distributed random pseudo-integer:\n');
+disp(C);
+```
 
