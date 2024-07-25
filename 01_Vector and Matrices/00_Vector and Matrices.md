@@ -89,6 +89,21 @@ A transpose matrix is a matrix whose row and column values interchange with each
 **Determinant**
 A determinant of a matrix provides a scalar value; however, it is only applicable for a square matrix. A square matrix is a matrix whose row and column numbers are identical. For example a matrix of size 2 x 2. The command for calculating the determinant is to use det() function.
 
+**Identity matrix**
+An identity matrix has 3 distinctive characteristics:
+1. It is a square matrix
+2. The diagonal values are 1. The other values except for the diagonal are all zero
+3. The determinant is always 1
+The command for identity matrix is _eye(N)_ where N represents the dimension.
+
+**Inverse matrix**
+If the determinant of a certain matrix is zero, it is called a singular matrix. A non-singular matrix always has a nonzero determinant. Consider a non-singular square matrix X having a dimension of n x n. If another matrix Y, having the same dimension as X, can be related as XY = I, the second matrix Y can be regarded as the inverse matrix of X. Here, I represents the identity matrix, which has the same dimension as X and Y.
+
+If X is a matrix, the inverse matrix of X can be represented as X^-1. The matrix X is invertible only if:
+1. X is a square, non-singular matrix
+2. XX^-1 = I
+
+
 ```matlab
 % Operations on matrices
 clc; clear;
@@ -113,4 +128,7 @@ X_t = X'
 
 % Determinant
 det(A)
+
+% Identity matrix
+I = eye(4)
 ```
