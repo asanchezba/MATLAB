@@ -74,3 +74,43 @@ dim = size(A);
 fprintf('Dimension of matrix A:\n');
 disp(dim)
 ```
+
+### Operations on matrices
+
+**Addition and Subtraction**
+The addition and subtraction of two matrices with identical size can be performed by using the “+” and “-”.
+
+**Multiplication**
+The multiplication of two matrices is possible only if the number of columns of the first matrix equals the number of rows of the second matrix by using the "*". 
+
+**Transpose**
+A transpose matrix is a matrix whose row and column values interchange with each other. The command for transposing a matrix is to use the prime (') symbol.
+
+**Determinant**
+A determinant of a matrix provides a scalar value; however, it is only applicable for a square matrix. A square matrix is a matrix whose row and column numbers are identical. For example a matrix of size 2 x 2. The command for calculating the determinant is to use det() function.
+
+```matlab
+% Operations on matrices
+clc; clear;
+
+A = [1 4 6; 2 5 7; 3 6 8];
+B = [2 4 6; 3 5 7; 4 6 8];
+
+%Addition
+Add = A + B
+
+% Substraction
+Sub = A - B
+
+X = [1 2 4; 2 5 6];
+Y = [1 2; 3 4; 5 7];
+
+% Multiplication
+mul = X * Y
+
+% Transpose
+X_t = X'
+
+% Determinant
+det(A)
+```
