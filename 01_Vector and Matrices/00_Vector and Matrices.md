@@ -102,7 +102,7 @@ If the determinant of a certain matrix is zero, it is called a singular matrix. 
 If X is a matrix, the inverse matrix of X can be represented as X^-1. The matrix X is invertible only if:
 1. X is a square, non-singular matrix
 2. XX^-1 = I
-
+Command for calculating the inverse of a matrix is _inv()_.
 
 ```matlab
 % Operations on matrices
@@ -132,3 +132,44 @@ det(A)
 % Identity matrix
 I = eye(4)
 ```
+
+### Matrix Concatenation
+
+Multiple matrices can be appended together to form a larger combined matrix using matrix concatenation. Matrix concatenation can be of two types—horizontal and vertical concatenation. 
+
+```matlab
+% Matrix Concatenation
+clc; clear;
+
+A = [1 4;2 4;3 2];
+B = [2 -4;1 3;7 9];
+fprintf('Horizontal concatenation:\n');
+C = [A,B]
+fprintf('Vertical concatenation:\n');
+D = [A;B]
+```
+
+### Creating Arrays of Zeros, Ones, and Random Numbers
+
+Command for producing arrays of zeros: _zeros(row,col)_
+Command for producing arrays of ones: _ones(row,col)_
+
+```matlab
+% Arrays of zeros, ones
+clc;clear;
+
+row = 3;
+col = 2;
+A = zeros(row,col);
+B = ones(row,col);
+fprintf('Array of zeros:\n');
+disp(A);
+fprintf('Array of ones:\n');
+disp(B);
+```
+Random number generation can be very effective for verifying any particular program with random input values. Based on the types of random numbers that are required to be generated, command may vary.
+
+Command for arrays of random numbers uniformly distributed: _rand(row,col)_
+Command for arrays of random numbers normally distributed: _randn(row,col)_
+Command for arrays of random pseudo-integer numbers uniformly distributed: _randi([num<sub>min</sub>,num<sub>max</sub>], [row,col])_
+
