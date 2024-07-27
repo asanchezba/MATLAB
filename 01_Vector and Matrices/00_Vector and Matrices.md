@@ -199,3 +199,12 @@ fprintf('Array of uniformly distributed random pseudo-integer:\n');
 disp(C);
 ```
 
+### Array Function for One-Dimensional Arrays
+
+Several functions are available in MATLAB to perform operations on a one-dimensional array.
+
+_linspace()_ is a function that can be used to create a one-dimensional array, which contains equally spaced values within a specific range.
+
+```matlab
+linespace(Lower<sub>limit<sub>, Upper<sub>limit<sub>, point)
+```
