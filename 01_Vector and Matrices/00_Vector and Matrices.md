@@ -203,7 +203,7 @@ disp(C);
 
 Several functions are available in MATLAB to perform operations on a one-dimensional array.
 
-**linspace()** is a function that can create a one-dimensional array containing equally spaced values within a specific range.
+***linspace()*** is a function that can create a one-dimensional array containing equally spaced values within a specific range.
 
 The command is: linespace(Lower<sub>limit</sub>, Upper<sub>limit</sub>, point)
 
@@ -211,7 +211,7 @@ where _Lower<sub>limit</sub>,Upper<sub>limit</sub>_ is a specific range, and _po
 
 An alternative way is to specify the space/range between the upper and lower limits with the command:  Lower<sub>limit</sub>:space:Upper<sub>limit</sub>
 
-To determine the maximum or the minimum values within an array, **max()** and **min()** can be used
+To determine the maximum or the minimum values within an array, ***max()*** and ***min()*** can be used
 
 ```matlab
 % Array functions
@@ -241,3 +241,22 @@ disp(max_A);
 fprintf('Minimum value of the array A:');
 disp(min_A);
 ```
+
+### Mean, Standard Deviation, Variance, and Mode
+
+Mean, standard deviation, and variance are three essential statistical terminologies to understand the distribution of data. 
+
+**Mean:** The average of all the values in an array. It can be determined using the _mean()_ function.
+
+**Variance:** The average of the squared difference between each value and the mean of an array. It can be determined by using _var()_ function.
+
+**Standard deviation:** Is the square root of the variance of an array. It can be determined by using _std()_ function.
+
+**Mode:** the value that creates the maximum appearance. It can be determined by using _mode()_ function.
+
+
+
+
+
+
+
