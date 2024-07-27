@@ -211,6 +211,8 @@ where _Lower<sub>limit</sub>,Upper<sub>limit</sub>_ is a specific range, and _po
 
 An alternative way is to specify the space/range between the upper and lower limits with the command:  Lower<sub>limit</sub>:space:Upper<sub>limit</sub>
 
+To determine the maximum or the minimum values within an array, **max()** and **min()** can be used
+
 ```matlab
 % Array functions
 clc;clear
