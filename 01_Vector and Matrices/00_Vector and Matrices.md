@@ -204,6 +204,6 @@ disp(C);
 Several functions are available in MATLAB to perform operations on a one-dimensional array.
 
 _linspace()_ is a function that can create a one-dimensional array containing equally spaced values within a specific range.
-The command is: linespace(Lower<sub>limit<sub>, Upper<sub>limit<sub>, point)
-where _Lower<sub>limit</sub>, Upper<sub>limit</sub>_ is a specific range, and _point_ indicate the number of evenly space values. 
+The command is: linespace(Lower<sub>limit</sub>, Upper<sub>limit</sub>, point)
+where _Lower<sub>limit</sub>,Upper<sub>limit</sub>_ is a specific range, and _point_ indicate the number of evenly space values. 
 
