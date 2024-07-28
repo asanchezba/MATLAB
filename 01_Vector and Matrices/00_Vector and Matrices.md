@@ -271,6 +271,85 @@ fprintf('Standard deviation of A = %.2f\n',std_A);
 fprintf('Mode of A = %.2f\n',mode_A);
 ```
 
+### Dot Operator
 
+The dot operator "." can be used to:
+- Dot multiplication or element-wise multiplication of two arrays of the same size. **".*"**
+- Element-wise division of two arrays of the same size, or when the numerator is a scalar value and the dominator is an array. **"./"**
+- Determining power or exponential whenever either the base or the power is an array. **".^"**
+- For writing complicated and complex equations
 
+```matlab
+% Dot Operator
+clc;clear;
+
+% A and B are two arrays;
+% scalar_val is a scalar value;
+
+A = randi([1,2],2,3);
+B = randi([1,2],2,3);
+fprintf('Some instances of the usage of dot operator:\n');
+fprintf('---------------------------------------------\n');
+
+% Dot multiplication
+fprintf('Dot multiplication of two arrays:\n');
+disp(A.*B);
+% Element-wise division between two arrays
+fprintf('Element-wise division of two arrays:\n');
+disp(A./B);
+% Division: Numerator-scalar and denominator-array
+scalar_val = 5;
+fprintf('Division when numerator-scalar and denominator-array:\n');
+disp(scalar_val./A);
+% Power value: Eiter the base, or power is an array
+Base = 10;
+fprintf('Power term is an array:\n');
+disp(Base.^A);
+fprintf('Base teerm is an array:\n');
+disp(A.^scalar_val);
+```
+
+### Table Arrays, Cell Arrays, and Structure Arrays
+
+A table containing different data types can be created using the built-in function _table(variable1, variable2,...)_. All the variables can be accessed and operated like separate arrays. 
+
+```matlab
+% Table Array
+% Headers: Battery name, Energy density, Lifecycle, Safety
+clc; clear;
+
+Battery_name = {'Li-ion';'Liquid super capacitor';'Lead acid'};
+Energy_density = [5;2.5;2];
+Life_cycle = [2;5;1.5];
+Safety = {'High';'Low';'Moderate'};
+TABLE = table(Battery_name,Energy_density,Life_cycle,Safety);
+
+fprintf('Comparison among different battery types:\n');
+fprintf('------------------------------------------\n');
+disp(TABLE);
+
+% Accessing each colum of the table
+fprintf('Accessing the data of Battery_name column:\n');
+disp(TABLE.Battery_name);
+fprintf('Accessing the data of Energy_density column:\n');
+disp(TABLE.Energy_density);
+fprintf('Accessing the data of Lifecycle column:\n');
+disp(TABLE.Life_cycle);
+fprintf('Accessing the data of Safety column:\n');
+disp(TABLE.Safety);
+```
+
+In a cell array, there are different cells, each of which can contain data of different types. The command is _cell(row,col)_ where _row_ and _col_ are used to define the size of the cell array, as well as to access each of the cells.
+
+```matlab
+% Cell Array
+
+A = cell(2,3);
+A(1,:) = {3,4,4};
+A(2,:) = {'A','B','C'};
+fprintf('Cell Array, A:\n');
+disp(A);
+```
+
+In a structure array, different data can be grouped in several fields. In each field, there can be data of different types. The command is _struct(Field1,Val1<sub>Field1</sub>,Field2,Val2<sub>Field2</sub>,...)_
 
