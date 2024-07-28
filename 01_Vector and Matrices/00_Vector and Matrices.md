@@ -351,5 +351,25 @@ fprintf('Cell Array, A:\n');
 disp(A);
 ```
 
-In a structure array, different data can be grouped in several fields. In each field, there can be data of different types. The command is _struct(Field1,Val1<sub>Field1</sub>,Field2,Val2<sub>Field2</sub>,...)_
+In a structure array, different data can be grouped in several fields. In each field, there can be data of different types. The command is _struct(Field1,Val1<sub>Field1</sub>,Field2,Val2<sub>Field2</sub>,...)_. Where Field1, Field2,... indicates the different fields under which different data will be grouped. The grouped data of each field is represented by Val1<sub>Field1</sub>, Val2<sub>Field2</sub>, ...
 
+```matlab
+% Structure Array
+Field1 = 'Battery_Name';
+val_Field1 = {'Li-ion';'Liquid super capacitor';'Lead acid'};
+Field2 = 'Energy_Density';
+val_Field2 = [5,2.5,2];
+Field3 = 'Life_Cycle';
+val_Field3 = [2,5,1.5];
+Field4 = 'Safety';
+val_Field4 = {'High';'Low';'Moderate'};
+
+fprintf('Structure array of different battery types and properties:\n');
+S = struct(Field1,val_Field1,Field2,val_Field2,Field3,val_Field3,Field4,val_Field4)
+fprintf('Accessing first field of the structure:\n');
+disp(S(1));
+fprintf('Accessing second field of the structure:\n');
+disp(S(2));
+fprintf('Accessing third field of the structure:\n');
+disp(S(3));
+```
