@@ -381,6 +381,7 @@ Consider three matrices given as follows:
 <img width="767" alt="Captura de pantalla 2024-07-29 a las 15 42 25" src="https://github.com/user-attachments/assets/59d8819c-1f3a-4adc-8b72-838cd28e9773">
 
 Calculate the following:
+
 a) MatA + MatB
 
 b) MatB - MatC
@@ -396,3 +397,16 @@ f) Inverse MatA
 g) Horizontally concatenate MatB and MatC
 
 h) Vertically concatenate MatC and MatA
+
+### Exercice 2
+
+Given an array a = linspace(2,20,100). What is the mean, variance, standard deviation, and mode of a?
+
+### Exercice 3
+
+Suppose you are working with five semiconductor materials, namely, silicon (Si), germanium (Ge), tin (Sn), carbon (C), and tellurium (Te). Each of them has a bandgap of 1.12, 0.67, 0.08, 5.47, and 0.33 eV, respectively, eV being their unit of measurement.
+
+a) Enlist the information in a table with a column for “Serial_Number,” “Element_Name,” “Element_Symbol,” and “Bandgap.” Use MATLAB “table” function for the purpose.
+
+b) Form and display a structured array from the above information with the same column name as mentioned in 5a. Change the bandgap of tin from 0.08 to 0.07 eV by accessing the specific field and display the array again.
+
