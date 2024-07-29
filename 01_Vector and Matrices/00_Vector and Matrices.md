@@ -378,4 +378,4 @@ disp(S(3));
 
 Consider three matrices given as follows:
 
-(https://github.com/asanchezba/MATLAB/blob/672963fee7d389dff5c30e915a8d29a5b454c79c/01_Vector%20and%20Matrices/Captura%20de%20pantalla%202024-07-29%20a%20las%2015.42.25.png)
+<img width="767" alt="Captura de pantalla 2024-07-29 a las 15 42 25" src="https://github.com/user-attachments/assets/59d8819c-1f3a-4adc-8b72-838cd28e9773">
