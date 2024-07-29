@@ -377,4 +377,5 @@ disp(S(3));
 ### Exercice 1
 
 Consider three matrices given as follows:
-(01_Vector and Matrices/Captura de pantalla 2024-07-29 a las 15.42.25.png)
+
+(https://github.com/asanchezba/MATLAB/blob/672963fee7d389dff5c30e915a8d29a5b454c79c/01_Vector%20and%20Matrices/Captura%20de%20pantalla%202024-07-29%20a%20las%2015.42.25.png)
