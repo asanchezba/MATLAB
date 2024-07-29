@@ -373,3 +373,8 @@ disp(S(2));
 fprintf('Accessing third field of the structure:\n');
 disp(S(3));
 ```
+
+### Exercice 1
+
+Consider three matrices given as follows:
+(01_Vector and Matrices/Captura de pantalla 2024-07-29 a las 15.42.25.png)
