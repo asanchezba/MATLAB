@@ -379,3 +379,20 @@ disp(S(3));
 Consider three matrices given as follows:
 
 <img width="767" alt="Captura de pantalla 2024-07-29 a las 15 42 25" src="https://github.com/user-attachments/assets/59d8819c-1f3a-4adc-8b72-838cd28e9773">
+
+Calculate the following:
+a) MatA + MatB
+
+b) MatB - MatC
+
+c) MatA/MatC
+
+d) Transpose of MatB
+
+e) Determinant of MatC
+
+f) Inverse MatA
+
+g) Horizontally concatenate MatB and MatC
+
+h) Vertically concatenate MatC and MatA
