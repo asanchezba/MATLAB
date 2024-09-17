@@ -119,15 +119,25 @@ switch x
 end
 ```
 
-### For loop
+### "For" loop
 It is a repetitive structure, where a certain task will be repeated systematically. This loop performs a set of functions defined by the statements a number of times. Within a for loop, other conditional statements, such as _if_ statement or nested _if_ statement, can be embedded as required.
 
 ```matlab
 %structure
-
 for index = values
   statements
 end
 ```
+***Example***
 
+```matlab
+%For loop
+clc; clear all
+
+a = [2,4,6,8,10];
+for i = 1:length(a)
+    fprintf('Iteration: %d\n', i);
+    fprintf('Value: %d\n', a(i))
+end
+```
 
