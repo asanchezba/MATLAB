@@ -120,3 +120,14 @@ end
 ```
 
 ### For loop
+It is a repetitive structure, where a certain task will be repeated systematically. This loop performs a set of functions defined by the statements a number of times. Within a for loop, other conditional statements, such as _if_ statement or nested _if_ statement, can be embedded as required.
+
+```matlab
+%structure
+
+for index = values
+  statements
+end
+```
+
+
