@@ -25,5 +25,20 @@ command...
 end
 ```
 
+```matlab
+if (logical condition)
+  Executable
+command...
+    elseif
+  Executable
+command...
+    else
+  Executable
+command...
+end
+```
+
+
+
 
 
