@@ -8,4 +8,10 @@ Some important logical and relational operators, meanings, and examples are list
 ### "If" statement 
 It can be represented in three formats
 
+```matlab
+if (logical condition)
+  Executable
+command...
+end
+```
 
