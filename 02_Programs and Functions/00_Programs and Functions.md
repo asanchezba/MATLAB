@@ -66,5 +66,18 @@ else
 end
 ```
 
+### "Switch" statement 
+Conditional statement through which multiple cases can be set up for executing different blocks of codes. Similar to the _if_ statement but provides more simplicity in terms of comprehension.
 
-
+```matlab
+%Switch structure
+**switch** Switch Expression
+  **case** Case Expression
+    Executable Statement
+ **case** Case Expression
+    Executable Statement
+..... ......
+**otherwise**
+  Executable Statement
+end
+```
