@@ -37,7 +37,18 @@ command...
 command...
 end
 ```
+***Example***
+```matlab
+%If statement
+clc; clear all
 
+x = randi(20,1);
+disp(['The value of x: ', num2str(x)])
+
+if (x > 10)
+    disp('x is greater than 10')
+end
+```
 
 
 
