@@ -37,7 +37,7 @@ command...
 command...
 end
 ```
-***Example***
+***Example 1***
 ```matlab
 %If statement
 clc; clear all
@@ -49,7 +49,22 @@ if (x > 10)
     disp('x is greater than 10')
 end
 ```
+***Example 2***
+```matlab
+y = randi(100,1);
+disp(['The value of y: ', num2str(y)])
+%fprintf('The value of y: %d',y)
 
+if (y >= 80)
+    disp('Grade: A')
+elseif (y >= 60 && y < 80)
+    disp('Grade: B')
+elseif (y >= 40 && y < 60)
+    disp('Grade: C')
+else
+    disp('Grade: F')
+end
+```
 
 
 
