@@ -71,13 +71,13 @@ Conditional statement through which multiple cases can be set up for executing d
 
 ```matlab
 %Switch structure
-**switch** Switch Expression
-  **case** Case Expression
+switch
+  case (Case Expression)
     Executable Statement
- **case** Case Expression
+ case (Case Expression)
     Executable Statement
 ..... ......
-**otherwise**
+otherwise
   Executable Statement
 end
 ```
