@@ -141,3 +141,32 @@ for i = 1:length(a)
 end
 ```
 
+### User-Defined Functions
+Apart from the built-in functions, MATLAB lets the user create a function to carry out a certain task. The user-defined function consists of three parts: input parameters, output variables, and executable commands. This function can be saved as a script file (MATLAB M-file) and used in a separate script file by calling out the function’s name. Both script files (Function file, Main Script file) need to be in the same directory path. 
+
+Also, MATLAB allows to have another type of user-defined function named Anonymous function, which does not require to be saved as a separate script file. Instead, the function can be created on the same main script file and can be usable in the rest of the code in the same script.
+
+```matlab
+%structure
+
+%Function with single input and single output
+function out = functionName (input1)
+Executable commands for a task
+End
+
+%Function with no input and single output
+function out = functionName ()
+Executable commands for a task
+end
+
+%Function with multiple inputs and single output
+function out = functionName(input1, input2, ...)
+Executable commands for a task
+end
+
+%Function with multiple inputs and multiple outputs
+function [out1, out2, . . .] = functionName (input1, input2, ...)
+Executable commands for a task
+end
+```
+
