@@ -192,3 +192,80 @@ myfunc = @(x) 2*x + 3;
 % Call the anonymous function
 result = myfunc(2)
 ```
+
+***Example 3***
+```matlab
+% Call summation function
+sum = Summation(2,5)
+
+% Call subtraction function
+sub = Subtraction(10,2)
+
+% Call multiplication function
+mul = Multiplication(14,7)
+
+% Call division function
+div = Division(14,7)
+
+% Function for Summation
+function sum = Summation(input1,input2)
+sum = input1 + input2;
+end
+
+% Function for Subtraction
+function sub = Subtraction(input1,input2)
+sub = input1 - input2;
+end
+
+% Function for Multiplication
+function mul = Multiplication(input1,input2)
+mul = input1 * input2;
+end
+
+% Function for Division
+function div = Division(input1,input2)
+div = input1 * input2;
+end
+```
+
+*NOTE: function definitions within a script must come after all executable code.
+
+
+### Solve Quadratic Equations Using Functions
+A user-defined function can be created to solve such quadratic equations for finding the roots.
+
+```matlab
+%Solve Quadratic Equations Using Functions
+clc; clear all
+
+%Quadratic Equation: 2x^2 + 3x + 5 = 0
+a = 2; b = 3; c = 5;
+[x1,x2] = quad_roots(a,b,c)
+
+function [x1,x2] = quad_roots(a,b,c)
+x1 = (-b + sqrt(b^2 + 4 * a *c))/(2*a);
+x2 = (b + sqrt(b^2 + 4 * a *c))/(2*a);
+end
+```
+
+***Exercicies***
+
+1. Create a MATLAB program which will take a numerical user input. If the user input is within the 0–100 range, the program would display “Inside range”; otherwise, the program would display “Outside range.” Moreover, if the input is greater than 25 and less than or equal to 50, the program would additionally display “First half,” and if the number is more than 50 but less than or equal to 75, the program would additionally display “Second half.”
+
+2. Hexadecimal codes of colors are vastly used in computer science. Write a MATLAB code using switch-case so that the users can provide the given hexadecimal code as input to know the corresponding color. If the hexadecimal color is wrong or is not available in the table, the code should output an error message: “The color code you entered is wrong/not available.”
+<img width="533" alt="Captura de pantalla 2024-09-19 a las 16 04 04" src="https://github.com/user-attachments/assets/88874df7-6d36-4a00-a1d1-208a3fecb4a3">
+
+
+4. For two Cartesian coordinates (x1, y1) and (x2, y2),the formula to determine the distance is
+<img width="319" alt="Captura de pantalla 2024-09-19 a las 16 04 46" src="https://github.com/user-attachments/assets/65197fa5-adcd-4587-a2d3-117e8f7ec691">
+
+Write a user-defined function “dis- tance” to take two coordinates as input and return the distance as the output.
+Check the function for:
+(a) (2,1) and (2, 2)
+(b) (3, 5) and (1,6)
+
+5. Create a user-defined function “usercal,” which will take two numbers as input from the user, and another number to determine the mathematical operation to perform. If the third number is 1, 2, or 3, addition, subtraction, or multiplication will be performed. If any other third number is entered, an error message “Wrong operation entered” will be demonstrated.
+
+
+
+
