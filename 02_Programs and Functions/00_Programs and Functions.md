@@ -170,3 +170,25 @@ Executable commands for a task
 end
 ```
 
+***Example 1***
+```matlab
+%User-Defined Functions
+clc; clear all
+
+[out1, out2] = myfunction(2, 10)
+
+%Function definition
+function [out1, out2] = myfunction(input1, input2)
+out1 = 2*input1;
+out2 = 2*input2;
+end
+```
+
+***Example 2***
+```matlab
+% Define the anonymous function
+myfunc = @(x) 2*x + 3;
+
+% Call the anonymous function
+result = myfunc(2)
+```
