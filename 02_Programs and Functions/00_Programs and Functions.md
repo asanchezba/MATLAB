@@ -252,16 +252,19 @@ end
 
 1. Create a MATLAB program which will take a numerical user input. If the user input is within the 0–100 range, the program would display “Inside range”; otherwise, the program would display “Outside range.” Moreover, if the input is greater than 25 and less than or equal to 50, the program would additionally display “First half,” and if the number is more than 50 but less than or equal to 75, the program would additionally display “Second half.”
 
-2. Hexadecimal codes of colors are vastly used in computer science. Write a MATLAB code using switch-case so that the users can provide the given hexadecimal code as input to know the corresponding color. If the hexadecimal color is wrong or is not available in the table, the code should output an error message: “The color code you entered is wrong/not available.”
+```matlab
+```
+
+3. Hexadecimal codes of colours are vastly used in computer science. Write a MATLAB code using switch-case so that the users can provide the given hexadecimal code as input to know the corresponding colour. If the hexadecimal colour is wrong or is not available in the table, the code should output an error message: “The colour code you entered is wrong/not available.”
 <img width="533" alt="Captura de pantalla 2024-09-19 a las 16 04 04" src="https://github.com/user-attachments/assets/88874df7-6d36-4a00-a1d1-208a3fecb4a3">
 
 
 4. For two Cartesian coordinates (x1, y1) and (x2, y2),the formula to determine the distance is
 <img width="319" alt="Captura de pantalla 2024-09-19 a las 16 04 46" src="https://github.com/user-attachments/assets/65197fa5-adcd-4587-a2d3-117e8f7ec691">
 
-Write a user-defined function “dis- tance” to take two coordinates as input and return the distance as the output.
+Write a user-defined function “distance” to take two coordinates as input and return the distance as the output.
 Check the function for:
-(a) (2,1) and (2,2)
+(a) (2,1) and (2,2)
 (b) (3,5) and (1,6)
 
 5. Create a user-defined function “usercal,” which will take two numbers as input from the user, and another number to determine the mathematical operation to perform. If the third number is 1, 2, or 3, addition, subtraction, or multiplication will be performed. If any other third number is entered, an error message “Wrong operation entered” will be demonstrated.
