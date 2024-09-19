@@ -261,8 +261,8 @@ end
 
 Write a user-defined function “dis- tance” to take two coordinates as input and return the distance as the output.
 Check the function for:
-(a) (2,1) and (2, 2)
-(b) (3, 5) and (1,6)
+(a) (2,1) and (2,2)
+(b) (3,5) and (1,6)
 
 5. Create a user-defined function “usercal,” which will take two numbers as input from the user, and another number to determine the mathematical operation to perform. If the third number is 1, 2, or 3, addition, subtraction, or multiplication will be performed. If any other third number is entered, an error message “Wrong operation entered” will be demonstrated.
 
