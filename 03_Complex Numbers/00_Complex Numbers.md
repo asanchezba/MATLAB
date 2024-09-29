@@ -8,7 +8,8 @@ The rectangular form of a complex number can be represented as **C = a + i * b**
 The complex number can be generated using the above-mentioned formula if the real and imaginary values are known. 
 
 ### Polar Form
-The polar form of any complex number is | C | imaginary. 
+The polar form of any complex number is <img width="131" alt="Captura de pantalla 2024-09-29 a las 20 00 30" src="https://github.com/user-attachments/assets/bff36a21-a79a-4868-bdf5-93001b423614">
+
 
 
 
