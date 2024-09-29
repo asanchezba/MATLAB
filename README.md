@@ -4,6 +4,6 @@ Welcome to the **MATLAB and Simulink Crash Course for Engineers repository**! In
 
 ### Table of Contents
 - [Chapter 0: Introduction](https://github.com/asanchezba/MATLAB/tree/main/00_Introduction)
-- [Chapter 1: Vector and Matrices] ()
+- [Chapter 1: Vector and Matrices] (https://github.com/asanchezba/MATLAB/tree/main/01_Vector%20and%20Matrices)
 - [Chapter 2: Programs and Functions] ()
 - [Chapter 3: Complex Numbers] ()
