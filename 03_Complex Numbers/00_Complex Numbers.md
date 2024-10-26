@@ -44,9 +44,19 @@ Euler's formula provides a relationship between trigonometric and exponential te
 Where _e_ is the base of the natural logarithm, _x_ is any real number, and _i_ is the imaginary unit. 
 
 As mentioned above, it is possible to convert a complex number from its polar form to cartesian form by using the following relationship:
+
 a = |C| * cos(cosθ)
 
 b = |C| * sin(sinθ) 
+
+Therefore, the complex number in a cartesian format becomes:
+
+C = |C| * (cos(cosθ) + i * sin(sinθ))
+
+Implementing Euler's formula in the above one, the complex number can be represented in an exponential format as:
+
+<img width="447" alt="Captura de pantalla 2024-10-26 a las 20 11 35" src="https://github.com/user-attachments/assets/9f1f3db5-af81-4c7e-844f-b00b1f396783">
+
 
 
 
