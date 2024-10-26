@@ -34,7 +34,10 @@ C_mag3 = abs(C2);
 C_angle3 = angle(C2)*(180/pi);
 C_polar3 = [C_mag3, C_angle3]
 ```
-To convert a complex number from rectangular to polar, we can use the above formula or MATLAB un-built functions _abs()_ and _angle()_. Another way is using _cart2pol()_. 
+To convert a complex number from rectangular to polar, we can use the above formula or the MATLAB unbuilt functions _abs()_ and _angle()_. Another way is to use _cart2pol()_. 
+
+## Euler's Series
+Euler's formula provides a relationship between trigonometric and exponential terms. 
 
 
 
