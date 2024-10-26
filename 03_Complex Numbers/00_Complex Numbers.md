@@ -14,6 +14,28 @@ The polar form of any complex number is
 
 Here, |C| is the absolute value or magnitude of the complex number and θ represents the angle. The absolute value is given by |C| = sqrt(a^2 + b^2) and the angle is given by θ = b/a rad = (b/a) X 180º/π degree. 
 
+```matlab
+%Recntangular complex number
+a = 2;
+b = 3;
+C1 = a + i*b
+C2 = complex(a,b)
+
+%Polar complex number
+[C_angle, C_mag] = cart2pol(a,b);
+C_angle = C_angle*(180/pi);
+C_polar = [C_mag, C_angle]
+
+C_mag2 = sqrt(a^2 + b^2);
+C_angle2 = atan(b/a)*(180/pi);
+C_polar2 = [C_mag2, C_angle2]
+
+C_mag3 = abs(C2);
+C_angle3 = angle(C2)*(180/pi);
+C_polar3 = [C_mag3, C_angle3]
+```
+To convert a complex number from rectangular to polar, we can use the above formula or MATLAB un-built functions _abs()_ and _angle()_. Another way is using _cart2pol()_. 
+
 
 
 
