@@ -39,6 +39,14 @@ To convert a complex number from rectangular to polar, we can use the above form
 ## Euler's Series
 Euler's formula provides a relationship between trigonometric and exponential terms. 
 
+<img width="322" alt="Captura de pantalla 2024-10-26 a las 20 05 19" src="https://github.com/user-attachments/assets/b7bf22f4-8607-4fb4-a142-433c95e55a66">
+
+Where _e_ is the base of the natural logarithm, _x_ is any real number, and _i_ is the imaginary unit. 
+
+As mentioned above, it is possible to convert a complex number from its polar form to cartesian form by using the following relationship:
+a = |C| * cos(cosθ)
+
+b = |C| * sin(sinθ) 
 
 
 
