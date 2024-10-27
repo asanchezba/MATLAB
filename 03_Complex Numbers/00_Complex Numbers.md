@@ -87,6 +87,7 @@ D_angle = C1_angle - C2_angle;
 disp(['C1/C2 in exponential form: ', num2str(D_mag), 'exp(i*', num2str(D_angle), ')']);
 ```
 
+### Application of Euler's Series for Solving Initial Value Problem
 
 
 
