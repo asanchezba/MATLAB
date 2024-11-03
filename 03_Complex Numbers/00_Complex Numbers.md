@@ -57,7 +57,7 @@ Implementing Euler's formula in the above one, the complex number can be represe
 
 <img width="447" alt="Captura de pantalla 2024-10-26 a las 20 11 35" src="https://github.com/user-attachments/assets/9f1f3db5-af81-4c7e-844f-b00b1f396783">
 
-### Example
+#### Example
 ```matlab
 %Euler
 %C1 = 2+5i
@@ -88,6 +88,66 @@ disp(['C1/C2 in exponential form: ', num2str(D_mag), 'exp(i*', num2str(D_angle),
 ```
 
 ### Application of Euler's Series for Solving Initial Value Problem
+Euler's method can be used to solve the initial value problem as follows:
+
+<img width="372" alt="Captura de pantalla 2024-11-03 a las 13 01 33" src="https://github.com/user-attachments/assets/197ecf47-10ef-49ef-9f19-565554ef070a">
+
+The variable _x_ may have a certain range, defined as lower and upper limit values. The procedure for generating solutions to such problems using Euler's series is the following:
+1. Deciding number of steps _(N)_ for iteration over the range of values _x_, based on which a step size _(h)_ will be determined. 
+2. For each iteration, the values of _y_ and _x_ will be updated as follows:
+<img width="494" alt="Captura de pantalla 2024-11-03 a las 13 05 16" src="https://github.com/user-attachments/assets/a4d87209-5f6c-4685-940c-241de4afa55e">
+
+#### Example
+<img width="557" alt="Captura de pantalla 2024-11-03 a las 13 21 20" src="https://github.com/user-attachments/assets/dad6067e-c8a9-4bf9-9459-d6165cb43b75">
+
+```matlab
+%Generate a function for the differential equation
+%Differenctial equation: dy/dx=y'=2x^2+y-2
+%Condition: 0 <= x <= 5; y(0) = 0.1
+%MATLAB iterates from 1, not from 0
+%Hence, for the initial value y(0), we will consider it y(1)
+%Number of step, N = 18
+
+f = @(x,y) 2*x^2+y-2;
+L = input('Enter the lower limit of x:');
+U = input('Enter the upper limit of x:');
+N = input('Enter the number of step:');
+y1 = input('Enter initial value of y:');
+Euler_series(f,L,U,N,y1);
+
+function Sol=Euler_series(f,L,U,N,y1)
+%Input parameters
+%f: A function that provides the differential equation
+%L: Lower limit of x
+%U: Upper limit of x
+%N: Number of steps
+%y1: Initial value of y
+%Output parameters:
+%Sol: [x,y]; x: abscissas; y: ordinate
+
+%Consider the step size, h
+
+h = (U-L)/N;
+y = zeros(N+1,1);
+x = zeros(N+1,1);
+x(1) = L;
+y(1) = y1;
+for i = 1:N
+    y(i+1) = y(i) + h*f(x(i),y(i));
+    x(i+1) = x(1) + i*h;
+end
+
+plot(x,y,'*');
+grid on;
+xlabel('x');
+ylabel('y');
+title('Differential equation: dy/dx=2x^2+y-2;0<=x<=5;y(0)=0.1');
+Sol=[x,y];
+end
+```
+
+### Fourier Series
+
 
 
 
