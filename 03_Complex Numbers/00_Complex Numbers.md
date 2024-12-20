@@ -236,6 +236,49 @@ Here, _f^n_ represents the _n_th derivative of the function _f(x)_.
 The higher order we can go of a Tylor series, the more accurate the result will be for a particular function at a certain point. MATLAB built-in function for the Taylor series is __taylor(f,var)__.
 
 
+MATLAB function for Taylor series for a function _f_ at a point _var = 0_ up to fifth order is __taylor(f,var)__
+
+
+MATLAB function for Taylor series for a function _f_ at a point _var = a_ up to fifth order is __taylor(f,var,a)__
+
+
+MATLAB function for Taylor series for a function _f_ at a point _var = a_ up to _n_ order is __taylor(f,var,a,'order',n)__
+
+
+#### Example
+```matlab
+clc; clear all;
+% Taylor series expansion
+% Function: f(x)=2*sin(x) at a point x=a=0.5;
+% Taylor series expansion up to 4th and 10th order
+
+syms x;
+f = 2*sin(x);
+a = 0.5;
+T_4 = taylor(f,x,a,'order',4);
+T_10 = taylor(f,x,a,'order',10);
+disp('Taylor series expansion of 2*sin(x) at a=0.5 up to 4th order');
+T_4
+fplot(T_4,'b','LineWidth',1.5);
+hold on;
+fplot(T_10,'g','LineWidth',1.5);
+hold on;
+fplot(f,'r','LineWidth',1.5);
+hold on;
+xlim([-4 4]);
+ylim([-4 2]);
+grid on
+legend('Taylor series up to 4th order', ...
+    'Taylor series up to 10th order', ...
+    'Original function: 2*sin(x)','Location','Best')
+title('Taylor series of 2*sin(x) at a = 0.5')
+```
+
+![untitled2](https://github.com/user-attachments/assets/a420325c-21db-403b-9d06-e2a4b76d90cb)
+
+
+
+
 
 
 
