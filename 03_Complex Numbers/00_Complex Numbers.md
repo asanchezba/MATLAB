@@ -147,6 +147,100 @@ end
 ```
 
 ### Fourier Series
+Fourier series is a series through which any periodic function can be represented as a summation of sine and cosine functions. It provides an opportunity to describe any periodic function in a trigonometric representation.
+
+Consider a periodic function _f(t)_, with a period T. The Fourier series of this function is:
+
+<img width="543" alt="Captura de pantalla 2024-12-20 a las 18 53 38" src="https://github.com/user-attachments/assets/b8649273-a329-4eb4-8a72-9b30ac6a3e9c" />
+
+where:
+
+<img width="306" alt="Captura de pantalla 2024-12-20 a las 18 54 16" src="https://github.com/user-attachments/assets/5c3fdaa0-e4ca-41bb-a32d-01f7d473e124" />
+
+
+#### Example
+```matlab
+% Input: Square wave function
+% T=2; Magnitude=1; Omega=1
+t = -7:0.01:7;
+x = 1-square(pi*(t+1));
+plot(t,x,'LineWidth',1.5)
+grid on;
+hold on;
+
+% Fourier Series
+syms k t
+omega = pi;
+T = 2;
+k = 1:5;
+a_0 = (2/T)*int(2,t,0,1);
+a_k = (2/T)*int(2*cos(k*omega*t),t,0,1);
+b_k = (2/T)*int(2*sin(k*omega*t),t,0,1);
+f = (a_0/2)+sum(a_k.*cos(k*omega*t))+sum(b_k.*sin(k*omega*t));
+ezplot(f,[0,7])
+grid on;
+```
+
+![untitled](https://github.com/user-attachments/assets/6641e3ca-f71e-4ffd-8b66-bc14a4648f42)
+
+### Discrete Fourier Transform
+Discrete Fourier Transform (DFT) is almost similar to continuous Fourier transform, except that in DFT, a finite input sequence is considered an input. In this method, any continuous signal is sampled for a finite length to make the input a finite discrete sequence.
+
+Consider a sequence _x[k]_, for wich the DFT can be determined using:
+
+<img width="710" alt="Captura de pantalla 2024-12-20 a las 19 31 31" src="https://github.com/user-attachments/assets/c3f02615-49c4-425c-a142-327b874402f8" />
+
+Here, the length of the sequence is _N_.
+
+It is also essential to study inverse DFT, which can be accomplished by using the following formula:
+
+<img width="680" alt="Captura de pantalla 2024-12-20 a las 19 32 59" src="https://github.com/user-attachments/assets/2598329d-375c-4cb1-8e5b-277c9a3ba3d5" />
+
+Here, the output of DFT is considered as input of the inverse DFT function, and we can reproduce the original sequence, _x[k]_, by implementing inverse DFT.
+
+#### Example
+Consider an input sequence, _x_ = [1 4 5 7]. Determine:
+
+
+(i) Fourier transform of the input vector
+
+
+(ii) Inverse Fourier transform of the output of (i)
+
+
+```matlab
+disp('Input sequence: ');
+x = [1 4 5 7]
+F = fft(x);
+disp('Fourier transform of x: ');
+F
+inv_F = ifft(F);
+disp('Inverse Fourier transform of F: ');
+inv_F
+```
+
+### Taylor Series
+The Taylor Series is a general formula to represent any function as the summation of infinite terms that incorporates the function's derivatives at a single point. The sum of this infinite series provides a finite value, which is equal to the original value of the function near that single point. 
+
+The Taylor series of a real function _f(x)_ about a point _x = a_ can be represented as follows:
+
+<img width="914" alt="Captura de pantalla 2024-12-20 a las 19 49 23" src="https://github.com/user-attachments/assets/e7282f46-9794-4353-bb97-bf3d66ce2417" />
+
+In general format, this series can be represented as follows:
+
+<img width="410" alt="Captura de pantalla 2024-12-20 a las 19 50 19" src="https://github.com/user-attachments/assets/5a8bc032-dbb2-41b0-9eef-8277cb5dd0f1" />
+
+Here, _f^n_ represents the _n_th derivative of the function _f(x)_.
+
+
+The higher order we can go of a Tylor series, the more accurate the result will be for a particular function at a certain point. MATLAB built-in function for the Taylor series is __taylor(f,var)__.
+
+
+
+
+
+
+
 
 
 
