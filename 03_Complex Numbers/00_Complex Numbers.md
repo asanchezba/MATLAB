@@ -277,6 +277,80 @@ title('Taylor series of 2*sin(x) at a = 0.5')
 ![untitled2](https://github.com/user-attachments/assets/a420325c-21db-403b-9d06-e2a4b76d90cb)
 
 
+### Equilibrium Point
+The equilibrium point can be defined as the constant solution of a differential equation. It represents the steady-state points of a dynamic system. Consider a differential equation as follows:
+
+<img width="183" alt="Captura de pantalla 2024-12-21 a las 10 23 32" src="https://github.com/user-attachments/assets/36aeb3af-0a4c-4901-b163-0ef09cbd933b" />
+
+For such a differential equation, the equilibrium points will be the solutions of the following equation:
+
+<img width="224" alt="Captura de pantalla 2024-12-21 a las 10 24 23" src="https://github.com/user-attachments/assets/97ff61b8-8fdc-4d52-aa11-9cd33fdd19cd" />
+
+Here, the values of _y_ will be the equilibrium points, for satisfying the above condition. 
+
+#### Example
+Determine the equilibrium points of the following two differential equations:
+
+<img width="215" alt="Captura de pantalla 2024-12-21 a las 10 25 58" src="https://github.com/user-attachments/assets/fffebb0e-592b-424b-add9-df358de85ee0" />
+
+```matlab
+clc; clear all;
+% Two differential equations
+% dy/dt = 4x^2-xy
+% dx/dt = 2y-x^2
+% Determine the equilibrium points of the system
+% For determining equilibrium points consider,
+% dy/dt = 0 and dx/dt = 0
+% The solutions x and y will be the equilibrium points of the system
+
+syms x y
+[solx,soly] = solve(4*x^2-x*y == 0, 2*y-x^2 == 0);
+disp('Equilibrium points: ')
+E_point1 = [solx(1) soly(1)]
+E_point2 = [solx(2) soly(2)]
+```
+
+### Energy Calculation
+In an electrical system, the power can be represented using **S = P +jQ**, where, _S_, _P_, and _Q_ are apparent, real, and reactive power, respectively, and _j_ is the imaginary unit. Therefore, the electrical power can be considered as a complex number multiplied by scalar value time to calculate the electrical energy of a system. Hence, the electrical energy can be calculated as follows:
+
+<img width="376" alt="Captura de pantalla 2024-12-21 a las 10 37 53" src="https://github.com/user-attachments/assets/9d5bb035-c83b-4b21-9579-0dfce128c7df" />
+
+where _E_ is the electrical energy and _t_ represents the energy usage time. The units of _S_, _P_, and _Q_ are VA, W and VAR.
+
+#### Example
+An electrical system consumes 10 W real power and 20 VAR reactive power for 24h. Determine:
+
+(i) Apparent power in rectangular form
+
+(ii) Apparent power in polar form
+
+(iii) Electrical energy
+
+
+```matlab
+clc; clear all;
+% Real power, P = 10 W
+% Reactive power, Q = 20 VAR
+% Time, t = 24 hours = 86400 sec
+
+P = 10; Q = 20; t = 86400;
+% Rectangular form
+S_rec = complex(P,Q);
+disp('Apparent power in rectangular for: ')
+S_rec
+%Polar form
+S_mag = abs(S_rec);
+S_angle = angle(S_rec)*(180/pi); % Unit: Degree
+S_polar = [S_mag,S_angle];
+disp('Apparent power in polar form- [Magnitude Angle(Degree): ');
+S_polar
+% Electrical energy
+E = P*t;
+disp(['Electrical energy: ', num2str(E), ' Joule']);
+```
+
+
+
 
 
 
