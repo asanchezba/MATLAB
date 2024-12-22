@@ -349,6 +349,72 @@ E = P*t;
 disp(['Electrical energy: ', num2str(E), ' Joule']);
 ```
 
+### Impedance Calculation
+Impedance is a parameter used to depict the overall opposition of the current flow. Impedance consists of two parts - resistance and reactance - and can be represented as **Z = R +jX**. Here, _Z_ is the impedance, _R_ is the resistance, and _X_ represents the reactance of an electrical circuit. 
+
+Another definition of impedance is the ratio of a circuit's voltage to current. Therefore, impedance can also be represented as **Z = V/I**. Here, _V_ and _I_ represent a circuit's voltage and current, respectively.
+
+#### Example 1
+In a series AC electrical circuit, consider a voltage source of 100 &lt; 60&ordm; V. An impedance is connected in series with the voltage source. The current flowing through the circuit is 3 &lt; 30&ordm; A. Determine the impedance in both rectangular and polar form.
+
+```matlab
+clc; clear all;
+
+% Voltage
+V_mag = 100;
+V_angle = 60;
+% Current
+I_mag = 3;
+I_angle = 30;
+
+% Rectangular form
+[Vx, Vy] = pol2cart(V_angle, V_mag);
+V_rec = Vx+i*Vy;
+[Ix, Iy] = pol2cart(I_angle, I_mag);
+I_rec = Ix+i*Iy;
+Z_rec = V_rec/I_rec;
+disp('Impedance in rectangular form: ');
+Z_rec
+
+% Polar form
+Z_mag = abs(Z_rec)
+Z_angle = angle(Z_rec)*(180/pi)
+Z_polar = [Z_mag, Z_angle];
+disp('Impedance in polar form- [Magnituded Angle(Degree)]: ');
+Z_polar
+```
+
+
+#### Example 2
+Consider a series AC circuit with a voltage source of 100 &lt; 90&ordm; V. In series, there is a resistor of 5 ohms, a capacitor of 2 &micro;F, and an inductor of 15 mH. Determine the circuit's impedance in both rectangular and polar forms.
+
+```matlab
+% Resistance
+R = 5;
+% Capacitance
+C = 2*10^(-6);
+% Inductance
+L = 15*10^(-3);
+% Frequency
+f = 60;
+
+% X_L = Inductive Reactance
+X_L = 2*f*pi*L;
+% X_C = Capactive Reactance
+X_C = -1/(2*f*pi*C);
+% Rectangular form
+Z_rec = R+i*(X_L-X_C);
+disp('Impedance in rectangular form: ');
+Z_rec
+
+% Polar form
+Z_mag = abs(Z_rec);
+Z_angle = angle(Z_rec)*(180/pi);
+Z_polar = [Z_mag, Z_angle];
+disp('Impedance in polar form- [Magnitude Angle(Degree)]: ');
+Z_polar
+```
+
 
 
 
