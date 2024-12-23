@@ -415,6 +415,30 @@ disp('Impedance in polar form- [Magnitude Angle(Degree)]: ');
 Z_polar
 ```
 
+### Exercises 
+1. Take a user input for a complex number in rectangular form
+
+   (a) Convert the complex number into polar form and save it in a variable _m_
+   
+   (b) Determine the magnitude and angle of the complex number
+
+   (c) Consider another complex number _n = 5 - i_. Determine _m * n_ in exponential form
+
+2. Given a differential equation with initial values as follows:
+
+<img width="922" alt="Captura de pantalla 2024-12-23 a las 12 45 09" src="https://github.com/user-attachments/assets/9a4d2ee1-9b6a-4841-a356-109afd136d8a" />
+
+Develop a function for Euler's series, such that the function takes the equation, lower and upper limit, step number, and the initial value to generate the values of _x_ and _y_. Plot the _'x versus y'_ graph.
+
+3. Consider an input sequence _x_ = linespace(-2,2,10). Determine the Fourier transform of _x_ and the inverse Fourier transform of the output.
+4.  Perform the Taylor series expansion of the function _f_ = 2 cos (x) + 3 sin (x) at a point 0.6, for the order up to fourth and tenth.
+5.  In a series AC electrical circuit, consider a voltage source of 220 <30&ordm; V. There is a resistor of 10 ohms, and inductor of 20 X 10^-3 H, and a capacitor of 4 &micro;F attached to the circuit in series. The current flowing through the circuit is 5 <45&ordm; A. The system connected to it take 20 W real power and 35 VAR reactive power for a single day.
+
+    (a) Determine the impedance in both rectangular and polar forms
+    
+     (b) Calculate the apparent power in rectangular and polar forms
+    
+     (c) Determine the electrical energy
 
 
 
