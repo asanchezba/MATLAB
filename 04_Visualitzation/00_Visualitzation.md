@@ -29,6 +29,21 @@ A plot command for input _x_ and _y_, with other features, can be written as sho
 
 <img width="1076" alt="Captura de pantalla 2024-12-27 a las 16 09 42" src="https://github.com/user-attachments/assets/401cf41c-dafe-4b08-a8d1-c13d4a78ae66" />
 
+**Basic Features** 
+
+Some basic features of visualisation are not only restricted to be used in a line plot but also for other forms of visualisation (Table below).
+
+<img width="1062" alt="Captura de pantalla 2024-12-27 a las 16 11 50" src="https://github.com/user-attachments/assets/2679dd52-69a8-4293-99ba-b677904141bd" />
+
+#### Example 1: Line plot
+A line plot of global temperature from 2010 to 2020 is shown below. In the output Figure, the x-axis represents the year, while the y-axis represents the temperature in degrees Celsius. 
+
+
+
+
+
+
+
 
 
 
