@@ -124,7 +124,7 @@ grid on
 ![untitled3](https://github.com/user-attachments/assets/04cf1ade-674c-4d53-8661-99017d7b4975)
 
 
-## Bar Plot
+### Bar Plot
 
 
 
