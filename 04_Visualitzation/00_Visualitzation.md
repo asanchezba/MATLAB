@@ -90,6 +90,41 @@ grid on;
 
 ![untitled2](https://github.com/user-attachments/assets/1a3424ec-7591-41d7-b0a4-91c93b45aead)
 
+**Double-Axis Plot**
+
+In a line plot, sometimes we need to plot two line plots in the same figure with the double-axis feature. For creating a double-axis feature, _yyaxis left_ command is used right before the first plot command, which defines the left y-axis. Similarly, _yyaxis right_ commands are used to define the right y-axis. Between the two plot commands, _hold on_ command is used to keep both plots. _hold on_ is usually used to hold the previously plotted figure until the _hold off_ command. If two _plot_ commands are used consecutively without _hold_on_ and _hold off_ commands, the first figure will be replaced by the second one. Using _hold on_ even multiple plots can be incorporated in one figure until we finish it by _hold off_ command.
+
+#### Example 3: Double-Axis Plot
+Price comparison of two energy commodities - steel and copper - from 2000 to 2020. The left y-axis represents the prices of copper, whereas the right y-axis signifies the prices of steel over the years. 
+
+```matlab
+clc; clear all
+
+% Double-axis plot
+year = 2000:5:2020;
+copper_price = [1813 3679 7535 5631 5786];
+steel_price = [296 633 716 543 491];
+colororder({'k','b'})
+yyaxis left
+plot(year,copper_price,'k-o','LineWidth',1.5);
+xlim([2000 2020]);
+ylim([0 8000]);
+xlabel('Year');
+ylabel('Copper Price ($/Tonne)');
+hold on
+yyaxis right
+plot(year,steel_price,'b-o','LineWidth',1.5);
+ylim([200 1000]);
+ylabel('Steel Price ($/Tonne)');
+legend({'Copper Price','Steel Pric'},'Location','Northwest');
+title('Price of Copper and Steel (2000-2020')
+grid on
+```
+
+![untitled3](https://github.com/user-attachments/assets/04cf1ade-674c-4d53-8661-99017d7b4975)
+
+
+## Bar Plot
 
 
 
