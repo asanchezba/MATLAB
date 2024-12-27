@@ -15,7 +15,22 @@ _Liner Color_: The colour of the plotted line can be specified, or MATLAB will u
 
 Apart from the colours mentioned above, MATLAB also supports all combinations of red, green, and blue (RGB) colours, which are represented by a single vector in MATLAB. An RGB colour vector ranges from (0,255) individually. Therefore, a vector of [1 120 230] defines a specific colour; thus, a wide variety of colours can be formed. 
 
-_Line Style_: 
+_Line Style_: Line style defines the nature of the line that will be used to plot the 2D line plot. The line can be solid, dashed, or any other form by introducing some specific symbols (Table below). MATLAB uses a solid line as the default line style. 
+
+<img width="722" alt="Captura de pantalla 2024-12-27 a las 16 02 03" src="https://github.com/user-attachments/assets/1bf09348-60e1-47d3-8e53-bf8859436b1a" />
+
+_Marker_: This feature allows marking specific points in a line plot by using a customised marker (Table below). 
+
+<img width="631" alt="Captura de pantalla 2024-12-27 a las 16 03 24" src="https://github.com/user-attachments/assets/beafcddf-19e4-44b3-8d59-30dd8cf03a24" />
+
+_Linewidth_: The width of the plotted line can be weighted by choosing a numerical value. By default, MATLAB will choose linewidth as 1. By increasing the number, the width can be customised. The standard procedure to add a linewidth feature in the plot command is to incorporate -'_Linewidth_', _n_ - command within the plot command, where _n_ represents a numerical value referring to the level of the weight of the linewidth. 
+
+A plot command for input _x_ and _y_, with other features, can be written as shown in Figure below.
+
+<img width="1076" alt="Captura de pantalla 2024-12-27 a las 16 09 42" src="https://github.com/user-attachments/assets/401cf41c-dafe-4b08-a8d1-c13d4a78ae66" />
+
+
+
 
 
 
