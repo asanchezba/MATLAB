@@ -125,10 +125,108 @@ grid on
 
 
 ### Bar Plot
+Bar plot facilitates better comparative analysis. 
 
+```matlab
+bar(value,value,'Bar color')
+```
 
+MATLAB offers some variations in bar plot visualisation, such as horizontal bar plots.
 
+```matlab
+barh(value,value,'Bar color')
+```
 
+#### Example 4: Bar plot
+A bar plot shows the global CO2 emissions in Giga metric ton (Gt) from 2010-2020. 
+
+```matlab
+clc; clear all
+
+% Bar plot
+% Data: Global CO2 emissions (2010-2020)
+year = 2010:1:2020;
+CO2 = [30.5824 31.4595 31.806 32.3707 32.3886 32.3655 ...
+    32.3747 32.8374 33.5133 36.4568 34.0752];
+bar(year,CO2,'blue');
+ylim([20 40]);
+xlabel('Years');
+ylabel('CO2 emission (Gt)');
+title('Global CO2 Emissions (2010-2020)');
+grid on;
+```
+
+![untitled](https://github.com/user-attachments/assets/bbea45a0-585d-43a2-8e20-d638552e63aa)
+
+#### Example 5: Horizontal Bar Plot
+The data on electricity consumption by different household entities as end-users in the USA (2018) is used to plot a horizontal bar. The unit considered for electricity consumption per household is kWh/household. From the output (Figure below), it is clear that the highest consumption/household is obtained from the air conditioning system, whereas the least is from refrigeration. To colour each bar individually, we have assigned the _barh_ plot to a variable _C_, through which we have accessed each bar, and assigned an RGB vector representing separated colours for each of them.
+
+```matlab
+clc; clear all
+
+% Horizontal bar plot
+% Data: Electricity consumption by household entities in USA
+X = categorical({'Refrigeration','Water Heating','Lighting','Air Conditioning','Other'});
+X = reordercats(X,{'Refrigeration','Water Heating','Lighting','Air Conditioning','Other'});
+Y = [879 1056 1628 2545 2127];
+C = barh(X,Y);
+C.FaceColor = 'flat';
+C.CData(1,:) = [0 1 1];
+C.CData(2,:) = [0 0 1];
+C.CData(3,:) = [0 0.4470 0.7410];
+C.CData(4,:) = [0 1 0];
+C.CData(5,:) = [0.4660 0.6740 0.1880];
+xlabel('kWh/household');
+title('Electricity consumption by household entities in USA');
+grid on;
+```
+
+![untitled2](https://github.com/user-attachments/assets/c68bc00e-33cb-4363-aca2-20692984a283)
+
+### Area Plot
+Area plot is another interesting and essential visualisation technique. The dimensions of the area matrix may vary according to the dataset. In the area plot, each feature is stacked over each other sequentially over the y-axis. 
+
+```matlab
+area(input_matrix)
+```
+
+### Surface Plot
+Surface plot provides a 3D illustration that facilitates better visualisation interpretation. 
+
+```matlab
+surf(x,y,z)
+```
+Here, _x_, _y_, and _z_ are the input matrices, having the same dimension. The three inputs utilise a 3D coordinate system to create a surface plot.
+
+### Pie Plot
+
+```matlab
+pie(x,explode)
+```
+Here, _x_ is the input vector, and _explode_ is an optional feature of the function. The _explode_ feature is used whenever single or multiple pieces of pie need to explode from their original position to signify their impact. 
+
+#### Example 6: Pie Plot
+The data of electricity consumption by different sectors in the USA (2018) is demonstrated using a pie plot. A subplot is used to demonstrate two pie plots side by side with and without the explode feature. In the first subplot, all the pieces are stuck together without the _explode_ feature. In the second subplot, we can see that all the pieces explode from their rigid position. In the code, explode represents a vector, where the value "0" indicates not explode, while the value "1" indicates to explode. 
+
+```matlab
+clc; clear all
+
+% Pie Plot
+% Data: Electricity consumption by different sectors in USA (2018)
+% x: Percentage of Consumption in four different sectors in USA
+x = [35.4,25.9,2,38.5];
+subplot(1,2,1);
+pie(x);
+title('Without explode feature');
+subplot(1,2,2);
+explode = [1,1,1,1];
+pie(x,explode);
+title('With explode feature');
+labels = {'Commercial','Industrial','Transportation','Residential'};
+legend(labels,'Location','best');
+```
+
+![untitled3](https://github.com/user-attachments/assets/6a26e053-4b2e-433b-b231-07bd048775df)
 
 
 
