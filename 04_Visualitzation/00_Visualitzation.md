@@ -229,6 +229,143 @@ legend(labels,'Location','best');
 ![untitled3](https://github.com/user-attachments/assets/6a26e053-4b2e-433b-b231-07bd048775df)
 
 
+### Heat Map
+A heat map is another visualisation format for decision-making that considers three sets of parameters. 
+
+```matlab
+heatmap(x,y,z)
+```
+Here, _x_, _y_ and _z_ are the three input parameters.
+
+#### Example 7: Heat Map
+The data of electricity day-ahead market price, more precisely, locational marginal price (LMP), for 1 week over the time horizon starting from 10 AM to 3 PM is used to generate a heat map. 
+
+```matlab
+clc; clear all
+
+% Heat map
+% Data: Electricity day-ahead market price 
+% LMP: Local Marginal Price ($/MW)
+% Date: Jan-01-2019 to Jan-07-2019
+% Time: 10 AM to 3 PM
+
+LMP = [38.8 38.5 39.6 42.8 42.8 40.8; ...
+    42.2 42.4 43.4 45.0 58.0 55.3; ...
+    40.4 39.6 41.4 44.0 56.9 50.9; ...
+    38.8 39.5 40.0 43.6 55.3 48.5; ...
+    36.6 36.5 36.5 38.2 39.4 39.6; ...
+    32.7 33.1 34.5 35.0 36.5 34.9; ...
+    32.3 33.5 35.1 39.4 48.2 56.0];
+
+Time = {'10 AM', '11 AM', '12 PM', '01 PM', '02 PM', '03 PM'};
+Date = {'Jan-01', 'Jan-02', 'Jan-03', 'Jan-04', 'Jan-05', 'Jan-06', 'Jan-07'};
+H = heatmap(Time,Date,LMP);
+H.Title = 'Electricity day-ahead market price ($/MW)'
+H.XLabel = 'Time';
+H.YLabel = 'Date';
+```
+
+![untitled](https://github.com/user-attachments/assets/626d1564-3e43-4735-a368-64e1619e5690)
+
+In the heat map, the x-axis represents the time periods and the y-axis signifies the date. The individual blocks represent the value of LMP for a specific date and period. The colour bar is used to differentiate among the different LMPs. The mid blue indicates the lowest LMP, while the deep blue regards the highest LMP. 
+
+### Radar Plot
+Radar plot is one of the most intriguing and sophisticated visualisation techniques. In a radar plot, the centre can be defined as zero. The coordinate starts to span outside from the centre with equal distribution. There is no in-built function in MATLAB for the radar plot. However, a user-defined function can be used. 
+
+#### Example 8: Radar Plot
+A user-defined function named "RADAR.m" is created, which has five input parameters. This function needs to be saved in the same working directory of the executing M-file from which the function will be called to execute.
+
+In this example, a radar plot is used to compare different batteries considering their power density, energy density, life cycle, and safety. The batteries that have been considered to compare are Li-ion, liquid supercapacito, and NaS. All of these values have been ranked within a range of 0 to 5, where 5 indicates the most favourable rank and 0 refers to the least favourable rank. 
+
+#### Function definition
+
+```matlab
+function f=RADAR(I,Feature,Legend,line_color,Title)
+%INPUT: Data, I: Input matrix; size row by col,
+% row: number of examples; col: Features for each examples
+% Feature: Labels of each examples
+% Legend: a string array for legend, e.g. {'leg1','leg2'}
+% line_color: a string vector of line colors, e.g. ['r','g']
+% Title: A string representing the title
+
+row = size(I,1);
+col = size(I,2);
+Feature_num = size(Feature,2);
+I = [I I(:,1)];
+theta = (2*pi/col)*[1:col+1] + (pi/col);
+R = ones(1,size(I,1));
+[x y] = pol2cart(theta,I);
+P = plot(y', x', 'LineWidth', 1.5);
+legend(Legend,'Location','eastoutside');
+title(Title);
+
+for i=1:row
+    set(P(i),'Color',line_color(i))
+end
+
+axis_max = max(max(I))*1.1;
+axis([-axis_max axis_max -axis_max axis_max]);
+axis equal
+axis off
+
+if Feature_num>0
+    R_axis = linspace(0,max(max(I)),Feature_num);
+    for k=1:Feature_num
+        text(R_axis(k)*sin(pi/col-0.3),R_axis(k)*cos(pi/col-0.3),num2str(R_axis(k),2),...
+            'FontSize',10)
+    end
+    [R,R_axis] = meshgrid(ones(1,col),R_axis);
+    R_axis = [R_axis R_axis(:,1)];
+    theta_axis = 2*pi/col*[1:col+1]+pi/col;
+    R = ones(1,size(R_axis,1));
+    [y_axis,x_axis] = pol2cart(theta_axis,R_axis);
+    hold on
+    B = plot(x_axis,y_axis,':k');
+    for i = 1:length(B)
+        set(get(get(B(i),'Annotation'),'LegendInformation'),'IconDisplayStyle','off');
+    end
+end
+
+if length(Feature)>=col
+    theta_feature = 2*pi/col*[1:col]+pi/col;
+    R_feature = axis_max;
+    [y_feature,x_feature] = pol2cart(theta_feature,R_feature);
+    for k = 1:col
+        if ~sum(strcmpi({'' },Feature(k)))
+            text(x_feature(k), y_feature(k), cell2mat(Feature(k)), 'FontSize',...
+                12, 'HorizontalAlignment','center')
+        end
+    end
+end
+
+
+end 
+```
+
+#### Radar plot
+
+```matlab
+clc; clear;
+
+% Execution of RADAR.m function
+% Data: Four features of three different types battery
+% Battery types: Li-ion, Liquid super capacitors, NaS
+% Features: Power density, Energy density, Life cycle, Safety
+
+% Input
+I = [2 5 2 4; 5 2.5 5 2; 1 2 1.5 3];
+Feature = {'Power density', 'Energy density', 'Life cycle', 'Safety'};
+Legend = {'Li-ion', 'Liquid super capacitor', 'NaS'};
+line_color = ['r', 'g', 'b'];
+Title = {'Comparison of different battery types'};
+
+% Function call
+RADAR(I,Feature,Legend,line_color,Title);
+```
+
+![untitled2](https://github.com/user-attachments/assets/794e4e87-8d30-48de-ac3a-c01ef0825cca)
+
+
 
 
 
