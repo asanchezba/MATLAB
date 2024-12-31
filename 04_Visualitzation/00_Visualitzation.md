@@ -365,6 +365,39 @@ RADAR(I,Feature,Legend,line_color,Title);
 
 ![untitled2](https://github.com/user-attachments/assets/794e4e87-8d30-48de-ac3a-c01ef0825cca)
 
+### 3D Plot
+3D plot provides a figure which can be rotated in a three-dimensional space. 
+
+```matlab
+pie3(x,explode)
+```
+#### Example 9: 3D Pie Plots
+In this example, a 3D pie represents the share of different sectors in electricity consumption in the USA in 2018.
+
+```matlab
+clc; clear all
+
+% 3D Pie plot
+% Data: electricity consumption by different sectors in USA (2018)
+x = [35.4, 25.9, 2, 38.5];
+explode = [0,0,1,0];
+pie3(x,explode);
+title('Electricity consumption by different sectors in USA (2018)')
+labels = {'Commercial', 'Industrial', 'Transportation', 'Residential'};
+legend(labels,'Location','best');
+```
+
+![untitled](https://github.com/user-attachments/assets/4d727e1a-0c14-4a46-8947-9dceabf9c748)
+
+### Exporting High-Quality Figure
+It is possible to customise the quality of the figure while exporting by choosing the value of dpi. The recommended dpi level for a good-quality figure is generally 300 dpi. In default mode, the dpi level in MATLAB is below 300 dpi. Following the steps described below you can increase the dpi level.
+
+**Step 1:** After producing a figure in MATLAB, select File>Export Setup.
+
+**Step 2:** After selecting "Export Setup" a window will appear. First, select the "Rendering" option. Later, click on the dropdown option named "Resolution (dpi)". From this dropdown box, the user may choose their desired dpi level.
+
+**Step 3:** Click on the "Apply to Figure" option and select the "Export" button. Save the figure in the desired format by browsing the desired saving location. 
+
 
 
 
