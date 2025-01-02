@@ -398,6 +398,35 @@ It is possible to customise the quality of the figure while exporting by choosin
 
 **Step 3:** Click on the "Apply to Figure" option and select the "Export" button. Save the figure in the desired format by browsing the desired saving location. 
 
+### Exercises
+1. Two products have their average price varied over different months of the day, as shown in the table below. Demonstrate the graph with a line plot:
+
+   (a) With subplots.
+
+   (b) Witha  double axis, where the left axis shows the price of product A, and the right axis shows the price of product B.
+
+<img width="1019" alt="Captura de pantalla 2025-01-02 a las 19 37 39" src="https://github.com/user-attachments/assets/12fe2c0c-77b7-474c-8b4f-467f25d4e0c2" />
+
+2. A new startup has team members as mentioned in the following table:
+
+<img width="512" alt="Captura de pantalla 2025-01-02 a las 19 38 49" src="https://github.com/user-attachments/assets/1e9b6360-81e5-4cf3-a032-ed42638c09ab" />
+
+Represent the data in a (a) horizontal bar chart and (b) vertical bar chart.
+   
+3. In an apparatues purchase for university laboratories, the number of equipment is estimated as shown in the following table:
+
+<img width="683" alt="Captura de pantalla 2025-01-02 a las 19 41 44" src="https://github.com/user-attachments/assets/78fd2809-b2cd-40d0-96b9-915fb34809ac" />
+
+Represent the table's data in a:
+
+(a) 2D pie chart (with and without explode feature of the smallest pie using subplot).
+
+(b) 3D pie chart (with and without explode feature of the largest pie using subplot). 
+
+4. The temperature for a particular location is recorded in the table below. Draw the heat map from the table data.
+
+<img width="1012" alt="Captura de pantalla 2025-01-02 a las 19 43 19" src="https://github.com/user-attachments/assets/a7c9102f-33d5-4898-9829-0bb0c4c22139" />
+
 
 
 
