@@ -9,7 +9,7 @@ The rank of a matrix is the maximum number of linearly independent rows or colum
 
 (b) The vector does not result from the combination of other vectors.
 
-If the dimension of a matrix is _row X col_, the tank of that matrix will be either the maximum number of linearly independent rows or columns. It can be distinguished more precisely as follows:
+If the dimension of a matrix is _row x col_, the tank of that matrix will be either the maximum number of linearly independent rows or columns. It can be distinguished more precisely as follows:
 
 (a) If _row > col_, the rank of the matrix &#8801; maximum number of linearly independent columns.
 
