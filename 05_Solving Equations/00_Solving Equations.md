@@ -15,4 +15,27 @@ If the dimension of a matrix is _row x col_, the tank of that matrix will be eit
 
 (b) if _row < col_, the rank of the matrix &#8801; maximum number of linearly independent rows.
 
+**MATLAB command for determining the rank of a matrix, A**
+```matlab
+rank(A)
+```
+
+#### Example 1
+Determine the ranks of the following two matrices A and B:
+
+(i) A = [1 2 4; 2 4 8 ]
+
+(ii) B = [1 1 2; 5 2 7; 0 4 4; 2 6 8]
+
+```matlab
+% Determining rank
+A = [1 2 4; 2 4 8];
+B = [1 1 2; 5 2 7; 0 4 4; 2 6 8];
+disp('The rank of the matrix A:')
+rank(A)
+disp('The rank of the matrix B:')
+rank(B)
+```
+
+### Eigenvector and Eigenvalue
 
