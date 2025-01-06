@@ -132,7 +132,7 @@ disp('The solutions are:');
 disp('x = ');
 disp(x_val);
 disp('y = ');
-disp(y_val)
+disp(y_val);
 ```
 
 
