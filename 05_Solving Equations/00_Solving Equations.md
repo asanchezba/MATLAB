@@ -1,7 +1,7 @@
 ## Introduction
 This chapter explains the basics of linear algebra and presents techniques to solve different algebraic and differential equations. 
 
-### Linear Algebra
+## Linear Algebra
 **Rank** 
 The rank of a matrix is the maximum number of linearly independent rows or columns. Here, a row or a column vector can be regarded as linearly independent if:
 
@@ -87,7 +87,7 @@ vector
 ```
 Here, the MATLAB command _[vector,lambda]=eig(X)_ provides two outputs - the eigenvector and a diagonal vector containing the eigenvalues (_lambda_). 
 
-### Quadratic Equations
+## Quadratic Equations
 MATLAB has built-in functions to solve quadratic equations using the _solve_ command. The "solve" command is also useful to solve multiple equations with multiple variables. 
 
 ```matlab
