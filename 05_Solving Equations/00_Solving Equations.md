@@ -135,5 +135,59 @@ disp('y = ');
 disp(y_val);
 ```
 
+## Differential Equations
 
+### Ordinary Differential Equations
+Ordinary equations can be solved by _dsolve_ function. It can be used not only for first-order differential equations but also for higher degrees.
+
+```matlab
+dsolve(equation,condition)
+```
+_dsolve_ function has two parameters: _equation_, which represents the differential equations to solve, and _condition_, which is an optional feature. If the problem has initial conditions, the function will provide an exact solution based on those conditions. Otherwise, the function will provide generalised results with an unknown constant _C1_. 
+
+#### Example 6
+Consider the following first-order differential equation:
+
+$$dy/dx = 2x + y$$
+
+(i) Solve the differential equation
+
+(ii) If initial condition $$y(0) = 1$$, find the solution of the differential equation
+
+```matlab
+clc; clear all
+
+% 1st order differential equation
+% dy/dx=2*x+y
+
+syms y(x)
+diff_eq = diff(y,x) == 2*x+y;
+disp('Solution without initial condition:');
+Sol_y(x) = dsolve(diff_eq)
+% If the initial condition y(0)=1
+condition = y(0) == 1;
+disp('Solution wiht initial condition:')
+Sol_y(x) = dsolve(diff_eq,condition)
+```
+
+#### Example 7
+Solve the following second-order differential equation:
+
+$$d^2y/dx^2 = 2x^3 + 3dy/dx - 5; y(0) = 1, y'(0) = 1$$
+
+```matlab
+clc; clear all
+
+% 2nd order differential equation
+% (dy/dx)^2 = 2*x^2+3dy/dx-5
+% Initial conditions: y(0)=1, y'(0)=1
+
+syms y(x)
+diff_eqn = diff(y,x,2) == 2*x^2+3*diff(y,x)-5;
+condition1 = y(0) == 1;
+dy = diff(y,x);
+condition2 = dy(0) == 1;
+condition = [condition1 condition2];
+Sol_y(x) = dsolve(diff_eqn,condition)
+```
 
