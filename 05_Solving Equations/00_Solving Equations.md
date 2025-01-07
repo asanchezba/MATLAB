@@ -1,7 +1,7 @@
-## Introduction
+## 5.1. Introduction
 This chapter explains the basics of linear algebra and presents techniques to solve different algebraic and differential equations. 
 
-## Linear Algebra
+## 5.2. Linear Algebra
 **Rank** 
 The rank of a matrix is the maximum number of linearly independent rows or columns. Here, a row or a column vector can be regarded as linearly independent if:
 
@@ -37,7 +37,7 @@ disp('The rank of the matrix B:')
 rank(B)
 ```
 
-### Eigenvector and Eigenvalue
+### 5.2.1. Eigenvector and Eigenvalue
 Consider a square matriz _X_ of dimension _n x n_. The eigenvector, $$v$$, of the square matrix A signifies a linear transformation that follows the following condition:
 
 $$X v = \lambda v$$
@@ -87,7 +87,7 @@ vector
 ```
 Here, the MATLAB command _[vector,lambda]=eig(X)_ provides two outputs - the eigenvector and a diagonal vector containing the eigenvalues (_lambda_). 
 
-## Quadratic Equations
+## 5.3. Quadratic Equations
 MATLAB has built-in functions to solve quadratic equations using the _solve_ command. The "solve" command is also useful to solve multiple equations with multiple variables. 
 
 ```matlab
@@ -135,9 +135,9 @@ disp('y = ');
 disp(y_val);
 ```
 
-## Differential Equations
+## 5.4. Differential Equations
 
-### Ordinary Differential Equations
+### 5.4.1. Ordinary Differential Equations
 Ordinary equations can be solved by _dsolve_ function. It can be used not only for first-order differential equations but also for higher degrees.
 
 ```matlab
@@ -214,7 +214,7 @@ condition = [condition1 condition2 condition3];
 Sol_y(x) = dsolve(diff_eqn,condition)
 ```
 
-### Partial Differential Equations
+### 5.4.2. Partial Differential Equations
 In the partial derivative of a function of multiple variables, the differentiation is performed with respect to one variable while considering the rest of the variables as constant. To solve a partial differential equation, the first step is to solve the partial derivative terms using _diff()_ command. 
 
 #### Example 9
@@ -237,7 +237,15 @@ Sol_x = solve(P_diff-x^2==0,x)
 ```
 After solving each partial derivative term, we have used _solve()_ function to finally solve the partial differential equation for $$x$$.
 
-## Integral Equations
+## 5.5. Integral Equations
+Integration can be solved using _int()_ function. Integrals can be of two types: definite and indefinite. In an indefinite integral, the limits are not defined; whether in a definite integral, the limits are defined for the variable with respect to which the integration will be performed. 
+
+Integration of a function _f_ with respect to _x_ with a limit of [a,b]
+```matlab
+int(f,x,a,b)
+```
+After determining the integral terms, using _solve(), integral equations can be solved. 
+
 
 
 
