@@ -191,3 +191,54 @@ condition = [condition1 condition2];
 Sol_y(x) = dsolve(diff_eqn,condition)
 ```
 
+#### Example 8
+Solve the following third-order differential equation:
+
+$$d^3y/dx^3 = 3x^2 + 3d^2y/dx^2 - 2dy/dx + 1; y(0) = 1, y'(0) = 0, y''(0) = 1$$
+
+```matlab
+clc; clear all
+
+% 3rd order differential equation
+% (dy/dx)^3 = 3*x^2+3*(dy/dx)^2-2*dy/dx+1
+% Initial conditions: y(0)=1, y'(0)=0, y''(0)=1
+
+syms y(x)
+diff_eqn = diff(y,x,3) == 3*x^2+3*diff(y,x,2)-2*diff(y,x)+1;
+dy = diff(y,x);
+d2y = diff(y,x,2);
+condition1 = y(0) == 1;
+condition2 = dy(0) == 0;
+condition3 = d2y(0) == 1;
+condition = [condition1 condition2 condition3];
+Sol_y(x) = dsolve(diff_eqn,condition)
+```
+
+### Partial Differential Equations
+In the partial derivative of a function of multiple variables, the differentiation is performed with respect to one variable while considering the rest of the variables as constant. To solve a partial differential equation, the first step is to solve the partial derivative terms using _diff()_ command. 
+
+#### Example 9
+Consider the following partial differential equation and solve it for x.
+
+$$\frac{\partial}{\partial x}(2x^2+y-5)-x^2=0$$
+
+```matlab
+clc; clear all
+
+% Partial differential equation
+% del(F)/del(x) - x^2 = 0
+% F = 2*x^2+y-5
+
+syms x y
+F = 2*x^2+y-5;
+P_diff = diff(F,x);
+disp('Solution:')
+Sol_x = solve(P_diff-x^2==0,x)
+```
+After solving each partial derivative term, we have used _solve()_ function to finally solve the partial differential equation for $$x$$.
+
+## Integral Equations
+
+
+
+
