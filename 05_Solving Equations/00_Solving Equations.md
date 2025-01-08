@@ -244,7 +244,18 @@ Integration of a function _f_ with respect to _x_ with a limit of [a,b]
 ```matlab
 int(f,x,a,b)
 ```
-After determining the integral terms, using _solve(), integral equations can be solved. 
+After determining the integral terms, using _solve()_, integral equations can be solved. 
+
+#### Example 10
+Consider the following single-variable integral equation:
+
+$$\int 2x^2dx - 3x = 0$$
+
+(i) Solve the the integral equation for $$x$$.
+
+(ii) If the limit of $$x$$ is [0 2], find the solution for $$x$$.
+
+
 
 
 
