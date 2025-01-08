@@ -255,9 +255,111 @@ $$\int 2x^2dx - 3x = 0$$
 
 (ii) If the limit of $$x$$ is [0 2], find the solution for $$x$$.
 
+```matlab
+clc; clear all
+
+% Integral equation
+% Integration [2*x^2]dx - 3x = 0
+
+% Without limit
+syms x
+I1 = int(2*x^2,x);
+disp('The solution without limit:');
+x_sol = solve(I1-3*x==0,x)
+
+% With limit of [0 2]
+I2 = int(2*x^2,x,0,2);
+disp('The solution with limit:');
+x_sol = solve(I2-3*x==0,x)
+```
+
+#### Example 11
+Consider the following multivariable integral equation:
+
+$$\int (x^2 + e^y) dx = 0$$
+
+(i) Solve the integral equation for $$y$$.
+
+(ii) If the limit of $$x$$ is [0 1], find the solution for $$y$$.
+
+```matlab
+clc; clear all
+
+% Integral equation
+% Integration [x^2+exp(y)]dx = 0
+
+% Without limit
+syms x y
+I1 = int(x^2+exp(y),x);
+disp('The solution without limit:');
+y_sol = solve(I1==0,y)
+
+% With limit of [0 1]
+I2 = int(x^2+exp(y),x,0,1);
+disp('The solution with limit:');
+y_sol = solve(I2==0,y)
+```
+
+### Exercises
+1. Given two matrices:
+
+$$M = \begin{bmatrix} -4 & 5 \\ 
+8 & -11 \\ \end{bmatrix}$$
+
+$$N = \begin{bmatrix} -0.33 & 1 & 3.3 \\ 
+0.5 & 0.45 & -5.12 \\ 
+2 & -2 & 0 \\ \end{bmatrix}$$
+
+  (a) Determine the rank of M and N.
+
+  (b) Determine the inverse of M and N.
+
+  (c) Determine the eigenvalues and eigenvector of M and N.
 
 
+  
+2. Solve the following algebraic equations:
+
+   (a) $$x^2 + 5x + 9 = 0$$
+   
+   (b) $$101x^2 + 36x + 255 = 4$$
+   
+   (c) $$2.60x^2 + 5.34x - 7 = 7.44$$
+   
+   (d) $$9x^2 + 3xy - 2 = - 3; 4x^2 + 7xy + 5/2 = 0$$
+   
+   (e) $$16x^2 + xy - 3 = 9x^2 - 11xy + 2 = 7$$
 
 
+3. Solve the following differential equations. Show the solution with the initial condition where applicable. Use _vpa()_ to summarise large expressions up to two significant digits.
 
+   (a) $$dy/dx = 3x + 2y; y(0) = 2$$
+
+   (b) $$dy/dx = -7x + 4y + 2; y(0) = 1$$
+
+   (c) $$d^2y/dx^2 = 5x^2 + 9dy/dx + 2y; y(0) = 2, y'(0) = 1$$
+
+   (d) $$d^2y/dx^2 = -3x^2 - dy/dx + 2; y(0) = 1, y'(0) = 1$$
+
+   (e) $$d^3y/dx^3 = 5x^2 + 11d^2y/dx^2 + dy/dx + 8; y(0) = 2, y'(0) = 1, y''(0) = -1$$
+
+   (f) $$d^3y/dx^3 = -6x^2 + d^2y/dx^2 - 23; y(0) = 1, y'(0) = 0, y''(0) = 1$$
+
+   (g) $$\frac{\partial}{\partial x} (x^2 + 4y + 3) + 7x^2 = 3$$
+
+   (h) $$\frac{\partial}{\partial x} (3x^2 - 11y) - 2x^2 = 0$$
+   
+
+4. Consider the following integral equations:
+   
+   (a) $$\int (log(x))^2 dx - 2x$$
+
+   (b) $$\int (2^x - e^y) dx$$
+
+   For each of the above:
+
+   (i) Solbe the integral equation for $$y$$.
+
+   (ii) If the limit of $$x$$ is [0 2], find  the solution for $$y$$.
+   
 
