@@ -32,6 +32,27 @@ $$z^1 = \frac{1}{c_{3}} (d_{1} - a_{3}x_{0} - b_{3}y_{0})$$
 
 To determined the values of $$x^2, y^2, z^2$$ in the second iteration, the determined values $$x^1, y^1, z^1$$ will be used in place of $$x_{0}, y_{0}, z_{0}$$ respectively. The algorithm continues until convergence. 
 
+In the Gauss-Seidel method, the first approximations are calculated as follows:
+
+$$x^1 = \frac{1}{a_{1}} (d_{1} - b_{1}y_{0} - c_{1}z_{0})$$
+
+$$y^1 = \frac{1}{b_{2}} (d_{1} - a_{2}x^1 - c_{2}z_{0})$$
+
+$$z^1 = \frac{1}{c_{3}} (d_{1} - a_{3}x^1 - b_{3}y^1)$$
+
+Here, in the first iteration, for determining $$y^1$$, the latest updated value $$x^1$$ is used instead of $$x_{0}$$. The same continues for other values and other iterations as well. Due to this improvisation, the number of iterations is greatly reduced, and the algorithm converges more quickly.
+
+After repeating these steps for several iterations, we can more accurately determine the values of $$x,y$$, and $$z$$. In this iterative method, when the approximate values become almost constant after some iterations, we can conclude that the convergence has happened and stop the iterations.
+
+#### Example 1
+Consider the following set of equations to determine the values of $$x, y$$ and $$z$$ using the Gauss-Seidel method
+
+$$80x - 10y + 2z = 85$$
+
+$$5x +50y + 12z = 112$$
+
+$$4x + 9y + 30z = 68$$
+
 
 
 
