@@ -139,5 +139,85 @@ fprintf('Root of the equation after %dth iteration: %.5f\n',i,x);
 ```
 
 ## 6.4. Runge-Kutta Method
+Runge-Kutta is an iterative method to solve or approximate ordinary differential equations. Out of the Runge-Kutta family "RK4" or the fourth-order Runge-Kutta method is the most widely used. Consider a differential equation $$y' = f(x,y)$$, with the initial value of $$y(0) = y_{0}$$. The following formula needs to be followed to approximate the solution of this differential equation for the value of $$y$$:
+
+$$x^{i+1} = x^i + h$$
+
+$$y^{i+1} = y^i + \frac{1}{6}[k_{1} + 2k_{2} + 2k_{3} + k_{4}]$$
+
+$$k_{1} = hf(x^i, y^i)$$
+
+$$k_{2} = hf(x^i + \frac{h}{2}, y^i + \frac{k_{1}}{2})$$
+
+$$k_{3} = hf(x^i + \frac{h}{2}, y^i + \frac{k_{2}}{2})$$
+
+$$k_{4} = hf(x^i + h, y^i + k_{3})$$
+
+Here, the value of $$x$$ is updated with a certain time step $$h$$ in every $$i$$th iteration. For each of that, the updated value of $$x$$, the value of $$y$$ is approximated in every iteration as mentioned in the equation. In the above equations, $$k_{1}, k_{2}, k_{3}, k_{4}$$ are the weights of the fourth-order Runge-Kutta method. For a certain range of the $$x$$ value, the solution $$y$$ id approximated in each iteration step.
+
+#### Example 3
+Consider the following differential equation:
+
+$$\frac{dy}{dx} = (x + 2y)cos(y);  0&le;x&le;2,  y(0) = 5$$
+
+Solve the equation for the value of $$y$$ with a step size of 0.2
+
+```matlab
+clc; clear all
+
+% Runge-Kutta method
+% Differential equation dy/dx = (x+2*y)*cos(y)
+% Conditions: 0<=x<=2; y(0) = 5; Step size, h=0.2
+
+F = @(x,y) (x+2*y)*cos(y);
+h = 0.2;
+x0 = 0;
+y0 = 5;
+xn = 2;
+N = length(x0:h:xn);
+for j=1:N-1
+    k1 = h*F(x0,y0);
+    k2 = h*F(x0+0.5*h,y0+0.5*k1);
+    k3 = h*F(x0+0.5*h,y0+0.5*k2);
+    k4 = h*F(x0+h,y0+k3);
+    y(j) = y0+(1/6)*(k1+2*k2+2*k3+k4);
+    x0 = x0+h;
+    y0 = y(j);
+end
+x = 0.2:h:xn;
+plot(x,y,'o-b','LineWidth',1.5);
+xlabel('x');
+ylabel('y');
+title('Runge-Kutta method')
+grid on
+fprintf('The final solution for x = 2 is: %.5f\n', y(j));
+```
+
+## Exercises
+
+1. Given a set of equations as follows:
+   
+   $$20x - 2y - z = 122$$
+
+   $$4x - 60y +18z = 76$$
+
+   $$2x -15y + 35z = 50$$
+
+   Solve the equation using Gauss-Seidel method. Consider the tolerance for x, y, and z to be less than 0.00001.
+   
+2. Solve the following equations using Newton-Raphson method, which has a root within the range of [0,2]. Consider a tolerance for the value of root less than 0.0001:
+
+   (a) $$3x + 2cos(x) - 5$$
+
+   (b) $$x^5 - x - 2$$
+
+3. Use the classical fourth-order Runge-Kutta method to solve the following differential ewuations for the step size of 0.2, for $$0&le;x&le;2$$, and with an initial condition of $$y(0) = 5$$.
+
+   (a) $$\frac{dy}{dx} = -4x^3 - 6x^2 - 10x + 2$$
+
+   (b) $$\frac{dy}{dx} = xsin(y) + ycos(x)$$
+
+
+
 
 
