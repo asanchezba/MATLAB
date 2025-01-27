@@ -1,5 +1,5 @@
 ## 8.1. Introduction
-The electrical circuit analyses can be divided into DC and AC circuits. Some of the important theorems and methods to solving individual circuit problems are explained in this chapter, along with two electrical components - an operational amplifier and a transistor.
+The electrical circuit analyses can be divided into DC (Direct Current) and AC (Alternating Current) circuits. Some of the important theorems and methods to solving individual circuit problems are explained in this chapter, along with two electrical components - an operational amplifier and a transistor.
 
 ## 8.2. DC Circuit Analysis
 ### 8.2.1. Ohm's Law
