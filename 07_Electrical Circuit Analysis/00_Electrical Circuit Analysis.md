@@ -65,8 +65,8 @@ Equivalent_R = R1 + ((R2*R3)/(R2+R3));
 fprintf('Equivalent resistance: %f',Equivalent_R);
 ```
 
-### 8.2.3. Delta-Wye Conversion
-In some cases, the resistance of a circuit may not be connected either in series or parallel. That's when delta-wye comes in handy. Consider the following circuit in Figure 2, where $$R_{1}$$, $$R_{2}$$, and $$R_{3}$$ are in a delta configuration, and $$R_{4}$$, $$R_{5}$$ and $$R_{3}$$ are in another delta configuration. To determine the equivalent resistance, one of the easiest way is to convert the delta configuration into a wye configuration to make the calculation easy. 
+### 7.2.3. Delta-Wye Conversion
+In some cases, the resistance of a circuit may not be connected in series or parallel. That's when delta-wye comes in handy. Consider the following circuit in Figure 2, where $$R_{1}$$, $$R_{2}$$, and $$R_{3}$$ are in a delta configuration, and $$R_{4}$$, $$R_{5}$$ and $$R_{3}$$ are in another delta configuration. To determine the equivalent resistance, one of the easiest ways is to convert the delta configuration into a wye configuration to simplify the calculation. 
 
 <p align="center"><img width="550" alt="Captura de pantalla 2025-01-24 a las 19 49 29" src="https://github.com/user-attachments/assets/b8b8bee9-ed3a-41a9-8d73-4125cbe77d4e" /></p>
 <p align="center"> <em>Figure 2: A delta connected resistive circuit </em></p>
@@ -86,6 +86,76 @@ $$R_{y2} = \frac{(R_{d1} · R_{d3})}{(R_{d1} + R_{d2} + R_{d3})}$$
 $$R_{y3} = \frac{(R_{d2} · R_{d3})}{(R_{d1} + R_{d2} + R_{d3})}$$
 
 #### Example 3: Delta to Wye Conversion
+Consider a delta-configured circuit as shown in Figure 3, having the resistances $$R_{d1} = 10 ohms, R_{d2} = 5 ohms, R_{d3} = 20 ohms$$. Determine the equivalent wye resistances $$R_{y1}, R_{y2}, R_{y3}$$.
+
+```matlab
+clc; clear all
+
+% Delta to wye conversion
+Rd1 = 10;
+Rd2 = 5;
+Rd3 = 20;
+Ry1 = (Rd1*Rd2)/(Rd1+Rd2+Rd3);
+Ry2 = (Rd1*Rd3)/(Rd1+Rd2+Rd3);
+Ry3 = (Rd1*Rd2)/(Rd1+Rd2+Rd3);
+fprintf('Equivalent wye configured resistances:\n');
+fprintf('Ry1= %f Ry2= %f Ry3= %f\n',Ry1,Ry2,Ry3);
+```
+
+**Wye to Delta Conversion**
+To convert a wye configured resistances $$R_{y1}, R_{y2}$$ and $$R_{y3}$$ to a delta configured equivalent resistances $$R_{d1}, R_{d2}$$ and $$R_{d3}$$; the following equations can be used:
+
+$$R_{d1} = \frac{(R_{y1}·R_{y2})+(R_{y2}·R_{y3})+(R_{y3}·R_{y1})}{R_{y3}}$$
+$$R_{d2} = \frac{(R_{y1}·R_{y2})+(R_{y2}·R_{y3})+(R_{y3}·R_{y1})}{R_{y2}}$$
+$$R_{d3} = \frac{(R_{y1}·R_{y2})+(R_{y2}·R_{y3})+(R_{y3}·R_{y1})}{R_{y1}}$$
+
+#### Example 4: Wye to Delta Conversion
+Consider a delta-configured circuit as shown in Figure 3, having the resistances $$R_{y1} = 10 ohms, R_{y2} = 5 ohms, R_{y3} = 20 ohms$$. Determine the equivalent wye resistances $$R_{d1}, R_{d2}, R_{d3}$$.
+
+```matlab
+clc; clear all
+
+% Wye to Delta conversion
+Ry1 = 10;
+Ry2 = 5;
+Ry3 = 20;
+Rd1 = (Ry1*Ry2+Ry2*Ry3+Ry3*Ry1)/Ry3;
+Rd2 = (Ry1*Ry2+Ry2*Ry3+Ry3*Ry1)/Ry2;
+Rd3 = (Ry1*Ry2+Ry2*Ry3+Ry3*Ry1)/Ry1;
+fprintf('Equivalent delta configured resistances:\n');
+fprintf('Rd1= %f Rd2= %f Rd3= %f\n',Rd1,Rd2,Rd3);
+```
+
+#### Example 5: Equivalent Resistance with Delta-Wye Conversion
+Consider Figure 2 to determine its equivalent resistance by using the delta-wye conversion method. The values of the resistance are $$R_{1} = 2 ohms, R_{2} = 4 ohms, R_{3} = 6 ohms, R_{4} = 3 ohms, R_{5} = 2 ohms$$. 
+
+```matlab
+clc; clear all
+
+% Equivalent resistance with delta-wye conversion
+% First step: Conversion into wye configuration
+% Second step: Find Rs1 and Rs2
+% Third step: Find Rp
+% Fourth step: Find overall equivalent resistance, Req
+
+R1 = 2; R2 = 4; R3 = 6; R4 = 3; R5 = 2;
+Ry1 = (R1*R2)/(R1+R2+R3);
+Ry2 = (R1*R3)/(R1+R2+R3);
+Ry3 = (R2*R3)/(R1+R2+R3);
+Rs1 = Ry2+R4;
+Rs2 = Ry3+R5;
+Rp = (Rs1*Rs2)/(Rs1+Rs2);
+Req = Ry1+Rp;
+fprintf('The equivalent resistance: %.3f ohms\n',Req);
+```
+
+### 7.2.4. Kirchhoff's Laws
+Gustav Rober Kirchhoff proposed two fundamental laws of electrical circuits: Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL). 
+
+**Kirchhoff's Current Law (KCL):** The sum of all the currents entering a specific node is always zero. In other words, the summation of all the currents entering a node is equal to the summation of all the currents drawing out from that node. 
+
+**Kirchhoff's Voltage Law (KVL):** The summation of all the voltages in a closed loop is always zero. 
+
 
 
 
