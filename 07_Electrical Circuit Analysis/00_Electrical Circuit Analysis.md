@@ -152,10 +152,56 @@ fprintf('The equivalent resistance: %.3f ohms\n',Req);
 ### 7.2.4. Kirchhoff's Laws
 Gustav Rober Kirchhoff proposed two fundamental laws of electrical circuits: Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL). 
 
-**Kirchhoff's Current Law (KCL):** The sum of all the currents entering a specific node is always zero. In other words, the summation of all the currents entering a node is equal to the summation of all the currents drawing out from that node. 
+**Kirchhoff's Current Law (KCL):** The sum of all the currents entering a specific node is always zero. In other words, the summation of all the currents entering a node equals the summation of all the currents drawing out from that node. 
 
 **Kirchhoff's Voltage Law (KVL):** The summation of all the voltages in a closed loop is always zero. 
 
+Consider the circuit in Figure 4, where there are two loops, whose currents are considered as $$I_{L1}$$ and $$I_{L2}$$. The resistance of the circuit are $$R_{1} = 2 &Omega;$$, $$R_{2} = 4 &Omega;$$ and $$R_{3} = 4 &Omega;$$. The voltage source, $$E = 10 V$$. At node B, the current $$I_{1}$$ is entering, which gets divided in two: $$I_{2}$$ and $$I_{3}$$. The objective is to determine the current $$I_{1}$$, $$I_{2}$$, and $$I_{3}$$, and the voltage across the resistance $$R_{3}$$, which is termed as $$V_{R3}$$.
+
+In the first ABCD loop, we can apply KVL, and the equation is as follows:
+
+$$E-V_{R1}-V_{R2} = 0$$
+
+or,
+
+$$E = I_{L1}·R_{1} + (I_{L1}·R_{2}-I_{L2}·R_{2}) = 2·I_{L1}-4·I_{L2} = 6·I_{L1}-4·I_{L2}$$
+
+Hence,
+
+$$6·I_{L1}-4·I_{L2} = 10  \quad (1)$$  
+
+Here, $$V_{R1}$$ and $$V_{R2}$$ are the voltages across resistance $$R_{1}$$ and $$R_{2}$$, respectively.
+
+$$V_{R2} + V_{R3} = 0$$
+
+or,
+
+$$(I_{L2}·R_{2}-I_{L1}·R_{3} = 0$$
+
+Hence,
+
+$$-4·I_{L1} + 8·I_{L2} = 0 \quad (2)$$
+
+By solving (1) and (2), the determined values of $$I_{L1}$$ and $$I_{L2}$$ are $$I_{L1} = 2.5 A$$ and $$I_{L2} = 1.25 A$$. From the figure, we can write the following equation:
+
+$$I_{1} = I_{L1} = 2.5 A$$
+
+$$I_{2} = I_{L2} = 1.25 A$$
+
+At node B, applying KCL, we can write the following equation:
+
+$$I_{1} = I_{2} + I_{3}$$
+
+Hence,
+
+$$I_{3} = I_{1} - I_{2} = 1.25 A$$
+
+The voltage across the resistance $$R_{3}$$ can be determined by applying Ohm's law:
+
+$$V_{R3} = I_{2}·R_{3} = 1.25·4 = 5 V$$
+
+<p align="center"><img width="870" alt="Captura de pantalla 2025-01-30 a las 19 58 50" src="https://github.com/user-attachments/assets/7900ec6a-2958-40da-857e-62228ad0f75e" /></p>
+<p align="center"> <em>Figure 4: A resistive electrical circuit with two loops </em></p>
 
 
 
