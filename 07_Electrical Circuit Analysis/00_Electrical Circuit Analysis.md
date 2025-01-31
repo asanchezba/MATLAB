@@ -1,8 +1,8 @@
-## 8.1. Introduction
+## 7.1. Introduction
 The electrical circuit analyses can be divided into DC (Direct Current) and AC (Alternating Current) circuits. Some of the important theorems and methods to solving individual circuit problems are explained in this chapter, along with two electrical components - an operational amplifier and a transistor.
 
-## 8.2. DC Circuit Analysis
-### 8.2.1. Ohm's Law
+## 7.2. DC Circuit Analysis
+### 7.2.1. Ohm's Law
 Ohm's law demonstrates the relationship between voltage, current, and resistance, as shown in the following equation, which considers constant temperature.
 
 $$V = I·R$$
@@ -32,7 +32,7 @@ grid on;
 
 
 
-### 8.2.2. Equivalent Resistance
+### 7.2.2. Equivalent Resistance
 In an electrical circuit, the equivalent resistance signifies the overall resistance of a circuit, where the multiple resistances can be connected in series, parallel, or a combination of both. If multiple resistances are connected in series, the equivalent resistance is the summation of all of them. Therefore, for a series-connected resistive circuit, the equivalent resistance will be as shown in the following equation.
 
 $$R_{eq} = R_{1}+R_{2}$$
@@ -247,7 +247,7 @@ fprintf('The voltage across R3, VR1= %.3f V\n',VR3);
 ```
 
 ### 7.2.5. Voltage Divider and Current Divider Laws
-**Voltage Divider Rule:** In a series circuit, the voltages are divided across all the series-connected resistances. Consider the circuit in Figure 5, where three resistances $$R_{1}, R_{2}$$, and $$R_{3}$$ are connected in series. Using the voltage divider rule, the voltages across each resistance can be determined using the following formulas:
+**Voltage Divider Rule:** In a series circuit, the voltages are divided across all the series-connected resistances. Consider the circuit in Figure 5, where three resistances $$R_{1}, R_{2}$$, and $$R_{3}$$ are connected in series. The voltages across each resistance can be determined using the following formulas:
 
 $$V_{R1} = \frac{R_{1}}{R_{1}+R_{2}+R_{3}} · V$$
 
@@ -275,4 +275,115 @@ VR3 = (R3/(R1+R2+R3))*E;
 fprintf('Voltage across the resistance R2: %.3f V\n',VR2);
 fprintf('Voltage across the resistance R3: %.3f V\n',VR3);
 ```
+
+**Current Divider Rule:** In a parallel circuit, the current is divided among all the parallel resistive paths. Consider the circuit in Figure 6, where two resistances $$R_{1}$$ and $$R_{2}$$ are connected in parallel. The current through each of these resistances can be determined using the following formulas:
+
+$$I_{1} = \frac{R_{1}}{R_{1}+R_{2}}·I$$
+
+$$I_{2} = \frac{R_{2}}{R_{1}+R_{2}}·I$$
+
+Where, $$I$$ is the summation of $$I_{1}$$ and $$I_{2}$$.
+
+<p align="center"><img width="538" alt="Captura de pantalla 2025-01-31 a las 19 25 30" src="https://github.com/user-attachments/assets/cbaa33a9-3736-495b-94ae-7e0417d352c7" /></p>
+<p align="center"> <em>Figure 6: An electrical circuit with a current source and parallel resistance </em></p>
+
+#### Example 8: Current Divider
+Consider the circuit in Figure 6, where $$R_{1} = 2 &Omega;, R_{2} = 4 &Omega;$$ and $$I = 16 A$$. Determine the currents $$I_{1}$$ and $$I_{2}$$.
+
+```matlab
+clc; clear all
+
+% Current Divider
+% Determine the current through the resistances R1 and R2
+
+R1=2; R2=4; I=16;
+I1 = (R2/(R1+R2))*I;
+I2 = (R1/(R1+R2))*I;
+fprintf('Current through the resistance R1, I1: %.3f A\n',I1);
+fprintf('Current through the resistance R2, I2: %.3f A\n',I2);
+```
+
+### 7.2.6. Thevenin's Theorem
+Thevenin¡s theorem states that any linear circuit can be represented with an equivalent series circuit, incorporating an open-circuit voltage in the terminal, $$V_{th}$$, and an input equivalent resistance, which is determined considering all the voltage sources replaced by a short circuit, and the current sources replaced by an open circuit. 
+
+Figure 7a is the original circuit. For determining its Thevenin's circuit, Thevenin's voltage $$V_{th}$$ and Thevenin's resistance $$R_{th}$$ need to be determined. In Figure 7b, by applying the voltage divider rule, the value of $$V_{th}$$ can be determined as follows:
+
+$$V_{th} = \frac{R_{2}}{R_{1}+R_{2}}·V$$
+
+The equivalent resistance $$R_{th}$$ can be determined from Figure 7c, where a short circuit replaces the voltage sources. If there was a current source, it would be replaced by an open circuit. From the figure, Thevenin's equivalent resistance can be calculated as follows:
+
+$$R_{th} = (R_{1} || R_{2}) + R_{3} = \frac{R_{1}·R_{2}}{R_{1}+R_{2}} + R_{3}$$
+
+
+<p align="center"><img width="713" alt="Captura de pantalla 2025-01-31 a las 19 36 13" src="https://github.com/user-attachments/assets/a5c96056-4c06-4ee2-96a7-70851e4367fc" /></p>
+<p align="center"> <em>Figure 7: Application of Thevenin's theorem to simplify an electrical circuit </em></p>
+
+#### Example 9: Thevenin's Theorem
+Consider the circuit shown in Figure 7a, where the parameters are $$R_{1} = 4&Omega;, R_{2} = 2 &Omega;, R_{3} = 3 &Omega;, R_{L} = 5 &Omega;$$, and $$V = 10 V$$. Using Thevenin's theorem, find the following parameters:
+
+(a) Thevenin's voltage, $$V_{th}$$
+
+(b) Thevenin's equivalent resistance, $$R_{th}$$
+
+(c) The current flowing through the load resistance, $$R_{L}$$
+
+```matlab
+clc; clear all
+
+% Thevenin's theorem
+% Determine Thevenin's voltage, vth
+% Determine Thevenin's equivalent resistance, rth
+% Determine Load current, IRL
+
+R1=4; R2=2; R3=3; RL=5; V=10;
+Vth = (R2/(R1+R2))*V;
+Rth = ((R1*R2)/(R1+R2))+R3;
+IRL = Vth/(Rth+RL);
+fprintf('Thevenin voltage: %.3f V\n',Vth);
+fprintf('Thevenin equivalent resistance: %.3f ohms\n',Rth);
+fprintf('Load current: %.3f A\n',IRL);
+```
+
+### 7.2.7. Maximum Power Transfer Theorem
+The maximum power can be achieved from a circuit if its load resistance matches with Thevenin's equivalent resistance. 
+
+Consider the following Thevenin's equivalent circuit (Figure 8), where the ñpad resistance is $$R_{L}$$ and the Thevenin's voltage and equivalent resistance are $$V_{th}$$ and $$R_{th}$$. According to the theorem, maximum power will be achieved when $$R_{L} = R_{th}$$; and the maximum power will be calculated with the following equation:
+
+$$P_{max} = I^2·R_{L} = (\frac{V_{th}}{R_{th}+R_{L}})^2·R_{L}$$
+
+<p align="center"><img width="541" alt="Captura de pantalla 2025-01-31 a las 20 01 54" src="https://github.com/user-attachments/assets/fef373d0-ff59-4e29-ab1b-4ecf1df7afb5" /></p>
+<p align="center"> <em>Figure 8: Thevenin's equivalent circuit </em></p>
+
+#### Example 10: Maximum Power Transfer Theorem
+Consider the circuit shown in Figure 8, where the parameters are $$R_{th} = 5 &Omega; and $$V_{th} = 10 V$$. Vary the load resistance starting from 1 to 12 ohms, and determine the output power for all scenarios to prove the maximum power transfer theorem.
+
+```matlab
+clc; clear all
+
+% Maximum power transfer theorem
+Rth=5; Vth=10;
+RL = 1:1:26;
+for i=1:1:26
+    I(i) = Vth/(Rth+RL(i));
+    Power(i) = I(i)^2*RL(i);
+end
+
+plot(RL,Power,'o-b','LineWidth',1.2);
+xlabel('Load resistance, R_L (Ohms)');
+ylabel('Output power, P (W)');
+title('Maximum power transfer theorem');
+grid on;
+% Maximum power, when RL=Rth
+RL=5;
+P_max = (Vth/(Rth+RL))^2*RL;
+fprintf('Maximum output power = %.3f\n',P_max);
+```
+
+
+![untitled](https://github.com/user-attachments/assets/546965d1-de60-4908-9af3-bfc868e09b88)
+<p align="center"> <em>Figure 9: Graphical output - Maximum power transfer theorem </em></p>
+
+## 7.3. AC Circuit Analysis
+
+
 
