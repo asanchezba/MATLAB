@@ -203,6 +203,76 @@ $$V_{R3} = I_{2}·R_{3} = 1.25·4 = 5 V$$
 <p align="center"><img width="870" alt="Captura de pantalla 2025-01-30 a las 19 58 50" src="https://github.com/user-attachments/assets/7900ec6a-2958-40da-857e-62228ad0f75e" /></p>
 <p align="center"> <em>Figure 4: A resistive electrical circuit with two loops </em></p>
 
+#### Example 6: Circuit Problem
+Using loop analysis, solve the circuit shown in Figure 4, considering $$R_{1} = 2 &Omega;, R_{2} = 4 &Omega;, R_{3} = 4 &Omega;$$, and $$E = 10 V$$, for determining:
 
+(a) The loop currents in ABCD and BEFC
 
+(b) The currents $$I_{1}, I_{2}$$ and $$I_{3}$$
+
+(c) The voltages across resistances $$R_{1}, R_{2}$$ and $$R_{3}$$
+
+```matlab
+clc; clear all
+
+% Circuit problem
+% Determine the loop current IL1 and IL2
+% Determine current I1, I2 and I3
+% Determine voltages across resistance R3: VR3
+% Determine voltages across resistance R2: VR2
+% Determine voltages across resistance R1: VR1
+
+R1 = 2; R2 = 4; R3 = 4;
+syms IL1 IL2
+eqn1 = 6*IL1-4*IL2 == 10;
+eqn2 = -4*IL1+8*IL2 == 0;
+[IL1,IL2] = solve(eqn1,eqn2);
+fprintf('The ABCD loop current, IL1: %.3f A\n',IL1);
+fprintf('The BEFC loop current, IL2: %.3f A\n',IL2);
+
+I1 = IL1;
+I2 = IL2;
+I3 = I1-I2;
+
+fprintf('The currents in the circuit:\n');
+fprintf('I1= %.3f A I2= %.3f A I3= %.3f A\n',I1,I2,I3);
+
+VR1 = I1*R1;
+VR2 = I2*R2;
+VR3 = I3*R3;
+
+fprintf('The voltage across R1, VR1= %.3f V\n',VR1);
+fprintf('The voltage across R2, VR2= %.3f V\n',VR2);
+fprintf('The voltage across R3, VR1= %.3f V\n',VR3);
+```
+
+### 7.2.5. Voltage Divider and Current Divider Laws
+**Voltage Divider Rule:** In a series circuit, the voltages are divided across all the series-connected resistances. Consider the circuit in Figure 5, where three resistances $$R_{1}, R_{2}$$, and $$R_{3}$$ are connected in series. Using the voltage divider rule, the voltages across each resistance can be determined using the following formulas:
+
+$$V_{R1} = \frac{R_{1}}{R_{1}+R_{2}+R_{3}} · V$$
+
+$$V_{R2} = \frac{R_{2}}{R_{1}+R_{2}+R_{3}} · V$$
+
+$$V_{R3} = \frac{R_{3}}{R_{1}+R_{2}+R_{3}} · V$$
+
+Where, $$V$$ is the summation of $$V_{R1}, V_{R2}$$, and $$V_{R3}$$.
+
+<p align="center"><img width="536" alt="Captura de pantalla 2025-01-31 a las 13 18 56" src="https://github.com/user-attachments/assets/a723ece0-117a-40d7-92be-f38f5a926bef" /></p>
+<p align="center"> <em>Figure 5: An electrical circuit with a voltage source and series resistance </em></p>
+
+#### Example 7: Voltage Divider
+Consider the circuit in Figure 5, where $$R_{1} = 2 &Omega;, R_{2} = 4 &Omega;, R_{3} = 8 &Omega;$$, and $$E = 24 V$$. Determine the voltage $$V_{R2}$$ and $$V_{R3}$$.
+
+```matlab
+clc; clear all
+
+% Voltage Divider
+% Determine the voltage across the resistances R2 and R3
+
+R1=2; R2=4; R3=8; E=24;
+VR2 = (R2/(R1+R2+R3))*E;
+VR3 = (R3/(R1+R2+R3))*E;
+fprintf('Voltage across the resistance R2: %.3f V\n',VR2);
+fprintf('Voltage across the resistance R3: %.3f V\n',VR3);
+```
 
