@@ -384,6 +384,92 @@ fprintf('Maximum output power = %.3f\n',P_max);
 <p align="center"> <em>Figure 9: Graphical output - Maximum power transfer theorem </em></p>
 
 ## 7.3. AC Circuit Analysis
+An AC circuit has sinusoid inputs as voltage or current sources. A sinusoid can be either a sine or a cosine signal. The general representation of an AC voltage and current source can be defined as follows:
 
+$$v(t) = V_{M}·sin(&omega;t)$$
 
+$$i(t) = I_{M}·sin(&omega;t)$$
+
+Here, $$V_{M}$$ and $$I_{M}$$ are the magnitude of voltage and current signal, respectively. Both sources are a function of time; therefore, after a certain time, the voltage and current may become both positive and negative. $$&omega;$$ indicates the angular frequency in radian.
+
+### 7.3.1. Some Terminologies
+**Peak Value:** The maximum value of a sinusoid from the zero level is regarded as the peak value. $$V_{p}$$ represents the peak voltage, the maximum positive voltage value.
+
+**RMS Value:** Implies the root mean square value of the amplitude of a sinusoid signal. It also can be regarded as the effective value of an AC circuit. The RMS value of voltage plays an important role in calculating different terms of an AC circuit. It can be calculated using the following formula:
+
+$$V_{RMS} = \frac{1}{\sqrt{2}}·V_{p}$$
+
+**Average Value:** Indicates the area under the sinusoid signal. It can also be calculated from its peak value using the following formula:
+
+$$V_{avg} = \frac{2}{&pi;}·V_{p}$$
+
+**Instantaneous Value:** Represents the exact value of a sinusoid at a specific time. As AC voltage is a function of time, by providing a specific time, AC voltage at that time can be determined.
+
+$$V_{inst}(t) = V_{p}·sin(2&pi;ft)$$
+
+Here, $$t$$ is the time at which the instantaneous voltage can be calculated. $$f$$ indicates the frequency of the input voltage.
+
+#### Example 11: AC Circuit
+The input voltage of an AC circuit is $$v(t) = 2·sin(2&pi;ft)$$, where $$f = 60 Hz$$. 
+
+(a) Plot the input voltage for $$t = 0:0.1$$
+
+(b) Find the values of peak voltage, peak-to-peak voltage, RMS voltage, and average voltage
+
+(c) Find the instantaneous voltage at $$t = 0.02$$.
+
+```matlab
+clc; clear all
+
+% AC Circuit
+% v(t) = 10 sin(2*pi*f*t)
+% Determine: Peak voltage, Vp
+
+f=60; 
+t=0:0.0001:0.1;
+v = 2*sin(2*pi*f*t);
+plot(t,v,'LineWidth',1.5);
+xlabel('Time (sec)');
+ylabel('Voltage (vol)');
+ylim([-2.5 2.5]);
+grid on;
+
+Vp = max(abs(v));
+fprintf('Peak voltage: %.3f\n',Vp);
+
+% Determine: Peak to peak voltage, Vpp
+Vpp = 2*Vp;
+fprintf('Peak to peak voltage: %.3f\n',Vpp);
+
+% Determine: RMS voltage, V_rms
+V_rms = (1/sqrt(2))*Vp;
+fprintf('RMS voltage: %.3f\n',V_rms);
+
+% Determine: Average voltage, V_avg
+V_avg = (2/pi)*Vp;
+fprintf('Average voltage: %.3f\n',V_avg);
+
+% Determine: Instantaneous voltage at T = 0.02 sec, v_inst
+T = 0.02;
+V_inst = 2*sin(2*pi*f*T);
+fprintf('Instantaneous voltage at T=0.02 sec: %.3f\n',V_inst);
+```
+
+![untitled](https://github.com/user-attachments/assets/d1ec321d-72bc-457f-835f-2b0103e8f38f)
+<p align="center"> <em>Figure 10: Graphical output - Determination of AC circuit voltage parameters </em></p>
+
+### 7.3.2. Impedance
+Impedance signifies the total impediment of the flow of charge in an AC circuit. The impedance can be divided into two parts: resistance and reactance. The resistance is a zero-frequency component; whereas the reactance is dependent on frequency. The general expression for overall impedance is as follows:
+
+%%Z = R + jX$$
+
+Here the real part is the resistance, and the imaginary part is the reactance. Again, the reactance can be categorised into two parts: inductive reactance ($$X_{L}$$), and capacitive reactance ($$X_{C}$$). With the inclusion of both of these reactances with resistance in series, the formula of impedance can be written as follows:
+
+$$Z = R + j(X_{L} - X_{C}) = R + j(&omega;L - \frac{1}{&omega;C})$$
+
+Therefore,
+
+$$|Z|&ang; &theta; = \sqrt{R^2 + (&omega;L - \frac{1}{&omega;C})^2} &ang; \frac{(&omega;L - \frac{1}{&omega;C})}{R}$$
+
+Here, $$L$$ is the inductance, $$C$$ is the capacitance, and $$&omega;$$ represents the angular frequency. 
 
