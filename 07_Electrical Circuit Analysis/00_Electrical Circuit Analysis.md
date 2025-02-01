@@ -471,5 +471,18 @@ Therefore,
 
 $$|Z|&ang; &theta; = \sqrt{R^2 + (&omega;L - \frac{1}{&omega;C})^2} &ang; \frac{(&omega;L - \frac{1}{&omega;C})}{R}$$
 
-Here, $$L$$ is the inductance, $$C$$ is the capacitance, and $$&omega;$$ represents the angular frequency. 
+Here, $$L$$ is the inductance, $$C$$ is the capacitance, and $$&omega;$$ represents the angular frequency. From the formula, it can also be observed that $$X_{L} = &omega;L$$ and $$X_{C} = \frac{1}{&omega;C}$$. An inductive circuit is called a lagging circuit, as the current through the reactance lags the voltage across it. Conversely, a capacitive circuit has a leading current with respect to voltage. A pure inductive circuit lags the current by $$-90^\circ$$, whereas a purely capacitive circuit leads the current by $$+90^\circ$$. If the circuit has both inductive and capacitive reactance, the nature of the circuit can be determined as follows:
+
+```
+if (X_L - X_C) > 0
+Inductive reactance;
+Power factor lagging;
+elseif (X_L - X_C) < 0
+Capacitive reactance;
+Power factor leading;
+else
+Resistive
+Power factor Unity;
+end
+```
 
