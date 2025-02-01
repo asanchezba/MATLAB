@@ -355,7 +355,7 @@ $$P_{max} = I^2·R_{L} = (\frac{V_{th}}{R_{th}+R_{L}})^2·R_{L}$$
 <p align="center"> <em>Figure 8: Thevenin's equivalent circuit </em></p>
 
 #### Example 10: Maximum Power Transfer Theorem
-Consider the circuit shown in Figure 8, where the parameters are $$R_{th} = 5 &Omega; and $$V_{th} = 10 V$$. Vary the load resistance starting from 1 to 12 ohms, and determine the output power for all scenarios to prove the maximum power transfer theorem.
+Consider the circuit shown in Figure 8, where the parameters are $$R_{th} = 5 &Omega;$$ and $$V_{th} = 10 V$$. Vary the load resistance starting from 1 to 12 ohms, and determine the output power for all scenarios to prove the maximum power transfer theorem.
 
 ```matlab
 clc; clear all
@@ -461,7 +461,7 @@ fprintf('Instantaneous voltage at T=0.02 sec: %.3f\n',V_inst);
 ### 7.3.2. Impedance
 Impedance signifies the total impediment of the flow of charge in an AC circuit. The impedance can be divided into two parts: resistance and reactance. The resistance is a zero-frequency component; whereas the reactance is dependent on frequency. The general expression for overall impedance is as follows:
 
-%%Z = R + jX$$
+$$Z = R + jX$$
 
 Here the real part is the resistance, and the imaginary part is the reactance. Again, the reactance can be categorised into two parts: inductive reactance ($$X_{L}$$), and capacitive reactance ($$X_{C}$$). With the inclusion of both of these reactances with resistance in series, the formula of impedance can be written as follows:
 
