@@ -459,7 +459,7 @@ fprintf('Instantaneous voltage at T=0.02 sec: %.3f\n',V_inst);
 <p align="center"> <em>Figure 10: Graphical output - Determination of AC circuit voltage parameters </em></p>
 
 ### 7.3.2. Impedance
-Impedance signifies the total impediment of the flow of charge in an AC circuit. The impedance can be divided into two parts: resistance and reactance. The resistance is a zero-frequency component; whereas the reactance is dependent on frequency. The general expression for overall impedance is as follows:
+Impedance signifies the total impediment of the flow of charge in an AC circuit. The impedance can be divided into two parts: resistance and reactance. The resistance is a zero-frequency component; whereas the reactance depends on frequency. The general expression for overall impedance is as follows:
 
 $$Z = R + jX$$
 
@@ -485,4 +485,42 @@ Resistive
 Power factor Unity;
 end
 ```
+
+An impedance triangle can be drawn (Figure 11), which shows the relationship between resistance and reactance more clearly. In an impedance triangle, the horizontal line indicates the resistance, as it is a zero-frequency component. The reactance indicates the perpendicular line, as they shift the voltage or current $$+90^\circ$$ or $$-90^\circ$$. An upward perpendicular line refers to an overall inductive reactance, while a downward perpendicular line depicts an overall capacitive reactance. The hypotenuse of the triangle demonstrates the magnitude of the overall impedance, and the angle between the hypotenuse and the horizontal line refers to the phase angle of impedance, which is usually regarded as $$&omega;$$. The cosine of this angle introduces a crucial term in the AC circuit, which is called power factor. 
+
+<p align="center"><img width="512" alt="Captura de pantalla 2025-02-02 a las 19 39 45" src="https://github.com/user-attachments/assets/9b223b1b-294d-4165-9ec1-bdf8ddfa1346" /></p>
+<p align="center"> <em>Figure 11: The impedance triangle </em></p>
+
+#### Example 12: Impedance
+Consider a series RLC circuit with $$R = 10$$ ohm, $$L = 0.02$$ H, and $$C = 0.05$$ F. If the frequency is 60 Hz, determine:
+
+(a) Impedance of the circuit
+
+(b) Power factor
+
+```matlab
+clc; clear all
+
+% Impedance
+% Determine impedance: Z
+% Determine power factor: PF
+
+R=10; L=0.02; C=0.05; f=60;
+XL = 2*pi*f*L;
+XC = 1/(2*pi*f*C);
+disp('Impedance:')
+Z = R+i*(XL-XC)
+Imp_magnitude = abs(Z);
+Phase_angle = angle(Z)*(180/pi);
+disp('In polar form:');
+fprintf('|Z| = %.3f ohms; Phase angle = %.3f degree\n',...
+    Imp_magnitude,Phase_angle);
+PF = cos(Phase_angle);
+fprintf('Power factor = %.3f\n',PF);
+```
+
+### 7.3.3. Power Triangle
+
+
+
 
