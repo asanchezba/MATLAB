@@ -520,7 +520,117 @@ fprintf('Power factor = %.3f\n',PF);
 ```
 
 ### 7.3.3. Power Triangle
+In an AC circuit, the power can be divided into two components: real power (P) and reactive power (Q). The real power is resistive power, which does not depend on frequency, whereas reactive power is frequency-dependent. The vector summation of these two components is called the apparent power (S). These three components can be represented using the power triangle (Figure 12), where the horizontal line represents the real power, P; the perpendicular line indicates the reactive power, Q; and the hypotenuse is the apparent power, S, which can be represented using the following formula:
 
+$$S = P +jQ$$
+
+Hence,
+
+$$|S| &ang; &theta; = \sqrt{P^2 + Q^2} &ang; \frac{Q}{P}$$
+
+For the inductive circuit, the reactive power will be indicated by an upward perpendicular line, and for the capacitive circuit, the reactive power will be represented by a downward perpendicular line. The angle between the horizontal line and hypotenuse is called the power angle ($$&theta;$$), the cosine of which is also referred to as the power factor. 
+
+<p align="center"><img width="589" alt="Captura de pantalla 2025-02-04 a las 19 28 46" src="https://github.com/user-attachments/assets/7b1d0c04-e0be-46eb-b037-94edc8cbd120" /></p>
+<p align="center"> <em>Figure 12: The power triangle </em></p>
+
+$$Q = \sqrt{Q_{L}^2 + Q_{C}^2 }$$
+
+```
+if (Q_L - Q_C) > 0
+Inductive reactance;
+Power factor lagging;
+elseif (Q_L - Q_C) < 0
+Capacitive reactance;
+Power factor leading;
+else
+Resistive
+Power factor Unity;
+end
+```
+
+#### Example 13: Power Triangle
+Consider a series RLC circuit with $$P = 10$$ W and $$Q = 5$$ Var. Determine:
+
+(a) Apparent power, S
+
+(b) Power factor, PF
+
+```matlab
+clc; clear all
+
+% Power triangle
+% Find: Apparent power, S
+% Find: Power factor, PF
+
+%Example 1: Real power, P=10W; Reactive power, Q=5 Var
+fprintf('Example 1: Positive reactive power\n');
+fprintf('-------------------------------------\n');
+P = 10; Q = 5;
+disp('Apparent power:')
+S = P+i*Q
+S_mag = abs(S);
+S_angle = angle(S)*(180/pi);
+fprintf('Apparent power in polar form:\n');
+fprintf('|S| = %.3f VA Power angle = %.3f degree\n',S_mag,S_angle);
+PF = cos(S_angle);
+
+if Q>0
+    fprintf('Power factor = %.3f; Lagging\n',PF);
+elseif Q<0
+    fprintf('Power factor = %.3f; Leading\n',PF);
+else
+    fprintf('Power factor = %.3f; Unity\n',PF);
+end
+
+fprintf('\n');
+
+%Example 2: Real power, P=10W; Reactive power, Q=-5 Var
+fprintf('Example 2: Negative reactive power\n');
+fprintf('-------------------------------------\n');
+P = 10; Q = -5;
+disp('Apparent power:')
+S = P+i*Q
+S_mag = abs(S);
+S_angle = angle(S)*(180/pi);
+fprintf('Apparent power in polar form:\n');
+fprintf('|S| = %.3f VA Power angle = %.3f degree\n',S_mag,S_angle);
+PF = cos(S_angle);
+
+if Q>0
+    fprintf('Power factor = %.3f; Lagging\n',PF);
+elseif Q<0
+    fprintf('Power factor = %.3f; Leading\n',PF);
+else
+    fprintf('Power factor = %.3f; Unity\n',PF);
+end
+
+fprintf('\n');
+
+%Example 3: Real power, P=10W; Reactive power, Q=0 Var
+fprintf('Example 2: Zero reactive power\n');
+fprintf('-------------------------------------\n');
+P = 10; Q = 0;
+disp('Apparent power:')
+S = P+i*Q
+S_mag = abs(S);
+S_angle = angle(S)*(180/pi);
+fprintf('Apparent power in polar form:\n');
+fprintf('|S| = %.3f VA Power angle = %.3f degree\n',S_mag,S_angle);
+PF = cos(S_angle);
+
+if Q>0
+    fprintf('Power factor = %.3f; Lagging\n',PF);
+elseif Q<0
+    fprintf('Power factor = %.3f; Leading\n',PF);
+else
+    fprintf('Power factor = %.3f; Unity\n',PF);
+end
+
+fprintf('\n');
+```
+
+### 7.3.4. Three-Phase AC Circuit Analysis
+In a three-phase circuit, the configuration can either be in wye or delta, based on which the properties change. To understand the relationship among different parameters in both wye and delta connection, we first need to categorise the circuit into two parts based on the nature of the load, which are balanced load and unbalanced load. In an unbalanced load, all the loads are not equally distributed among three phases, whereas in a balanced load, all the loads are distributed evenly among the phases. 
 
 
 
