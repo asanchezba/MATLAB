@@ -630,7 +630,163 @@ fprintf('\n');
 ```
 
 ### 7.3.4. Three-Phase AC Circuit Analysis
-In a three-phase circuit, the configuration can either be in wye or delta, based on which the properties change. To understand the relationship among different parameters in both wye and delta connection, we first need to categorise the circuit into two parts based on the nature of the load, which are balanced load and unbalanced load. In an unbalanced load, all the loads are not equally distributed among three phases, whereas in a balanced load, all the loads are distributed evenly among the phases. 
+In a three-phase circuit, the configuration can either be in wye or delta, based on which the properties change. To understand the relationship among different parameters in both wye and delta connection, we first need to categorise the circuit into two parts based on the nature of the load: balanced and unbalanced. In an unbalanced load, all the loads are not equally distributed among three phases, whereas in a balanced load, all the loads are distributed evenly among the phases. In a balanced system, all the voltages, or currents, in three phases are in $$120^\circ$$ phase difference from each other. Based on the nature of the order of the sequence of phase voltage, two-phase sequences are available - "abc" sequence and "acb" sequence (Figure 13). The phase sequence imples the order of sequence based on which the individual phase voltage or current reaches its peak values. 
+
+<p align="center"><img width="912" alt="Captura de pantalla 2025-02-07 a las 19 31 55" src="https://github.com/user-attachments/assets/ec0eee7d-76ab-46a0-afb9-6a27194200ab" /></p>
+<p align="center"> <em>Figure 13: abc and acb phase sequence in three-phase systems </em></p>
+
+### 7.3.4.1. Delta-Connected Unbalanced Load
+A delta-connected unbalanced load is shown in Figure 14, where the impedances are of different values in each phase to make the system unbalanced. 
+
+<p align="center"><img width="685" alt="Captura de pantalla 2025-02-07 a las 19 34 17" src="https://github.com/user-attachments/assets/4af6b85b-678a-46bb-8fef-7c1d3bc7e9f1" /></p>
+<p align="center"> <em>Figure 14: A delta connected unbalanced system </em></p>
+
+The relevant parameters for a delta-connected unbalanced load system are listed in Table 1. For a delta-connected unbalanced system, the parameters can be related with each other by the formulas as mentioned in Table 2. 
+
+<p align="center"> <em>Table 1. Parameters in a delta-connected unbalanced load system </em></p>
+<p align="center"><img width="946" alt="Captura de pantalla 2025-02-07 a las 19 38 13" src="https://github.com/user-attachments/assets/b1c11cb0-12da-4b3b-9084-c4d19824262b" /></p>
+
+<p align="center"> <em>Table 2. Relationship between the parameters in a delta-connected unbalanced system </em></p>
+<p align="center"><img width="648" alt="Captura de pantalla 2025-02-07 a las 19 39 21" src="https://github.com/user-attachments/assets/6b67d624-e10a-461c-bb36-0728e93025d0" /></p>
+
+#### Example 14: Delta-Connected Unbalanced Load
+Consider a system shown in Figure 14 with the following parameters:
+
+$$V_{AB} = 120 &ang;0^\circ V$$
+$$V_{BC} = 110 &ang;120^\circ V$$
+$$V_{CA} = 150 &ang;240^\circ V$$
+$$Z_{1} = 10 &ang;10^\circ$$
+$$Z_{2} = 15 &ang;-25^\circ$$
+$$Z_{3} = 20 &ang;-10^\circ$$
+
+Determine:
+
+(a) Phase currents $$I_{AB}, I_{BC}$$ and $$I_{CA}$$
+
+(b) Line currents $$I_{A}, I_{B}$$ and $$I_{C}$$
+
+```matlab
+clc; clear all
+
+% Delta connected unbalanced load
+% Find the phase currents I_AB, I_BC, I_CA
+% Find the line currents I_A, I_B, I_C
+
+% Line to Line voltages
+V_AB = 120*cos(0)+i*120*sin(0);
+V_BC = 110*cos(120*(pi/180))+i*110*sin(120*(pi/180));
+V_CA = 150*cos(240*(pi/180))+i*150*sin(240*(pi/180));
+
+% Impedances
+Z1 = 10*cos(10*(pi/180))+i*10*sin(10*(pi/180));
+Z2 = 15*cos(-25*(pi/180))+i*15*sin(-25*(pi/180));
+Z3 = 20*cos(-10*(pi/180))+i*20*sin(-10*(pi/180));
+
+% Phase currents
+I_AB = V_AB/Z1;
+I_BC = V_BC/Z2;
+I_CA = V_CA/Z3;
+I_AB_mag = abs(I_AB);
+I_AB_ang = angle(I_AB)*(180/pi);
+I_BC_mag = abs(I_BC);
+I_BC_ang = angle(I_BC)*(180/pi);
+I_CA_mag = abs(I_CA);
+I_CA_ang = angle(I_CA)*(180/pi);
+fprintf('Phase currents:\n');
+fprintf('I_AB = %.3f A        Angle= %.3f degree\n',I_AB_mag,I_AB_ang);
+fprintf('I_BC = %.3f A        Angle= %.3f degree\n',I_BC_mag,I_BC_ang);
+fprintf('I_CA = %.3f A        Angle= %.3f degree\n',I_CA_mag,I_CA_ang);
+
+% Line currents
+I_A = I_AB-I_CA;
+I_B = I_BC-I_AB;
+I_C = I_CA-I_BC;
+I_A_mag = abs(I_A);
+I_A_ang = angle(I_A)*180/pi;
+I_B_mag = abs(I_B);
+I_B_ang = angle(I_B)*180/pi;
+I_C_mag = abs(I_C);
+I_C_ang = angle(I_C)*180/pi;
+fprintf('Line currents:\n');
+fprintf('I_A = %.3f A        Angle= %.3f degree\n',I_A_mag,I_A_ang);
+fprintf('I_B = %.3f A        Angle= %.3f degree\n',I_B_mag,I_B_ang);
+fprintf('I_C = %.3f A        Angle= %.3f degree\n',I_C_mag,I_C_ang);
+```
+
+### 7.3.4.2. Delta-Connected Balanced Load
+A delta-connected balanced load is shown in Figure 15, where the impedances are equally distributed in each phase to make the system balanced. In a balanced delta system, the magnitudes of the input line-to-line voltage and phase voltages are equal. The relevant parameters of a delta-connected balanced system are listed in Table 3. The relationship between the parameters for a delta-connected balanced load system can be summarised as shown in Table 4.
+
+<p align="center"><img width="683" alt="Captura de pantalla 2025-02-07 a las 20 06 11" src="https://github.com/user-attachments/assets/14d85795-f1c4-462c-b84a-43d6252a5da6" /></p>
+<p align="center"> <em>Figure 15: A delta connected balanced system </em></p>
+
+<p align="center"> <em>Table 3. Parameters in a delta-connected balanced load system </em></p>
+<p align="center"><img width="802" alt="Captura de pantalla 2025-02-07 a las 20 08 55" src="https://github.com/user-attachments/assets/0c015f82-6284-401c-ab0a-aebf7959acc1" /></p>
+
+<p align="center"> <em>Table 4. Relationship between the parameters in a delta-connected balanced load system </em></p>
+<p align="center"><img width="1280" alt="Captura de pantalla 2025-02-07 a las 20 08 23" src="https://github.com/user-attachments/assets/8cbe5c3a-dd31-42c0-a088-cbb02734584b" /></p>
+
+#### Example 15: Delta-Connected Balanced Load
+Consider a system shown in Figure 15 with the following parameters:
+
+$$V_{AB} = 120 &ang;0^\circ V$$
+$$V_{BC} = 110 &ang;120^\circ V$$
+$$V_{CA} = 150 &ang;240^\circ V$$
+$$Z = 10 &ang;10^\circ$$
+
+Determine:
+
+(a) Phase currents $$I_{AB}, I_{BC}$$ and $$I_{CA}$$
+
+(b) Line currents $$I_{A}, I_{B}$$ and $$I_{C}$$
+
+```matlab
+clc; clear all
+
+% Delta connected balanced load
+% Find the phase currents I_AB, I_BC, I_CA
+% Find the line currents I_A, I_B, I_C
+
+% Line to Line voltages
+V_AB = 120*cos(0)+i*120*sin(0);
+V_BC = 110*cos(120*(pi/180))+i*110*sin(120*(pi/180));
+V_CA = 150*cos(240*(pi/180))+i*150*sin(240*(pi/180));
+
+% Impedances
+Z = 10*cos(10*(pi/180))+i*10*sin(10*(pi/180));
+
+% Phase currents
+I_AB = V_AB/Z;
+I_BC = V_BC/Z;
+I_CA = V_CA/Z;
+Ip = abs(I_AB);
+I_AB_ang = angle(I_AB)*(180/pi);
+I_BC_ang = angle(I_BC)*(180/pi);
+I_CA_ang = angle(I_CA)*(180/pi);
+fprintf('Phase currents:\n');
+fprintf('I_AB = %.3f A        Angle= %.3f degree\n',Ip,I_AB_ang);
+fprintf('I_BC = %.3f A        Angle= %.3f degree\n',Ip,I_BC_ang);
+fprintf('I_CA = %.3f A        Angle= %.3f degree\n',Ip,I_CA_ang);
+
+% Line currents
+I_A = I_AB-I_CA;
+I_B = I_BC-I_AB;
+I_C = I_CA-I_BC;
+IL = abs(I_A);
+I_A_ang = angle(I_A)*180/pi;
+I_B_ang = angle(I_B)*180/pi;
+I_C_ang = angle(I_C)*180/pi;
+fprintf('Line currents:\n');
+fprintf('I_A = %.3f A        Angle= %.3f degree\n',IL,I_A_ang);
+fprintf('I_B = %.3f A        Angle= %.3f degree\n',IL,I_B_ang);
+fprintf('I_C = %.3f A        Angle= %.3f degree\n',IL,I_C_ang);
+```
+
+### 7.3.4.3. Wye-Connected Four-Wire Unbalanced Load
+
+
+
+
+
 
 
 
