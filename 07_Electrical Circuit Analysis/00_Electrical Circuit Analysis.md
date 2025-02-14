@@ -782,8 +782,94 @@ fprintf('I_C = %.3f A        Angle= %.3f degree\n',IL,I_C_ang);
 ```
 
 ### 7.3.4.3. Wye-Connected Four-Wire Unbalanced Load
+A wye-connected four-wire unbalanced load is shown in Figure 16, where the impedances are  different in each phase to make the system unbalanced. In addition, the common point is connected to a neutral, which explains the reason for naming it a four-wire system.
+
+The relevant parameters of a wyre-connected four-wire unbalanced system are enlisted in Table 5. The relationship among the parameters for a wye-connected four-wire unbalanced load system can be summarised as shown in Table 6.
+
+<p align="center"><img width="613" alt="Captura de pantalla 2025-02-14 a las 19 34 09" src="https://github.com/user-attachments/assets/2d71c581-5515-4404-9d02-d3e711c76562" /></p>
+<p align="center"> <em>Figure 16: A wyre connected four wire unbalanced system </em></p>
+
+<p align="center"> <em>Table 5. Parameters in a wye-connected four-wire unbalanced load system </em></p>
+<p align="center"><img width="858" alt="Captura de pantalla 2025-02-14 a las 19 36 25" src="https://github.com/user-attachments/assets/27c61c32-3fdb-4ced-954c-4a56ad089ad5" /></p>
+
+<p align="center"> <em>Table 6. Relationship between the parameters in a wye-connected four-wire unbalanced load system </em></p>
+<p align="center"><img width="578" alt="Captura de pantalla 2025-02-14 a las 19 37 32" src="https://github.com/user-attachments/assets/0c2cc98e-1f73-412e-be9b-9dd3833e7c16" /></p>
+
+#### Example 16: Wye-Connected Four-Wire Unbalanced Load
+Consider a system shown in Figure 16 with the following parameters:
+
+$$V_{AN} = 120 &ang;10^\circ V$$
+$$V_{BN} = 110 &ang;150^\circ V$$
+$$V_{CN} = 150 &ang;-50^\circ V$$
+$$Z_{1} = 10 &ang;10^\circ$$
+$$Z_{2} = 15 &ang;-25^\circ$$
+$$Z_{3} = 20 &ang;-10^\circ$$
+
+Determine:
+
+(a) Line-to-line voltage $$V_{AB}, V_{BC}$$, and $$V_{CA}$$
+
+(b) Phase currents $$I_{AN}, I_{BN}$$, and $$I_{CN}$$
+
+(c) Line currents $$I_{A}, I_{B}$$, and $$I_{C}$$
 
 
+```matlab
+clc; clear all
+
+% Wye connected four wire unbalanced load
+% Find: Line to line voltages V_AB, V_BC, V_CA
+% Find: Phase currents I_AN, I_BN, I_CN
+% Find: Line currents I_A, I_B, I_C
+
+% Line to line voltages
+V_AN = 120*cos(10)+i*120*sin(10);
+V_BN = 110*cos(150*(pi/180))+i*110*sin(150*(pi/180));
+V_CN = 150*cos(-50*(pi/180))+i*150*sin(-50*(pi/180));
+
+% Impendaces
+Z1 = 10*cos(10*(pi/180))+i*10*sin(10*(pi/180));
+Z2 = 15*cos(-25*(pi/180))+i*15*sin(-25*(pi/180));
+Z3 = 20*cos(-10*(pi/180))+i*20*sin(-10*(pi/180));
+
+% Line to line voltages
+V_AB = V_AN-V_BN;
+V_BC = V_BN-V_CN;
+V_CA = V_CN-V_AN;
+V_AB_mag = abs(V_AB);
+V_AB_ang = angle(V_AB)*180/pi;
+V_BC_mag = abs(V_BC);
+V_BC_ang = angle(V_BC)*180/pi;
+V_CA_mag = abs(V_CA);
+V_CA_ang = angle(V_CA)*180/pi;
+fprintf('Line to line voltages:\n');
+fprintf('V_AB = %.3f A      Angle = %.3f degree\n',V_AB_mag,V_AB_ang);
+fprintf('V_BC = %.3f A      Angle = %.3f degree\n',V_BC_mag,V_BC_ang);
+fprintf('V_CA = %.3f A      Angle = %.3f degree\n',V_CA_mag,V_CA_ang);
+
+% Phase currents
+I_AN = V_AN/Z1;
+I_BN = V_BN/Z2;
+I_CN = V_CN/Z3;
+I_AN_mag = abs(I_AN);
+I_AN_ang = angle(I_AN)*180/pi;
+I_BN_mag = abs(I_BN);
+I_BN_ang = angle(I_BN)*180/pi;
+I_CN_mag = abs(I_CN);
+I_CN_ang = angle(I_CN)*180/pi;
+fprintf('Phase currents:\n');
+fprintf('I_AN = %.3f A      Angle = %.3f degree\n',I_AN_mag,I_AN_ang);
+fprintf('I_BN = %.3f A      Angle = %.3f degree\n',I_BN_mag,I_BN_ang);
+fprintf('I_CN = %.3f A      Angle = %.3f degree\n',I_CN_mag,I_CN_ang);
+
+% Line currents
+fprintf('Line currents:\n');
+fprintf('I_A = %.3f A      Angle = %.3f degree\n',I_AN_mag,I_AN_ang);
+fprintf('I_B = %.3f A      Angle = %.3f degree\n',I_BN_mag,I_BN_ang);
+fprintf('I_C = %.3f A      Angle = %.3f degree\n',I_CN_mag,I_CN_ang);
+```
+
+### 7.3.4.4. Wye-Connected Four-Wire Balanced Load
 
 
 
