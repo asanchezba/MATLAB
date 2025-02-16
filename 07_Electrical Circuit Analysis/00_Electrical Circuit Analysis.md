@@ -870,6 +870,107 @@ fprintf('I_C = %.3f A      Angle = %.3f degree\n',I_CN_mag,I_CN_ang);
 ```
 
 ### 7.3.4.4. Wye-Connected Four-Wire Balanced Load
+A wye-connected four-wire balanced load is shown in Figure 17, where the impedances are distributed evenly in each phase to make the system balanced. In addition, the common point is connected to a neutral, which explains the reason for naming it a four wire-system. 
+
+The relevant parameters of a wye-connected four-wire balanced load system are listed in Table 7. The relationship among the parameters for a wye-connected four-wire balanced load system can be summarised as shown in Table 8.
+
+<p align="center"><img width="594" alt="Captura de pantalla 2025-02-16 a las 17 39 18" src="https://github.com/user-attachments/assets/70786e7b-6d2c-4ed1-b7d8-03360e4eb9da" /></p>
+<p align="center"> <em>Figure 17: A wyre connected four wire balanced system </em></p>
+
+<p align="center"> <em>Table 7. Parameters in a wye-connected four-wire balanced load system </em></p>
+<p align="center"><img width="856" alt="Captura de pantalla 2025-02-16 a las 17 40 04" src="https://github.com/user-attachments/assets/d643c038-834d-423d-90b8-08488748613c" /></p>
+
+<p align="center"> <em>Table 8. Relationship between the parameters in a wye-connected four-wire balanced load system </em></p>
+<p align="center"><img width="864" alt="Captura de pantalla 2025-02-16 a las 17 40 17" src="https://github.com/user-attachments/assets/64a0a9fa-f21e-422a-958b-506e76b9ad0b" /></p>
+
+
+#### Example 17: Wye-Connected Four-Wire Balanced Load
+Consider a system shown in Figure 17 with the following parameters:
+
+$$V_{AN} = 110 &ang;10^\circ V$$
+$$V_{BN} = 110 &ang;150^\circ V$$
+$$V_{CN} = 110 &ang;-50^\circ V$$
+$$Z = 10 &ang;10^\circ$$
+
+
+Determine:
+
+(a) Line-to-line voltage $$V_{AB}, V_{BC}$$, and $$V_{CA}$$
+
+(b) Phase currents $$I_{AN}, I_{BN}$$, and $$I_{CN}$$
+
+(c) Line currents $$I_{A}, I_{B}$$, and $$I_{C}$$
+
+```matlab
+clc; clear all
+
+% Wye connected four wire balanced load
+% Find: Line to line voltages V_AB, V_BC, V_CA
+% Find: Phase currents I_AN, I_BN, I_CN
+% Find: Line currents I_A, I_B, I_C
+
+% Line to line voltages
+V_AN = 110*cos(0)+i*110*sin(0);
+V_BN = 110*cos(120*(pi/180))+i*110*sin(120*(pi/180));
+V_CN = 110*cos(240*(pi/180))+i*110*sin(240*(pi/180));
+
+% Impendaces
+Z = 10*cos(10*(pi/180))+i*10*sin(10*(pi/180));
+
+% Line to line voltages
+V_AB = V_AN-V_BN;
+V_BC = V_BN-V_CN;
+V_CA = V_CN-V_AN;
+V_L = abs(V_AB);
+V_AB_mag = abs(V_AB);
+V_AB_ang = angle(V_AB)*180/pi;
+V_BC_mag = abs(V_BC);
+V_BC_ang = angle(V_BC)*180/pi;
+V_CA_mag = abs(V_CA);
+V_CA_ang = angle(V_CA)*180/pi;
+fprintf('Line to line voltages:\n');
+fprintf('V_AB = %.3f A      Angle = %.3f degree\n',V_L,V_AB_ang);
+fprintf('V_BC = %.3f A      Angle = %.3f degree\n',V_L,V_BC_ang);
+fprintf('V_CA = %.3f A      Angle = %.3f degree\n',V_L,V_CA_ang);
+
+% Phase currents
+I_AN = V_AN/Z;
+I_BN = V_BN/Z;
+I_CN = V_CN/Z;
+I_AN_mag = abs(I_AN);
+I_AN_ang = angle(I_AN)*180/pi;
+I_BN_mag = abs(I_BN);
+I_BN_ang = angle(I_BN)*180/pi;
+I_CN_mag = abs(I_CN);
+I_CN_ang = angle(I_CN)*180/pi;
+fprintf('Phase currents:\n');
+fprintf('I_AN = %.3f A      Angle = %.3f degree\n',I_AN_mag,I_AN_ang);
+fprintf('I_BN = %.3f A      Angle = %.3f degree\n',I_BN_mag,I_BN_ang);
+fprintf('I_CN = %.3f A      Angle = %.3f degree\n',I_CN_mag,I_CN_ang);
+
+% Line currents
+fprintf('Line currents:\n');
+fprintf('I_A = %.3f A      Angle = %.3f degree\n',I_AN_mag,I_AN_ang);
+fprintf('I_B = %.3f A      Angle = %.3f degree\n',I_BN_mag,I_BN_ang);
+fprintf('I_C = %.3f A      Angle = %.3f degree\n',I_CN_mag,I_CN_ang);
+```
+
+### 7.3.4.5. Wye-Connected Three-Wire Balanced Load
+A wye-connected three-wire unbalanced load system is shown in Figure 18, where the impedances are different in each phase to make the system unbalanced. The common point is not connected to a neutral; therefore, it will be regarded as a common point, not a neutral point. 
+
+The relevant parameters of a wye-connected three-wire balanced load system are listed in Table 9. The relationship among the parameters for a wye-connected three-wire balanced load system can be summarised as shown in Table 10. 
+
+<p align="center"><img width="710" alt="Captura de pantalla 2025-02-16 a las 17 55 08" src="https://github.com/user-attachments/assets/949e3d48-40f8-4560-a267-8c2ef5cb4393" /></p>
+<p align="center"> <em>Figure 18: A wyre connected three wire unbalanced system </em></p>
+
+<p align="center"> <em>Table 9. Parameters in a wye-connected three-wire unbalanced load system </em></p>
+<p align="center"><img width="854" alt="Captura de pantalla 2025-02-16 a las 17 55 19" src="https://github.com/user-attachments/assets/2e284fcc-e680-42de-8dcd-f2594d2eef4d" /></p>
+
+<p align="center"> <em>Table 10. Relationship between the parameters in a wye-connected three-wire unbalanced load system </em></p>
+<p align="center"><img width="845" alt="Captura de pantalla 2025-02-16 a las 17 55 26" src="https://github.com/user-attachments/assets/b1d680c0-c295-4311-bf18-d1e46a4a22da" /></p>
+
+
+
 
 
 
