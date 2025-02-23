@@ -955,7 +955,7 @@ fprintf('I_B = %.3f A      Angle = %.3f degree\n',I_BN_mag,I_BN_ang);
 fprintf('I_C = %.3f A      Angle = %.3f degree\n',I_CN_mag,I_CN_ang);
 ```
 
-### 7.3.4.5. Wye-Connected Three-Wire Balanced Load
+### 7.3.4.5. Wye-Connected Three-Wire Unbalanced Load
 A wye-connected three-wire unbalanced load system is shown in Figure 18, where the impedances are different in each phase to make the system unbalanced. The common point is not connected to a neutral; therefore, it will be regarded as a common point, not a neutral point. 
 
 The relevant parameters of a wye-connected three-wire balanced load system are listed in Table 9. The relationship among the parameters for a wye-connected three-wire balanced load system can be summarised as shown in Table 10. 
@@ -969,6 +969,22 @@ The relevant parameters of a wye-connected three-wire balanced load system are l
 <p align="center"> <em>Table 10. Relationship between the parameters in a wye-connected three-wire unbalanced load system </em></p>
 <p align="center"><img width="845" alt="Captura de pantalla 2025-02-16 a las 17 55 26" src="https://github.com/user-attachments/assets/b1d680c0-c295-4311-bf18-d1e46a4a22da" /></p>
 
+
+#### Example 18: Wye-Connected Three-Wire Unbalanced Load
+Consider a system shown in Figure 18 with the following parameters:
+
+$$V_{ao} = 120 &ang;10^\circ V$$
+$$V_{bo} = 110 &ang;150^\circ V$$
+$$V_{co} = 150 &ang;-50^\circ V$$
+$$Z_{1} = 10 &ang;10^\circ$$
+$$Z_{2} = 15 &ang;-25^\circ$$
+$$Z_{3} = 20 &ang;-10^\circ$$
+
+Determine:
+
+(a) Line-to-line voltages $$V_{AB}, V_{BC}$$, and $$V_{CA}$$
+
+(b) Line currents $$I_{A}, I_{B}$$, and $$I_{C}$$
 
 
 
