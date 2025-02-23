@@ -986,10 +986,132 @@ Determine:
 
 (b) Line currents $$I_{A}, I_{B}$$, and $$I_{C}$$
 
+```matlab
+clc; clear all
 
+% Wye connected three wire unbalanced load
+% Find: line to line voltages V_AB, V_BC, V_CA
+% Find: line currents I_A, I_B, I_C
 
+% Line to line voltges
+V_ao = 120*cos(10)+i*110*sin(10);
+V_bo = 110*cos(150*(pi/180))+i*110*sin(150*(pi/180));
+V_co = 150*cos(-50*(pi/180))+i*150*sin(-50*(pi/180));
 
+% Impedances
+Z1 = 10*cos(10*(pi/180))+i*10*sin(10*(pi/180));
+Z2 = 15*cos(-25*(pi/180))+i*15*sin(-25*(pi/180));
+Z3 = 20*cos(-10*(pi/180))+i*20*sin(-10*(pi/180));
 
+% Line to line voltages
+V_AB = V_ao-V_bo;
+V_BC = V_bo-V_co;
+V_CA = V_co-V_ao;
+V_AB_mag = abs(V_AB);
+V_AB_ang = angle(V_AB)*180/pi;
+V_BC_mag = abs(V_BC);
+V_BC_ang = angle(V_BC)*180/pi;
+V_CA_mag = abs(V_CA);
+V_CA_ang = angle(V_CA)*180/pi;
+fprintf('Line to line voltages:\n');
+fprintf('V_AB = %.3f A      Angle = %3.f degree\n',V_AB_mag,V_AB_ang);
+fprintf('V_BC = %.3f A      Angle = %3.f degree\n',V_BC_mag,V_BC_ang);
+fprintf('V_CA = %.3f A      Angle = %3.f degree\n',V_CA_mag,V_CA_ang);
 
+% Line currents
+I_A = V_ao/Z1;
+I_B = V_bo/Z2;
+I_C = V_co/Z3;
+I_A_mag = abs(I_A);
+I_A_ang = angle(I_A)*180/pi;
+I_B_mag = abs(I_B);
+I_B_ang = angle(I_B)*180/pi;
+I_C_mag = abs(I_C);
+I_C_ang = angle(I_C)*180/pi;
+fprintf('Line currents:\n');
+fprintf('I_A = %.3f A      Angle = %3.f degree\n',I_A_mag,I_A_ang);
+fprintf('I_B = %.3f A      Angle = %3.f degree\n',I_B_mag,I_B_ang);
+fprintf('I_C = %.3f A      Angle = %3.f degree\n',I_C_mag,I_C_ang);
+```
+
+### 7.3.4.6. Wye-Connected Three-Wire Balanced Load
+A wye-connected three-wire balanced load system is shown in Figure 19, where the impedances are equal in each phase to make the system balanced. In addition, the common point is not connected to a neutral; therefore, it will be regarded as a common point, not a neutral point. 
+
+<p align="center"><img width="774" alt="Captura de pantalla 2025-02-23 a las 15 51 37" src="https://github.com/user-attachments/assets/75d3dba3-14fe-4fc2-a119-7390db141224" /></p>
+<p align="center"> <em>Figure 19: A wyre connected three wire balanced system </em></p>
+
+<p align="center"> <em>Table 10. Parameters in a wye-connected three-wire balanced load system </em></p>
+<p align="center"><img width="913" alt="Captura de pantalla 2025-02-23 a las 15 52 12" src="https://github.com/user-attachments/assets/24a4ab3c-3aa9-482d-9767-db4b557d42d5" /></p>
+
+<p align="center"> <em>Table 11. Relationship between the parameters in a wye-connected three-wire balanced load system </em></p>
+<p align="center"><img width="898" alt="Captura de pantalla 2025-02-23 a las 15 52 44" src="https://github.com/user-attachments/assets/79ee64ef-42c3-4775-8ffb-4625b43f5878" /></p>
+
+#### Example 19: Wye-Connected Three-Wire Balanced Load
+Consider a system shown in Figure 19 with the following parameters:
+
+$$V_{ao} = 120 &ang;0^\circ V$$
+$$V_{bo} = 110 &ang;120^\circ V$$
+$$V_{co} = 150 &ang;240^\circ V$$
+$$Z = 10 &ang;10^\circ$$
+
+Determine:
+
+(a) Line-to-line voltages $$V_{AB}, V_{BC}$$, and $$V_{CA}$$
+
+(b) Line currents $$I_{A}, I_{B}$$, and $$I_{C}$$
+
+```matlab
+clc; clear all
+
+% Wye connected three wire balanced load
+% Find: line to line voltages V_AB, V_BC, V_CA
+% Find: line currents I_A, I_B, I_C
+
+% Line to line voltges
+V_ao = 120*cos(0)+i*110*sin(0);
+V_bo = 120*cos(120*(pi/180))+i*120*sin(120*(pi/180));
+V_co = 120*cos(240*(pi/180))+i*120*sin(240*(pi/180));
+
+% Impedances
+Z = 10*cos(10*(pi/180))+i*10*sin(10*(pi/180));
+
+% Line to line voltages
+V_AB = V_ao-V_bo;
+V_BC = V_bo-V_co;
+V_CA = V_co-V_ao;
+V_AB_mag = abs(V_AB);
+V_AB_ang = angle(V_AB)*180/pi;
+V_BC_mag = abs(V_BC);
+V_BC_ang = angle(V_BC)*180/pi;
+V_CA_mag = abs(V_CA);
+V_CA_ang = angle(V_CA)*180/pi;
+fprintf('Line to line voltages:\n');
+fprintf('V_AB = %.3f A      Angle = %3.f degree\n',V_AB_mag,V_AB_ang);
+fprintf('V_BC = %.3f A      Angle = %3.f degree\n',V_BC_mag,V_BC_ang);
+fprintf('V_CA = %.3f A      Angle = %3.f degree\n',V_CA_mag,V_CA_ang);
+
+% Line currents
+I_A = V_ao/Z;
+I_B = V_bo/Z;
+I_C = V_co/Z;
+I_A_mag = abs(I_A);
+I_A_ang = angle(I_A)*180/pi;
+I_B_mag = abs(I_B);
+I_B_ang = angle(I_B)*180/pi;
+I_C_mag = abs(I_C);
+I_C_ang = angle(I_C)*180/pi;
+fprintf('Line currents:\n');
+fprintf('I_A = %.3f A      Angle = %3.f degree\n',I_A_mag,I_A_ang);
+fprintf('I_B = %.3f A      Angle = %3.f degree\n',I_B_mag,I_B_ang);
+fprintf('I_C = %.3f A      Angle = %3.f degree\n',I_C_mag,I_C_ang);
+```
+
+## 7.4. Operational Amplifier
+An operational amplifier is an active device that can amplify any input signals; perform mathematical operations such as addition, multiplication, differentiation, and integration; and filter. The block diagram of an operational amplifier (Op-amp) is provided in Figure 20. A standard Op-amp has five important ports, where port 1 and port 2 signify the inverting and the non-inverting input signals; and port 5 is for the output signal. In port 3 and port 4, the positive and negative voltage connection is provided. 
+
+<p align="center"><img width="616" alt="Captura de pantalla 2025-02-23 a las 16 00 31" src="https://github.com/user-attachments/assets/a6964348-84a5-4813-9449-3167e9858000" /></p>
+<p align="center"> <em>Figure 20: Pin diagram of an operational amplifier </em></p>
+
+### 7.4.1. Inverting Amplifier
 
 
