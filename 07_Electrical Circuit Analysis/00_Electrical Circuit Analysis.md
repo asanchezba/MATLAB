@@ -1113,5 +1113,53 @@ An operational amplifier is an active device that can amplify any input signals;
 <p align="center"> <em>Figure 20: Pin diagram of an operational amplifier </em></p>
 
 ### 7.4.1. Inverting Amplifier
+In an inverting amplifier, the gain of the amplifier is negative. The gain of an amplifier is the ratio of output to input. A configuration of an inverting amplifier is given in Figure 21, where a positive voltage source is connected with the negative input port of an Op-amp, and the positive input port is grounded.
+
+$$V_{out} = -\frac{R_{2}}{R_{1}}·V_{in}$$
+
+<p align="center"><img width="642" alt="Captura de pantalla 2025-02-24 a las 20 26 34" src="https://github.com/user-attachments/assets/24942a23-d0f3-49c7-9a82-173a4ffe8f3d" /></p>
+<p align="center"> <em>Figure 21: Circuit diagram of an inverting amplifier </em></p>
+
+#### Example 20: Inverting Amplifier
+Consider an inverting amplifier as shown in Figure 21 with 40 V input and $$R_{1} = 4 &Omega;$$, $$R_{2} = 2 &Omega;$$. Determine the gain and the output voltage. 
+
+```matlab
+clc; clear all
+
+% Inverting amplifier
+% Find: Output voltage V_out
+% Find Gain G
+
+V_in = 40; R1 = 4; R2 = 2;
+V_out = -(R2/R1)*V_in;
+G = V_out/V_in;
+fprintf('Output voltage: %.2f V\n',V_out);
+fprintf('Gain: %.2f\n', G);
+```
+
+### 7.4.2. Non-inverting Amplifier
+In a non-inverting amplifier, the gain of the amplifier is positive. A configuration of a non-inverting amplifier is given in Figure 22, where a positive voltage source is connected with the positive input port of an Op-amp, and the negative input port is grounded.
+
+$$V_{out} = (1+\frac{R_{2}}{R_{1}})·V_{in}$$
+
+<p align="center"><img width="618" alt="Captura de pantalla 2025-02-24 a las 20 36 18" src="https://github.com/user-attachments/assets/e28ac154-f68b-46b3-bb6a-84c21d42b05d" /></p>
+<p align="center"> <em>Figure 22: Circuit diagram of an non-inverting amplifier </em></p>
+
+#### Example 21: Non-Inverting Amplifier
+Consider an inverting amplifier as shown in Figure 22 with 40 V input and $$R_{1} = 4 &Omega;$$, $$R_{2} = 2 &Omega;$$. Determine the gain and the output voltage. 
+
+```matlab
+clc; clear all
+
+% Non-inverting amplifier
+% Find: Output voltage V_out
+% Find Gain G
+
+V_in = 40; R1 = 4; R2 = 2;
+V_out = (1+(R2/R1))*V_in;
+G = V_out/V_in;
+fprintf('Output voltage: %.2f V\n',V_out);
+fprintf('Gain: %.2f\n', G);
+```
 
 
