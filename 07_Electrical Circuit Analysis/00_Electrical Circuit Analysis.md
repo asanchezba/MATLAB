@@ -1162,4 +1162,81 @@ fprintf('Output voltage: %.2f V\n',V_out);
 fprintf('Gain: %.2f\n', G);
 ```
 
+### 7.4.3. Follower Circuit
+In a follower circuit (Figure 23), the gain is always unity. The feedback resistance is short-circuited, and the input impedance is open-circuited. Therefore, the input impedance of a follower circuit is infinity, or very high; and the output impedance is zero, or very small. 
+
+<p align="center"><img width="474" alt="Captura de pantalla 2025-02-28 a las 17 55 55" src="https://github.com/user-attachments/assets/eb5c8508-dd95-4636-8a3e-3a0950981389" /></p>
+<p align="center"> <em>Figure 23: Circuit diagram of a follower circuit </em></p>
+
+#### Example 22: Follower Circuit
+Consider the circuit in Figure 24, where the output of an inverting amplifier is connected as an input of a follower circuit. Determine the values of $$V_{1}$$ and $$V_{out}$$.
+
+<p align="center"><img width="918" alt="Captura de pantalla 2025-02-28 a las 17 58 02" src="https://github.com/user-attachments/assets/93dc5b1f-7ddc-4a69-a522-9406cf478e94" /></p>
+<p align="center"> <em>Figure 24: Follower circuit </em></p>
+
+```matlab
+clc; clear all
+
+% Follower circuit
+% Find output of the inverting amplifier V1
+% Find final output voltage V_out
+
+V_in = 20; R1 =4; R2 = 8;
+V1 = -(R2/R1)*V_in;
+fprintf('V1: %.2f V\n',V1);
+V_out = V1;
+fprintf('Final output voltage, V_out: %.2f V\n',V_out);
+```
+
+### 7.4.4. Differentiator Circuit
+A differentiator circuit is shown in Figure 25. For a given signal input $$V_{in}(t)$$, the output of the Op-amp will be a differentiation of the input with the multiplication of resistance and capacitance value. As it is an inverting amplifier, the output will be inverted. The output of a differentiator circuit can be defined using the following formula:
+
+$$V_{out}(t) = -RC·\frac{dV_{in}}{dt}$$
+
+The current through the resistance $$R$$ and the capacitor $$C$$ can be represented by the following formula:
+
+$$I_{R} = \frac{V_{out}}{R}$$
+
+$$I_{C} = C\frac{dV_{in}}{dt}$$
+
+<p align="center"><img width="513" alt="Captura de pantalla 2025-02-28 a las 18 08 00" src="https://github.com/user-attachments/assets/c8dc6445-c7a3-43e6-b3eb-aa3ea271a9b9" /></p>
+<p align="center"> <em>Figure 25: Circuit diagram of a differentiator circuit </em></p>
+
+#### Example 23: Differentiator Circuit
+Consider the circuit in Figure 25, where $$R = 5 &Omega;$$ and $$C = 0.5 F$$. If the input signal is $$v(t) = 2 sin(t)$$, determine:
+
+(a) The output signal $$v_{out}(t)$$
+
+(b) The output of the circuit at $$t = 0.1 s$$
+
+(c) $$I_{R}$$ and $$I_{C}$$ at $$t = 0.1 s$$
+
+```matlab
+clc; clear all
+
+% Differentiator circuit
+% Find output signal v_out(t)
+% Find output at t=0.1 sec
+% Find I_R and I_C at t=0.1 sec
+
+R = 5; C = 0.5;
+syms t
+v = @(t) 2*sin(t);
+v_out = @(t) -R*C*diff(v,t);
+fprintf('The output signal:\n');
+disp(v_out(t))
+v_out = limit(v_out,t,0.1);
+fprintf('The output voltage at t=0.1 sec: %.5f V\n',v_out);
+I_R = -v_out/R;
+I_C = limit(C*diff(v,t),t,0.1);
+fprintf('\n');
+fprintf('I_R at t=0.1 sec: %.5f A\n',I_R);
+fprintf('\n');
+fprintf('I_C at t=0.1 sec: %.5f A\n',I_C);
+```
+
+### 7.4.5. Integrator Circuit
+
+
+
 
