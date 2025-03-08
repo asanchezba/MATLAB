@@ -1236,7 +1236,72 @@ fprintf('I_C at t=0.1 sec: %.5f A\n',I_C);
 ```
 
 ### 7.4.5. Integrator Circuit
+An integrator circuit is shown in Figure 26. For a given signal input $$V_{in}(t)$$, the output of the Op-amp will be an integration of the input with the multiplication of some certain value. As it is an inverting amplifier, the output will be inverted. The output of a differentiator circuit can be defined using the following equation.
 
+$$V_{out}(t) = - \frac{1}{RC} \int v_{in}(t) \ dt$$
+
+The current through the resistance $$R$$ and the capacitor $$C$$ can be represented by the following formula:
+
+$$I_{R} = \frac{V_{out}}{R}$$
+
+$$I_{C} = C\frac{dV_{in}}{dt}$$
+
+<p align="center"><img width="624" alt="Captura de pantalla 2025-03-08 a las 19 32 06" src="https://github.com/user-attachments/assets/755f9139-3c29-487f-a91d-26755f9241ae" /></p>
+<p align="center"> <em>Figure 26: Circuit diagram of a integrator circuit </em></p>
+
+#### Example 24: Integrator Circuit
+Consider the integrator circuit in Figure 26, where $$R = 5 &Omega;$$ and $$C = 0.5 F$$. If the input signal is $$v(t) = -5 cos(t)$$, determine:
+
+(a) The output signal $$v_{out}(t)$$
+
+(b) The output of the circuit at $$t = 0.1 s$$
+
+(c) $$I_{R}$$ and $$I_{C}$$ at $$t = 0.1 s$$
+
+```matlab
+clc; clear all
+
+% Integrator circuit
+% Find output signal v_out(t)
+% Find output at t=0.1 sec
+% Find I_R and I_C at t=0.1 sec
+
+R = 5; C = 0.5;
+syms t
+v = @(t) -5*cos(t);
+v_out = @(t) (-1/R*C)*int(v,t);
+fprintf('The output signal:\n');
+disp(v_out(t))
+v_out = limit(v_out,t,0.1);
+fprintf('The output voltage at t=0.1 sec: %.5f V\n',v_out);
+I_R = -v_out/R;
+I_C = limit(C*diff(v,t),t,0.1);
+fprintf('\n');
+fprintf('I_R at t=0.1 sec: %.5f A\n',I_R);
+fprintf('\n');
+fprintf('I_C at t=0.1 sec: %.5f A\n',I_C);
+```
+
+## 7.5. Transistor Circuit
+A transistor is a semiconductor-based device that has two _pn_ junctions. By sandwiching either a n-type with two p-types or a p-type with two n-types, a transistor is made. Therefore, a transistor has three terminals and three sections: emitter, base, and collector. The two types of transistors based on the _pn_ junction, termed as _p-n-p_ transistor and _n-p-n_ transistor, are shown in Figure 27.
+
+<p align="center"><img width="732" alt="Captura de pantalla 2025-03-08 a las 19 45 05" src="https://github.com/user-attachments/assets/7269c01e-2bb3-40b1-a34f-65644a2a20df" /></p>
+<p align="center"> <em>Figure 27: p-n-p and n-p-n transistor </em></p>
+
+In a transistor-based circuit, the connections can be made in three ways (Figure 28):
+
+- Common emitter (CE) connection
+- Common base (CB) connection
+- Common collector (CC) connection
+
+<p align="center"><img width="914" alt="Captura de pantalla 2025-03-08 a las 19 47 33" src="https://github.com/user-attachments/assets/111be6d1-6907-4ec3-b718-8c55c21d993e" /></p>
+<p align="center"> <em>Figure 28: Three configurations of a transistor </em></p>
+
+In any transistor circuit, there is a relation of current among emitter, base, and collector currents that can be defined as follows:
+
+$$I_{E} = I_{B} + I_{C}$$
+
+Here, $$I_{E}$$, $$I_{B}$$, and $$I_{C}$$ are the emitter current, base current, and collector current, respectively.
 
 
 
