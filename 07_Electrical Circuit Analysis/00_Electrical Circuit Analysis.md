@@ -66,12 +66,12 @@ fprintf('Equivalent resistance: %f',Equivalent_R);
 ```
 
 ### 7.2.3. Delta-Wye Conversion
-In some cases, the resistance of a circuit may not be connected in series or parallel. That's when delta-wye comes in handy. Consider the following circuit in Figure 2, where $$R_{1}$$, $$R_{2}$$, and $$R_{3}$$ are in a delta configuration, and $$R_{4}$$, $$R_{5}$$ and $$R_{3}$$ are in another delta configuration. To determine the equivalent resistance, one of the easiest ways is to convert the delta configuration into a wye configuration to simplify the calculation. 
+In some cases, a circuit's resistance may not be connected in series or parallel. That's when delta-wye comes in handy. Consider the following circuit in Figure 2, where $ $ R_$$, $ $ R_$$, and $ $ R_$$ are in a delta configuration, and $ $ R_$$, $ $ R_$$, and $ $ R_$$ are in another delta configuration. To determine the equivalent resistance, one of the easiest ways is to convert the delta configuration into a wye configuration to simplify the calculation. 
 
 <p align="center"><img width="550" alt="Captura de pantalla 2025-01-24 a las 19 49 29" src="https://github.com/user-attachments/assets/b8b8bee9-ed3a-41a9-8d73-4125cbe77d4e" /></p>
 <p align="center"> <em>Figure 2: A delta connected resistive circuit </em></p>
 
-Figure 3, illustrates the delta configuration and the wye configuration of resistances. In the delta configuration, the resistances are connected in such a way that it looks like the delta symbol (&Delta;). Conversely, in the wye configuration, the resistances create an appearance of "_Y_". This configuration is termed star configuration as well. 
+Figure 3, illustrates the delta configuration and the wye configuration of resistances. In the delta configuration, the resistances are connected so that it looks like the delta symbol (&Delta;). Conversely, in the wye configuration, the resistances create an appearance of "_Y_". This configuration is termed star configuration as well. 
 
 <p align="center"><img width="914" alt="Captura de pantalla 2025-01-24 a las 19 52 37" src="https://github.com/user-attachments/assets/e666da9f-d684-4ad0-b40f-c6085384bc41" /></p>
 <p align="center"> <em>Figure 3: Delta and wye configuration in electrical circuits </em></p>
@@ -1302,6 +1302,84 @@ In any transistor circuit, there is a relation of current among emitter, base, a
 $$I_{E} = I_{B} + I_{C}$$
 
 Here, $$I_{E}$$, $$I_{B}$$, and $$I_{C}$$ are the emitter current, base current, and collector current, respectively.
+
+Two common terminologies used in transistor circuits are as follows:
+
+**Current amplification factor, $$&alpha;$$**
+The current amplification factor is the ratio of output current to input current, generally regarded as $$&alpha;$$. For a transistor with a common base connection, the current amplification factor can be written as:
+
+$$&alpha; = \frac{Collector current}{Emitter current} = \frac{I_{C}}{I_{E}}$$
+
+**Base current amplification, $$&beta;$$**
+The base current amplification factor is the ratio of output current to base current, generally regarded as $$&beta;$$. For a transistor with a common emitter connection, the current amplification factor can be written as:
+
+$$&beta; = \frac{Collector current}{Base current} = \frac{I_{C}}{I_{B}}$$
+
+#### Example 25: Transistor Circuit
+Consider a transistor with a common base connection. If the emitter current, $$I_{E} = 10 mA$$, and $$&alpha; = 0.8$$, determine the collector current and the base current.
+
+```matlab
+clc; clear all
+
+% Transistor Circuit
+% Determine collector current I_C
+% Determine base current I_B
+
+I_E = 10; alpha = 0.8;
+I_C = alpha*I_E;
+I_B = I_E-I_C;
+fprintf('Collector current: %.3f mA\n',I_C);
+fprintf('Base current: %.3f mA\n',I_B);
+```
+
+### Exercises
+1. Determine the equivalent resistance of the following circuit in Figure 29. Verify Ohm's law if the voltage varies from 1 V to 12 V.
+
+<p align="center"><img width="531" alt="Captura de pantalla 2025-03-09 a las 15 51 39" src="https://github.com/user-attachments/assets/5d3f832a-6c16-43f7-b8df-00c58221cebb" /></p>
+<p align="center"> <em>Figure 29: A resistive electrical circuit </em></p>
+   
+2. Consider the following circuit in Figure 30, where $$R_{1} = 0.2 ohm, R_{2} = 0.5 ohm, R_{3} = 1 ohm, R_{4} = 0.8 ohm$$, and $$R_{5} = 1.44 ohm$$.
+   
+   (a) Determine the equivalent resistance of the circuit
+
+   (b) Determine the current if the voltage is 6 V.
+
+<p align="center"><img width="423" alt="Captura de pantalla 2025-03-09 a las 15 54 17" src="https://github.com/user-attachments/assets/4de6cdc4-78dd-4302-9bad-78b55a3fa991" /></p>
+<p align="center"> <em>Figure 30: A delta connected resistive electrical circuit </em></p>
+
+3. (a) Create a function $$voltdiv()$$ which will calculate the divided voltages in the following circuit in Figure 31 given the values of $$R_{1} = 2 ohm, R_{2} = 4 ohm, R_{3} = 8 ohm,$$ and $$V = 24 V$$.
+
+   (b) Create a function with $$curdiv()$$ which will calculate the  divided currents in the following circuit in Figure 32 given the values of $$R_{1} = 2 ohm, R_{2} = 4 ohm$$, and $$I = 8A$$.
+
+<p align="center"><img width="430" alt="Captura de pantalla 2025-03-09 a las 15 57 06" src="https://github.com/user-attachments/assets/b8c207ee-cb96-443f-8474-f4e0dfc9e0bb" /></p>
+<p align="center"> <em>Figure 31: An electrical circuit with three resistors in series </em></p>
+
+<p align="center"><img width="438" alt="Captura de pantalla 2025-03-09 a las 15 59 37" src="https://github.com/user-attachments/assets/1703bdeb-426c-4b98-ba68-023e8ad873aa" /></p>
+<p align="center"> <em>Figure 32: An electrical circuit with two resistors in parallel </em></p>
+
+4. In the following circuit in Figure 33, $$R_{1} = 4 ohm, R_{2} = 9 ohm$$, and load resistance, $$R_{L} = 5 ohm$$. The circuit is running at a voltage of 12 V. Determine:
+
+   (i) Thevenin's voltage $$V_{th}$$
+
+   (ii) Thevenin's equivalent resistance $$R_{th}$$
+
+   (iii) The current flowing through the load resistance $$R_{L}$$
+
+   (iv) From the calculated Thevenin's circuit, vary the load resistance starting from 1 to 20 ohms, and determine the output power for all scenarios to prove the maximum power transfer theorem; also     determine the maximum output power
+
+
+<p align="center"><img width="479" alt="Captura de pantalla 2025-03-09 a las 16 03 30" src="https://github.com/user-attachments/assets/9f40c09c-15b3-44fa-bbf8-1b0b484adbd8" /></p>
+<p align="center"> <em>Figure 33: An electrical circuit with three resistors </em></p>
+
+5. Using Example 13 as a reference, determine the apparent power, $$S$$, and the power factor of a series RLC circuit with:
+
+   (a) P = 50 W and Q = 13 Var
+
+   (b) P = 12 W and Q = 2.3 Var
+
+6. 
+
+
 
 
 
