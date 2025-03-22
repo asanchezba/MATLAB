@@ -1377,7 +1377,74 @@ fprintf('Base current: %.3f mA\n',I_B);
 
    (b) P = 12 W and Q = 2.3 Var
 
-6. 
+6. Consider the following delta-connected system as shown in Figure 34, with the following parameters:
+
+   $$V_{AB} = 100 &ang;0^\circ V$$
+   
+   $$V_{BC} = 110 &ang;120^\circ V$$
+   
+   $$V_{CA} = 120 &ang;240^\circ V$$
+   
+   $$Z_{1} = 8 &ang;25^\circ$$
+   
+   $$Z_{2} = 14 &ang;55^\circ$$
+   
+   $$Z_{3} = 18 &ang;-23^\circ$$
+
+   <p align="center"><img width="731" alt="Captura de pantalla 2025-03-22 a las 17 28 44" src="https://github.com/user-attachments/assets/d6f0a233-4320-4322-a906-97d202519829" /></p>
+   <p align="center"> <em>Figure 34: An electrical circuit delta connection </em></p>
+
+   (a) Determine if the system is balanced or unbalanced. Hence, calculate:
+
+       (i) Phase currents $$I_{AB}, I_{BC}$$, and $$I_{CA}$$
+
+       (ii) Line currents $$I_{A}, I_{B}$$, and $$I_{C}$$
+
+   Now consider the following parameters for the same system:
+
+   $$V_{AB} = 100 &ang;0^\circ V$$
+   
+   $$V_{BC} = 110 &ang;120^\circ V$$
+   
+   $$V_{CA} = 120 &ang;240^\circ V$$
+   
+   $$Z_{1} = 8 &ang;25^\circ$$
+   
+   $$Z_{2} = 14 &ang;55^\circ$$
+   
+   $$Z_{3} = 18 &ang;-23^\circ$$
+
+   (b) Determine if the system is balanced or unbalanced. Hence, calculate:
+
+       (i) Phase currents $$I_{AB}, I_{BC}$$, and $$I_{CA}$$
+
+       (ii) Line currents $$I_{A}, I_{B}$$, and $$I_{C}$$
+
+7. (a) Determine the gain and output voltage of the inverting amplifier as shown in Figure 35, where $$R_{1} = 10 ohm, R_{2} = 14 ohm$$, and input voltage $$V_{in} = 24 V$$.
+   
+   (b) What is the gain and output voltage of the non-inverter amplifier if the diagram shown in Figure 36 has the same $$R_{1}, R_{2}$$, and input voltage of 5 ohm, 7 ohm, and 12 V, respectively?
+
+   <p align="center"><img width="729" alt="Captura de pantalla 2025-03-22 a las 17 34 48" src="https://github.com/user-attachments/assets/cbc31e47-4268-4423-a4d1-5d7214ca57d0" /></p>
+   <p align="center"> <em>Figure 35: An inverting amplifier </em></p>
+
+   <p align="center"><img width="728" alt="Captura de pantalla 2025-03-22 a las 17 35 32" src="https://github.com/user-attachments/assets/1b95ecb2-aeb7-48b8-a0f8-69a242ce9686" /></p>
+   <p align="center"> <em>Figure 36: A non-inverting amplifier </em></p>
+
+8. (a) Design a differentiator circuit as shown in Figure 37, where you have an input of $$V(t) = 6·cos^2(t)$$, a resistor of 10 ohm, and a capacitor of 0.5 Farads. What will be the output signal, $$v_{out}$$ from the differentiator? What will the circuit's output voltage, $$I_{R}$$ and $$I_{C}$$ at 0.1 s?
+
+   (b) Design an integrator circuit as shown in Figure 38, where you have an input of $$v(t) = cos^2(t)/sin(t)$$, a resistor of 12 ohm, and a capacitor of 0.2 Farads. What will be the output signal,      $$v_{out}$$ from the differentiator? What will the circuit's output voltage, $$I_{R}$$ and $$I_{C}$$ at 0.5 s?
+
+   <p align="center"><img width="738" alt="Captura de pantalla 2025-03-22 a las 17 41 14" src="https://github.com/user-attachments/assets/22bc2df9-5f8a-4e9f-8c32-47546047fa13" /></p>
+   <p align="center"> <em>Figure 37:  </em></p>
+
+   <p align="center"><img width="722" alt="Captura de pantalla 2025-03-22 a las 17 41 58" src="https://github.com/user-attachments/assets/cac800c9-b851-4476-9eea-b578277d9f09" /></p>
+   <p align="center"> <em>Figure 38:  </em></p>
+
+
+
+
+
+
 
 
 
