@@ -13,5 +13,11 @@ A system in control system is commonly represented either in a time domain, an s
 </p>
 
 ### 8.2.1. Linear Time-Invariant System
-Linear time-invariant (LTI) systems refer to a certain group of systems with two distinctive characteristics: **linearity** and time **invariance**. Linearity is when the output of the system is linearly related to the output. 
+<p align="justify">
+Linear time-invariant (LTI) systems refer to a certain group of systems with two distinctive characteristics: **linearity** and time **invariance**. Linearity is when the output of the system is linearly related to the output. If we focus on Figure 1, the first output is $$y_{1}(t)$$, and the input is $$x_{1}(t)$$, whereas the second output and the input of the system is $$y_{2}(t)$$ and $$x_{2}(t)$$ respectively. The linear characteristic of the system can be realised by observing the third inputs and outputs. Here, the given input is the combination of the previous two inputs—(a) and (b). Due to the linearity property, the output of the system changes linearly according to the changes made in the inputs, i.e., the output has also become the combination of the outputs of (a) and (b). Such linear characteristic is one of the characteristics of the LTI system.
+</p>
 
+<p align="center"><img width="663" alt="Captura de pantalla 2025-04-18 a las 18 44 41" src="https://github.com/user-attachments/assets/ff2ec02b-11a6-4051-aa11-a09ab169cc3c" /></p>
+<p align="center"> <em>Figure 1: Illustration of linearity </em></p>
+
+Another characteristic of an LTI system is its invariance. If the input is applied at a different timing, the output will not be dependent on that timing. 
