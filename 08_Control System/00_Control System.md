@@ -9,6 +9,8 @@ Control systems are mostly associated with signals, because by understanding the
 </p>
 
 <p align="justify">
-A system in control system is commonly represented either in a time domain, an s-domain, or a frequency domain. In the s-domain, the system is represented by a parameter called $$s$$, which is represented by a transfer function, and which can be derived from a time domain system through the Laplace transform. A frequency domain, on the other hand, provides specific details on the amplitude and phase of the system. This can be determined from the s-domain by replacing $$s$$ with $$$j &omega;$$
+A system in control system is commonly represented either in a time domain, an s-domain, or a frequency domain. In the s-domain, the system is represented by a parameter called $$s$$, which is represented by a transfer function, and which can be derived from a time domain system through the Laplace transform. A frequency domain, on the other hand, provides specific details on the amplitude and phase of the system. This can be determined from the s-domain by replacing $$s$$ with $$j &omega;$$, where $$&omega;$$ is the frequency of the input signal. 
 </p>
+
+### 8.2.1. Linear Time-Invariant System
 
