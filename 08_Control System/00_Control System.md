@@ -6,6 +6,9 @@ The study of control systems is required to govern the behaviour of any physical
 ## 8.2. Frequency Response Overview
 <p align="justify">
 Control systems are mostly associated with signals, because by understanding the signals and their response by the system, one can easily control different aspects of the complete system. These systems may be exposed to the signals of different frequencies, the response for which is important to comprehend and eventually control the system. The frequency response can therefore be stated as the output of a system to a waveform of a particular frequency. More specifically, the frequency response can provide more information on the amplitude response and phase response of a system.
+</p>
 
+<p align="justify">
 A system in control system is commonly represented either in a time domain, an s-domain, or a frequency domain. In the s-domain, the system is represented by a parameter called $$s$$, which is represented by a transfer function, and which can be derived from a time domain system through the Laplace transform. A frequency domain, on the other hand, provides specific details on the amplitude and phase of the system.
 </p>
+
