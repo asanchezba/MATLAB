@@ -20,4 +20,24 @@ Linear time-invariant (LTI) systems refer to a certain group of systems with two
 <p align="center"><img width="663" alt="Captura de pantalla 2025-04-18 a las 18 44 41" src="https://github.com/user-attachments/assets/ff2ec02b-11a6-4051-aa11-a09ab169cc3c" /></p>
 <p align="center"> <em>Figure 1: Illustration of linearity </em></p>
 
-Another characteristic of an LTI system is its invariance. If the input is applied at a different timing, the output will not be dependent on that timing. 
+<p align="justify">
+Another characteristic of an LTI system is its invariance. If the input is applied at a different timing, the output will not be dependent on that timing. Consider a system that produces $$y(t)$$ output for an input $$x(t)$$. If a time shift occurs in the input, such as $$x(t+1)$$, the produced output will remain the same with the same time shift, i.e., $$y(t+1)$$, as shown in Figure 2.
+</p>
+
+<p align="center"><img width="844" alt="Captura de pantalla 2025-05-20 a las 20 03 42" src="https://github.com/user-attachments/assets/e4c4e6c2-e280-4a70-825a-7dc00fa670fb" /></p>
+<p align="center"> <em>Figure 2: Illustration of time invariance </em></p>
+
+### 8.2.2. Transfer Function
+<p align="justify">
+A system's transfer function can be defined as the ratio of the Laplace transform of output to the Laplace transform of input. Consider the following system in Figure 3, where $$Y(s)$$ represents the Laplace transform of the output $$y(t)$$ and $$X(s)$$ is the Laplace transform of the output $$x(t)$$.
+</p>
+
+<p align="center"><img width="645" alt="Captura de pantalla 2025-05-20 a las 20 07 52" src="https://github.com/user-attachments/assets/9709f611-7764-4e45-af06-e6103fd22b0d" /></p>
+<p align="center"> <em>Figure 3: Illustration of transfer function </em></p>
+
+Hence, the transfer function of the system can be referred to as follows:
+
+$$G(s) = \frac{Y(s)}{X(s)}$$
+
+
+
