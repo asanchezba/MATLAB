@@ -39,5 +39,9 @@ Hence, the transfer function of the system can be referred to as follows:
 
 $$G(s) = \frac{Y(s)}{X(s)}$$
 
+In MATLAB the transfer function can be created using $$tf()$$, where the input is a matrix representing the coefficients of the numerator and the denominator.
+
+
+
 
 
