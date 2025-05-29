@@ -41,7 +41,105 @@ $$G(s) = \frac{Y(s)}{X(s)}$$
 
 In MATLAB the transfer function can be created using $$tf()$$, where the input is a matrix representing the coefficients of the numerator and the denominator.
 
+```matlab
+if([Numerator], [Denominator])
+```
+<p align="justify">
+Here, in $$[Numerator]$$ the coefficients of $$s$$ need to be incorporated starting from the highest degree to the lowest degree as a row vector. For $$[Denominator]$$, the same process applies; however, the denominator represents the input and the numerator represents the output of the system, both in the Laplace transformation form.
+</p>
 
+#### Example 1: Transfer Function
+Create the following transfer function
 
+$$G(s) = \frac{s+50}{s^2+11s+12}$$
+
+```matlab
+% Example 1: Transfer Function
+G = tf([1 50],[1 11 12]);
+disp('Transfer function:')
+G
+
+% Alternative display
+syms s
+G = @(s)(s+50)/(s^2+11*s+12);
+disp('Transfer function:')
+disp(G(s))
+```
+
+### 8.2.3. Laplace Transform
+The Laplace transformation is used to convert any time-domain signal into a frequency-domain, or s-domain, output. One of the benefits is that it can convert any differential equation into a simple algebraic equation in its frequency domain. 
+
+In MATLAB, the Laplace transfomr of any time domain equation can be converted into an s-domain equation by using the following comand:
+
+```matlab
+laplace(g)
+```
+
+#### Example 2: Laplace Transform
+Consider the following function for performing the Laplace transform
+
+$$g(t) = e^{3t} *sin(6t)$$
+
+```matlab
+% Example 2: Laplace Transform
+syms t s
+g = @(t) exp(3*t)*sin(6*t);
+disp('Laplace transform:')
+G(s)=laplace(g(t))
+```
+Laplace transform can also be utilised for solving initial value problems involving differential equations. The Laplace transform of derivative terms can be determined using the following formula:
+
+$$y^n(t) = s^nY(s) - s^{n-1} y(0) - s^{n-2} y'(0) - s^{n-3} y''(0) ... - y^{n-1}(0)$$
+
+where $$n = 1, 2, 3, ...$$ Here, $$y^n$$ represents the nth derivative of $$y(t). Using the above formula, the Laplace transform of the first, second, and third derivarive terms are listed in Table 1, as these are the most commonly used terms in the initial value problems.
+
+<p align="center"> <em>Tabble 1: Differential terms and the corresponding Laplace transforms </em></p>
+<p align="center"><img width="925" alt="Captura de pantalla 2025-05-29 a las 20 12 50" src="https://github.com/user-attachments/assets/fd7ea418-6ab6-487d-af4a-2673c3522904" /></p>
+
+#### Example 3: Laplace Transform of Initial Value Problem with Differential Equation
+Solve the following initial value problem using Laplace transform
+
+$$3y'''(t) + 2y''(y) + 3y(t) = 1; y(0) = y'(0) = 0; y''(0) = 1$$
+
+```matlab
+% Example 3: Laplce Transform of Initial Value Problem
+% 3*y'''(t) + 2*y''(t) + 3y(t) = 1
+% Initial condition: y(0)=0;y'(0)=0;y''(0)=1;
+
+syms s Y
+
+%Initial conditions
+y0=0;dy0=0;dy20=1;
+
+Y1 = @(s) s*Y-y0;
+Y2 = @(s) s^2*Y-s*y0-dy0;
+Y3 = @(s) s^3*Y-s^2*y0-s*dy0-dy20;
+
+% Differential equation
+eqn = 3*Y3(s)+2*Y2(s)+3*Y-laplace(1,s);
+solve(eqn,Y)
+```
+
+### 8.2.4. Inverse Laplace Transform
+To convert the frequency domain output back into its original time domain input, an inverse Laplace transform is required. The command for invers Laplace transfomr in MATLAB is as follows:
+
+```matlab
+ilaplace(G)
+```
+
+#### Example 4: Inverse Laplace Transform 
+Consider the following function for performing inverse Laplace transform
+
+$$G(s) = \frac{6}{(s-3)^2 + 36}$$
+
+```matlab
+% Example 4: Inverse Laplace Transform
+syms t s
+G = @(s) 6/((s-3)^2+36);
+disp('Inverse laplace transform:')
+g(t) = ilaplace(G(s))
+```
+
+### 8.2.5. Partial Fraction
 
 
