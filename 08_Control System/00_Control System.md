@@ -141,5 +141,41 @@ g(t) = ilaplace(G(s))
 ```
 
 ### 8.2.5. Partial Fraction
+Partial fraction decomposition is a method through which any rational fraction can be broken down in terms of simpler fractions to make the computations easier. The generalised format of a rational fraction and its partial fraction expansion is stated below:
+
+$$F(s) = \frac{N(s)}{D(s)} = \frac{N_{n}·s^n + N_{n-1}·s^{n-1} + ... + N_{1}·s + N_{0}}{D_{m}·s^m + D_{m-1}·s^{m-1} + ... + D_{1}·s + D_{0}}$$
+
+$$Partial fraction expansion = \frac{r_{m}}{s-p_{m}} + \frac{r_{m-1}}{s-p_{m-1}} + ... + \frac{r_{1}}{s-p_{1}} + k(s)$$
+
+Here, $$N(s)$$ and $$D(s)$$ represent the numerator and denominator terms. $$N = [N{n}, N{n-1} ... N{0}]$$ and $$D = [D_{n}, D{n-1} ... D{0}]$$ indicate two row vectors containing the coefficients of $$s$$ for numerator and denominator, respectively. These two vectors are the input of MATLAB for determining the residuals ($$r = [r{m}, r{m-1} ... r{1}]$$), poles ($$p = [p{m}, p{m-1} ... p{0}]$$), and coefficients ($$k = [k{m}, k{m-1} ... k{0}]$$) of polynomials of the partial fraction expansion. 
+
+The MATLAB command for partial fraction expansion is:
+```matlab
+[r,p,k] = residue(N,D)
+```
+
+A rational fraction can be proper or improper, based on which the steps for determining partial fraction decompositions vary. The conditions of the proper and improper rational fraction are provided in Table 2. For the third case, when the highest degree for both the numerator and the denominator becomes equal, the fraction can either be proper or improper based on certain conditions. To illustrate the conditions clearly, let's consider the following rational fraction $$F(s)$$, where the highest degree for both numerator and denominator is $$n$$:
+
+$$F(s) = \frac{a_{1}·s^n + a_{2}·s^{n-1} + ... + a_{n-1}·s + a_{0}·s^0}{b_{1}·s^n + b_{2}·s^{n-1} + ... + b_{n-1}·s + b_{n}·s^0}$$
+
+For the above-generalised fraction, the recognition of proper and improper fractions can be made by the steps incorporated in Table 3. Two more examples are provided in Table 4.
+
+<p align="center"><em> Table 2: The conditions of the proper and improper rational fraction </em></p>
+<p align="center"><img width="918" alt="Captura de pantalla 2025-05-30 a las 20 07 50" src="https://github.com/user-attachments/assets/57f015ee-61bc-49cb-80ce-d5a6557a3195" /></p>
+
+<p align="center"><em> Table 3: Conditions for being proper and improper fraction when the highest degree for both in the numerator and the denominator is equal </em></p>
+<p align="center"><img width="1300" alt="Captura de pantalla 2025-05-30 a las 20 16 40" src="https://github.com/user-attachments/assets/b85fd17c-ba82-42c2-8064-b5da10083f6a" /></p>
+
+<p align="center"><em>Table 4: Examples of fractions </em></p>
+<p align="center"><img width="624" alt="Captura de pantalla 2025-05-30 a las 20 18 44" src="https://github.com/user-attachments/assets/a0704b85-862a-40ef-b436-9715f5b5d927" /></p>
+
+#### Example 5: Partial Fraction Expansion
+Determine the partial fraction expansion of the following proper rational fraction, where the highest degree of the denominator is greater than the highest degree of the numerator.
+
+$$\frac{2s+3}{s^2+2s}$$
+
+
+
+
 
 
