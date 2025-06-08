@@ -250,5 +250,28 @@ disp(Espan(s))
 ```
 
 ### 8.2.6. DC Gain
+In general, the value of a transfer function signifies gain, which is termed as AC gain due to the existence of the frequency term. When that frequency components becomes zero, the AC gain can be referred to as DC gain. 
 
+To be more precise, DC gain can be defined as the ratio of the steady-state step output or response to the state input. It can also be regarded as the value of the transfer function solved at $$s = 0$$, using the following formula:
+
+$$DC gain = G(s)$$
+
+Here, $$G(s)$$ represents the transfer function of a system.
+
+#### Example 9: DC Gain
+Determine the DC gain of the following transfer function.
+
+$$G(s) = \frac{20}{s^2+10s+11}$$
+
+```matlab
+% DC Gain
+% Transfer eqn: 20/(s^2+10+11)
+
+syms s
+G = @(s) 20/(s^2+10*s+11);
+DC_gain = limit(G(s),s,0);
+fprintf('DC gain: %f\n',DC_gain)
+```
+
+### 8.2.7. Initial Value and Final Value Theorem
 
