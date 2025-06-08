@@ -274,4 +274,43 @@ fprintf('DC gain: %f\n',DC_gain)
 ```
 
 ### 8.2.7. Initial Value and Final Value Theorem
+The initial value theorem is used to determine the value of a time domain function, $$g(t)$$, at $$t = 0$$ given the Laplace transform of that function. On the other hand, the final value theorem helps to determine the final value of the function at $$t = \infty$$. Both of these theorems are regarded together as the limiting theorem.
+
+**Initial value theorem:** $$g(t) = \lim_{s \to \infty} sG(s)$$
+
+**Final value theorem:** $$g(t) = \lim_{s \to 0} sG(s)$$
+
+Here, $$G(s)$$ is the Laplace transform of the time domain function $$g(t)$$.
+
+#### Example 10: Initial and Final Value Theorem
+Considering the following transfer function:
+
+$$G(s) = \frac{2+6s+2s^2}{2s(s+2)^2}$$
+
+Determine the initial and final value of $$g(t)$$.
+
+```matlab
+% Initial value problem
+% Transfer eqn: (2+6*s+2*s^2)/(2*s*(s+2)^2)
+clc; clear;
+
+syms s
+G = @(s) (2 + 6*s + 2*s^2)/(2*s*(s+2)^2);
+Initial_val = limit(s*G(s),s,Inf);
+fprintf('Initial value: %.3f\n',Initial_val)
+```
+
+```matlab
+%Final value problem
+% Transfer eqn: (2+6*s+2*s^2)/(2*s*(s+2)^2)
+clc; clear;
+
+syms s
+G = @(s) (2 + 6*s + 2*s^2)/(2*s*(s+2)^2);
+Final_val = limit(s*G(s),s,0);
+fprintf('Final value: %.3f\n',Final_val)
+```
+
+### 8.2.8. Poles/Zeros
+
 
