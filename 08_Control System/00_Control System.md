@@ -312,5 +312,76 @@ fprintf('Final value: %.3f\n',Final_val)
 ```
 
 ### 8.2.8. Poles/Zeros
+The poles are the roots of the denominators of the transfer function of a system. On the other hand, zeros are the roots of the numerator of the transfer function of a system. In MATLAB, the commands for determining poles and zeros of a system from its transfer function are listed below:
+
+```matlab
+%Command for determining poles from transfer function G
+pole(G)
+
+%Command for determining zeros from transfer function G
+zero(G)
+
+% Command for pole-zero mapping from transfer function G
+pzmap(G)
+```
+
+#### Example 11: Poles and Zeros
+Consider the following transfer function to determine the poles and zeros:
+
+$$G(s) = \frac{s+50}{s^2+11s+12}$$
+
+```matlab
+%Poles/zeros
+% Transfer function: (s+50)/(s^2+11s+12)
+
+G = tf([1 50],[1,11,12]);
+disp('Transfer function:')
+G
+poles = pole(G)
+zeros = zero(G)
+
+%Pole-zero map
+pzmap(G)
+grid on
+```
+
+### 8.2.9. Laplace Transform in Electrical Circuit
+The Laplace transform can be used for electrical circuit analysis. We can convert the ratio of output to input into Laplace transformation to determine its transfer function. Later, from the transfer function, we can perform frequency domain analysis. 
+
+Consider the RLC circuit from Figure 4 to determine the following aspects using MATLAB:
+
+(a) Transfer function
+
+(b) Poles and zeros
+
+(c) DC gain
+
+(d) Initial and final value
+
+
+<p align="center"><img width="690" alt="Captura de pantalla 2025-06-15 a las 12 54 51" src="https://github.com/user-attachments/assets/96057255-edfa-4421-a4a5-18be963591d7" /></em></p>
+<p align="center"> <em>Figure 4: RLC circuit </em></p>
+
+(a) When converting from the time domain to the frequency domain, a capacitive element is represented as $$\frac{1}{sC}$$ and an inductive element is represented as $$sL$$, while the resistive element stays the same. The transfer function of the circuit:
+
+$$G(s) = \frac{V_{out}}{V_{in}} = \frac{sL}{R+sL+\frac{1}{sC}} = \frac{s}{2+s+\frac{1}{0.5s}} = \frac{s^2}{s^2+2s+2}$$
+
+(b) Poles and zeros:
+
+Poles = The roots of the denominator $$s^2+2s+2$$
+
+$$\text{Poles} = \frac{-2 \pm \sqrt{2^2 - 4 \cdot 1 \cdot 2}}{2 \cdot 1} = -1 \pm i$$
+
+Zeros = The roots of the numerator $$s^2$$
+
+$$\text{Zeros} = 0, 0$$
+
+(c) DC Gain
+
+$$\text{DC Gain} = G(s) = (\frac{s^2}{s^2+2s+2}) = 0$$
+
+(d) Initial and final value
+
+
 
 
