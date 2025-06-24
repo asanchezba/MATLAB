@@ -417,6 +417,43 @@ fprintf('Final value: %.3f\n',Final_val);
 ```
 
 ## 8.3. Time Response Overview
+Time response signifies the output of a time domain function that characterises any dynamic system. To determine the time response of a system, the nature of the input and the mathematical model of the system need to be known.
 
+The time response of a system can be categorised into two components: transient response and steady-state response. The transient response is the initial part of the time response, which exists only for a short period and approaches zero as time continues. Conversely, a steady-state response is the stable response of the system that happens right after the transient response. 
 
+Table 5 lists some of the input signal functions with their time and frequency domain characteristics. 
 
+<p align="center"><em>Table 5: Some input signals and their functions in time and frequency domain </em></p>
+<p align="center"><em><img width="1040" alt="Captura de pantalla 2025-06-24 a las 12 59 55" src="https://github.com/user-attachments/assets/bef94184-896b-4b4f-bd16-bf96f17b6746" /></em></p>
+
+### 8.3.1. First-Order System
+The general representation of the transfer function of a first-order system can be generalised using the following formula:
+
+$$G(s) = \frac{K}{1+ \tau s}$$
+
+Here, $$G(s)$$ represents the transfer function of the first-order system, $$K$$ is the DC gain, and $$\tau$$ is the time constant.
+
+Consider the following transfer function of a first-order system:
+
+$$G(s) = \frac{8}{2+ 5s}$$
+
+Determine the following parameters:
+
+(a) DC gain
+
+(b) Time constant
+
+$$G(s) = \frac{K}{1+ \tau s} = \frac{8}{2+ 5s} = \frac{4}{1+ \frac{5}{2}s}$$
+
+Hence, DC gain is $$K = 4$$ and time constant $$\tau = \frac{5}{2}$$
+
+#### 8.3.1.1. Specific Characteristics of First-Order Systems
+**Rise Time** is the time required by a signal to reach 90% of its final value starting from 10%. Consider the following step response of a first-order system:
+
+$$y(t) = K(1-e^{\frac{-t}{\tau}})$$
+
+where $$K$$ is the DC gain $$\tau$$ is the time constant.
+
+The following formula can determine the time required to reach 10% of the final value:
+
+$$t_{10\%} = -\tau \cdot \ln(0.1)$$
