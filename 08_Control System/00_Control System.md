@@ -456,4 +456,14 @@ where $$K$$ is the DC gain $$\tau$$ is the time constant.
 
 The following formula can determine the time required to reach 10% of the final value:
 
-$$t_{10\%} = -\tau \cdot \ln(0.1)$$
+$$t_{10\\%} = -\tau \cdot \ln(0.1)$$
+
+The following formula can determine the time required to reach 90% of the final value:
+
+$$t_{90\\%} = -\tau \cdot \ln(0.9)$$
+
+Therefore, the rise time of a first-order system can be calculated as:
+
+$$T_{R} = t_{90\\%} - t_{10\\%} = \tau \cdot \ln(9) = 2.2 \tau$$
+
+
