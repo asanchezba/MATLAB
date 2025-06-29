@@ -466,4 +466,31 @@ Therefore, the rise time of a first-order system can be calculated as:
 
 $$T_{R} = t_{90\\%} - t_{10\\%} = \tau \cdot \ln(9) = 2.2 \tau$$
 
+**Settling Time** is the time required for a signal to reach and remain steady within 2%-5% of its final values. The formula for determining settling time for 2% criteria can be written as:
+
+Maximum settling time, $$T_{S_max} = -\tau lnln(0.02) &asymp; 4 \tau$$
+
+The formula for determining settling time for 5% criteria can be written as:
+
+Minimum settling time, $$T_{S_min} = -\tau lnln(0.05) &asymp; 3 \tau$$
+
+**Delay Time** can be defined as the required time for a response to reach 50% of its final value during the first half cycle of the waveform. The formula for determining delay time can be represented as follows:
+
+Delay time, $$T_{D} = -\tau lnln(0.5) &asymp; 0.7 \tau$$
+
+### 8.3.2. Second-Order System
+The general format of the transfer function of a second-order system can be represented using the following equation:
+
+$$G(s) = \frac{K \omega_n^2}{s^2 + 2\zeta \omega_ns + \omega_n^2}$$
+
+Here, $$K$$ is the DC gain; $$\omega_n$$ is the natural frequency; and $$\zeta$$ represents the damping ratio of the second-order system. The roots of the transfer function's denominator indicate the poles of the system, based on which the stability of a system can be determined. Hence, the poles of a second-order system can be determined using the following formula:
+
+$$\text{Poles} = \frac{-2 \zeta \omega_n \pm \sqrt{4 \zeta^2 \omega_n^2 - 4 \cdot 1 \cdot \omega_n^2}}{2 \cdot 1} = -\zeta \omega_n \pm \omega_n \sqrt{\zeta^2-1}$$
+
+The damping ratio of a second-order system, $$\zeta$$, is used to classify different systems based on the oscillation characteristics of a system.
+
+ #### 8.3.2.1. Specific Characteristics of Second-Order Systems
+ **Delay Time** has the same definition as the one for the first-order system, but has a different formula.
+
+ $$\text{Delay time,}T_{D} = \frac{0.7\zeta + 1}{\omega_n\sqrt{1-\zeta^2}}$$
 
