@@ -510,7 +510,7 @@ The damping ratio of a second-order system, $$\zeta$$, is used to classify diffe
 
  **Percent of Overshoot** os a second-order system can be determined mathematically by
 
- $$\text{%Overshoot} = 100e^{\frac{\zeta_n}{\sqrt{1-\zeta^2}}}$$
+ $$\text{Overshoot} = 100e^{\frac{\zeta_n}{\sqrt{1-\zeta^2}}}$$
 
 ### 8.3.3. Impact of Damping Ratio
 
