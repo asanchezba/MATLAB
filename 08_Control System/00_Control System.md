@@ -494,3 +494,24 @@ The damping ratio of a second-order system, $$\zeta$$, is used to classify diffe
 
  $$\text{Delay time,}T_{D} = \frac{0.7\zeta + 1}{\omega_n\sqrt{1-\zeta^2}}$$
 
+ **Rise Time** of a response of a second-order system can be defined as the required time of the response to reach its 10% final value to 90% final value during the first cycle of the response. The definition works when the damping ratio is greater than 1. 
+
+ $$\text{Rise time,}T_{R} = \frac{\pi-\frac{\sqrt{1-\zeta^2}}{\zeta}}{\omega_n\sqrt{1-\zeta^2}}$$
+
+ **Peak Time** is the time required for the response of a second-order system to reach its peak or maximum value during the first cycle.
+
+ $$\text{Peak Time,}T_{P} = \frac{\pi}{\omega_n\sqrt{1-\zeta^2}}$$
+
+ **Settling Time** is the same definition as before mentioned in the first-order system. 
+
+ $$\text{Maximum settling time,}T_{S_{max}} = \frac{4}{\omega_n\sqrt{1-\zeta^2}}$$
+
+ $$\text{Minimum settling time,}T_{S_{min}} = \frac{3}{\omega_n\sqrt{1-\zeta^2}}$$
+
+ **Percent of Overshoot** os a second-order system can be determined mathematically by
+
+ $$\text{%Overshoot} = 100e^{\frac{\zeta_n}{\sqrt{1-\zeta^2}}}$$
+
+### 8.3.3. Impact of Damping Ratio
+
+ 
